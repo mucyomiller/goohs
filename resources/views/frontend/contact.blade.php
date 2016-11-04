@@ -37,7 +37,7 @@
 								<h4 class="col-sm-6 col-xs-12">Tel: 1-800-999-1234</h4>
 								<h4 class="col-sm-6 col-xs-12">Fax: 1-800-999-1234</h4>
 							</div>
-							<h4>Email: <a href="mailto:info@domainname.com">info@domainname.com</a></h4>
+							<h4>Email: <a href="mailto:info@goohs.com">info@goohs.com</a></h4>
 						</div>
 					</div>
 					<div class="col-md-1 col-xs-12 hidden-sm hidden-xs"></div>
@@ -107,9 +107,9 @@
 							<span class="icon-wrap"><i class="fa fa-car"></i></span>
 							<h4>Come and Visit</h4>
 							<ul class="list-unstyled">
-								<li>#121 King Koti Street, Abids,</li>
-								<li>Victoria Apartment, Telangana, India.</li>
-								<li>001-123-456-7890</li>
+								<li>#rue de l'armee Street, Kigali,</li>
+								<li>Nyarugenge, Kigali, Rwanda.</li>
+								<li>250-xx-xxx-xxx</li>
 							</ul>
 						</div>
 					<!-- Box #1 Ends -->
@@ -120,7 +120,7 @@
 							<ul class="list-unstyled">
 								<li>If you're having a medical emergency,</li>
 								<li>do not wait to contact us.</li>
-								<li>Call 001-123-456-7890</li>
+								<li>Call 250-xxx-xxx-xxx</li>
 								<li>or visit the closest emergency center.</li>
 							</ul>
 						</div>

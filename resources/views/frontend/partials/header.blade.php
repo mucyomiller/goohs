@@ -80,11 +80,11 @@
 					<!-- Navbar Collapse Starts -->
 						<div class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
-								<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="services.html">Services</a></li>
-								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">make Appointment</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contactus.html">Contact</a></li>
+								<li class="active"><a href="{{ route('index')}}">Home</a></li>
+								<li><a href="#">Services</a></li>
+								<li><a href="#">make Appointment</a></li>
+								<li><a href="{{ route('about')}}">About</a></li>
+								<li><a href="{{ route('contact')}}">Contact</a></li>
 							</ul>
 						</div>
 					<!-- Navbar Collapse Ends -->
