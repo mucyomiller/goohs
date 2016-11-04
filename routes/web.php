@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/',['as'=>'index','uses'=> function () {
     return view('frontend.index');
-});
-Route::get('about', function () {
+}]);
+Route::get('about',['as'=>'about','uses'=> function () {
     return view('frontend.about');
-});
-Route::get('contact', function () {
+}]);
+Route::get('contact',['as'=>'contact','uses'=> function () {
     return view('frontend.contact');
-});
+}]);
