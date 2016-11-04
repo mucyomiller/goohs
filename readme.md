@@ -20,4 +20,4 @@ If you discover a security vulnerability within Laravel, please send fill an iss
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+The goohs system is currently  open-source  under the [MIT license](http://opensource.org/licenses/MIT) but it's can be changed in upcomming days!.
