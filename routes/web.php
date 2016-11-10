@@ -20,3 +20,6 @@ Route::get('about',['as'=>'about','uses'=> function () {
 Route::get('contact',['as'=>'contact','uses'=> function () {
     return view('frontend.contact');
 }]);
+Route::get('backend',['as'=>'dashboard','uses'=> function () {
+    return view('dashboard.index');
+}]);
