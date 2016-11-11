@@ -20,6 +20,14 @@ Route::get('about',['as'=>'about','uses'=> function () {
 Route::get('contact',['as'=>'contact','uses'=> function () {
     return view('frontend.contact');
 }]);
-Route::get('backend',['as'=>'dashboard','uses'=> function () {
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+//Admin routes
+Route::group(['prefix'=>'backend','middleware' => ['auth']],function(){
+Route::get('index',['as'=>'backend.index','uses'=> function () {
     return view('dashboard.index');
 }]);
+});
