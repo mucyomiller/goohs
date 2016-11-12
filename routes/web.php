@@ -17,10 +17,8 @@ Route::get('/',['as'=>'index','uses'=> function () {
 Route::get('about',['as'=>'about','uses'=> function () {
     return view('frontend.about');
 }]);
-Route::get('contact',['as'=>'contact','uses'=> function () {
-    return view('frontend.contact');
-}]);
-
+Route::get('contact',['as'=>'contact','uses'=>'ContactController@index']);
+Route::post('contactsend',['as'=>'contactSend','uses'=>'ContactController@contactsend']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
@@ -29,5 +27,9 @@ Route::get('/home', 'HomeController@index');
 Route::group(['prefix'=>'backend','middleware' => ['auth']],function(){
 Route::get('index',['as'=>'backend.index','uses'=> function () {
     return view('dashboard.index');
+}]);
+route::get('logout',['as'=>'backend.logout','uses'=> function(){
+Auth::logout();
+return redirect('/');
 }]);
 });
