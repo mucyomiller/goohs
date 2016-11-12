@@ -51,13 +51,14 @@
 					<div class="col-sm-8 col-xs-12">
 						<h3>Get in touch by filling the form below</h3>
 						<div class="status alert alert-success contact-status"></div>
-						<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+						<form id="main-contact-form" class="contact-form" name="contact-form" method="POST" action="{{ route('contactSend') }}" role="form">
 							<div class="row">
 							<!-- Name Field Starts -->
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="name">Name </label>
 										<input type="text" class="form-control" name="name" id="name" required="required">
+										{{ csrf_field() }}
 									</div>
 								</div>
 							<!-- Name Field Ends -->
@@ -94,7 +95,7 @@
 								</div>
 							<!-- Message Field Ends -->
 								<div class="col-xs-12">
-									<input type="submit" class="btn btn-black text-uppercase" value="Submit">
+									<input type="submit" class="btn btn-black text-uppercase" name="submit" value="Submit">
 								</div>
 							</div>
 						</form>
