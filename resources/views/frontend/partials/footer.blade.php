@@ -38,10 +38,6 @@
 								<li><a href="#"><i class="fa fa-angle-right"></i> Pediatric Clinic</a></li>
 								<li><a href="#"><i class="fa fa-angle-right"></i> Diagnosis Clinic</a></li>
 								<li><a href="#"><i class="fa fa-angle-right"></i> Cardiac Clinic</a></li>
-								<li><a href="#"><i class="fa fa-angle-right"></i> Laboratory Analysis</a></li>
-								<li><a href="#"><i class="fa fa-angle-right"></i> Dental Clinic</a></li>
-								<li><a href="#"><i class="fa fa-angle-right"></i> Gynecological Clinic</a></li>
-								<li><a href="#"><i class="fa fa-angle-right"></i> Psychological</a></li>
 							</ul>
 						</div>
 					<!-- Services Ends -->
