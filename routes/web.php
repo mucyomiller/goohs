@@ -25,10 +25,10 @@ Route::get('/home', 'HomeController@index');
 
 //Admin routes
 Route::group(['prefix'=>'backend','middleware' => ['auth']],function(){
-Route::get('index',['as'=>'backend.index','uses'=> function () {
-    return view('dashboard.index');
-}]);
-route::get('logout',['as'=>'backend.logout','uses'=> function(){
+Route::get('index',['as'=>'backend.index','uses'=> function () {return view('dashboard.index');}]);
+Route::get('message',['as'=>'backend.message','uses'=> function () {return view('dashboard.message');}]);
+Route::get('sent',['as'=>'backend.sent','uses'=> function () {return view('dashboard.sent');}]);
+Route::get('logout',['as'=>'backend.logout','uses'=> function(){
 Auth::logout();
 return redirect('/');
 }]);
