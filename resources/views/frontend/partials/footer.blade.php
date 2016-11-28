@@ -56,14 +56,15 @@
 					<!-- Signup Newsletter Starts -->
 						<div class="col-md-4 col-xs-12 newsletter-block">
 							<h4>Signup Newsletter</h4>
-							<form action="#" class="newsletter">
+							<form method="POST" action="{{ route('subscribe') }}" class="newsletter">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Your Name">
+									<input type="text" name="name" class="form-control" placeholder="Your Name">
 								</div>
 								<div class="form-group">
-									<input type="email" class="form-control" placeholder="Enter your Email Address">
+									<input type="email" name="email" class="form-control" placeholder="Enter your Email Address">
 								</div>
-								<button type="submit" class="btn btn-lg btn-block btn-secondary">Submit</button>
+								{{ csrf_field() }}
+								<button type="submit" name="submit" class="btn btn-lg btn-block btn-secondary">Submit</button>
 							</form>
 						</div>
 					<!-- Signup Newsletter Ends -->

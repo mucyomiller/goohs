@@ -1,5 +1,4 @@
 <!-- BEGIN CORE JS FRAMEWORK-->
-    
 <!--[if lt IE 9]>
 <script src="assets/plugins/respond.js"></script>
 <![endif]-->

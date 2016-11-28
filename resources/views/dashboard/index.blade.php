@@ -22,10 +22,10 @@
       <ul>
         <li class="start "> <a href="#" > <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="arrow open"></span> </a> 
 		      <ul class="sub-menu">
-            <li class="active"> <a href="{{ url('/') }}">view appointments <span class=" label label-info pull-right m-r-30">NEW</span></a></li>
+            <li class="active"> <a href="{{ route('backend.appointments') }}">view appointments <span class=" label label-info pull-right m-r-30">NEW</span></a></li>
           </ul>
 		    </li>
-        <li class=""> <a href="{{ route('backend.message')}}"> <i class="fa fa-envelope"></i> <span class="title">show Messages</span> <span class=" badge badge-disable pull-right ">203</span></a> </li>
+        <li class=""> <a href="{{ route('backend.message')}}"> <i class="fa fa-envelope"></i> <span class="title">show Messages</span> <span class=" badge badge-disable pull-right ">5</span></a> </li>
       </ul>
       <div class="clearfix"></div>
       <!-- END SIDEBAR MENU -->

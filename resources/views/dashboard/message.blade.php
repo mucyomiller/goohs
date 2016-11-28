@@ -27,7 +27,7 @@
       <ul>
         <li class="start "> <a href="{{route('backend.index')}}"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="arrow "></span> </a> 
 		    </li>
-        <li class=""> <a href="email.html"> <i class="fa fa-envelope"></i> <span class="title">Email</span> <span class="badge badge-disable pull-right ">203</span></a> </li>
+        <li class=""> <a href="email.html"> <i class="fa fa-envelope"></i> <span class="title">Email</span> <span class="badge badge-disable pull-right ">5</span></a> </li>
       </ul>
 	<div class="side-bar-widgets">
 	<p class="menu-title">FOLDER <span class="pull-right"><a href="#" class="create-folder"> <i class="fa fa-plus"></i></a></span></p>
