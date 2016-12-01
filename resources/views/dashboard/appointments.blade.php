@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta charset="utf-8" />
-<title>Webarch - Responsive Admin Dashboard</title>
+<title>GOOHS | Appointments</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta content="" name="description" />
 <meta content="" name="author" />
@@ -39,7 +39,7 @@
             <!-- END LOGO -->
             <ul class="nav pull-right notifcation-center">
                 <li class="dropdown" id="header_task_bar"> <a href="index.html" class="dropdown-toggle active" data-toggle=""> <div class="iconset top-home"></div> </a> </li>
-                <li class="dropdown" id="header_inbox_bar" > <a href="email.html" class="dropdown-toggle" > <div class="iconset top-messages"></div>  <span class="badge" id="msgs-badge">2</span> </a></li>
+                <li class="dropdown" id="header_inbox_bar" > <a href="{{route('backend.message')}}" class="dropdown-toggle" > <div class="iconset top-messages"></div>  <span class="badge" id="msgs-badge">2</span> </a></li>
                 <li class="dropdown" id="portrait-chat-toggler" style="display:none"> <a href="#sidr" class="chat-menu-toggle"> <div class="iconset top-chat-white "></div> </a> </li>
             </ul>
         </div>
@@ -146,9 +146,9 @@
                         <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
                             <li><a href="user-profile.html"> My Account</a>
                             </li>
-                            <li><a href="calender.html">My Calendar</a>
+                            <li><a href="{{ route('backend.appointments')}}">My Appointments</a>
                             </li>
-                            <li><a href="email.html"> My Inbox&nbsp;&nbsp;<span class="badge badge-important animated bounceIn">2</span></a>
+                            <li><a href="{{route('backend.message')}}"> My Messages&nbsp;&nbsp;<span class="badge badge-important animated bounceIn">2</span></a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="login.html"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
@@ -199,7 +199,7 @@
       <ul>
         <li class="start"> <a href="{{ route('backend.index')}}"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="arrow"></span> </a> 
     </li>
-        <li class=""> <a href="email.html"> <i class="fa fa-envelope"></i> <span class="title">Email</span> <span class=" badge badge-disable pull-right ">203</span></a> </li>  
+        <li class=""> <a href="{{ route('backend.message')}}"> <i class="fa fa-envelope"></i> <span class="title">Email</span> <span class=" badge badge-disable pull-right ">203</span></a> </li>  
       </ul>
       <div class="clearfix"></div>
       <!-- END SIDEBAR MENU -->
