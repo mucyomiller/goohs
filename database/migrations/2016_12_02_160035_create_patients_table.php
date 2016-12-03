@@ -15,21 +15,20 @@ class CreatePatientsTable extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->integer('patient_type');
             $table->string('name');
+            $table->date('dob');
             $table->string('gender');
-            $table->string('birthDate');
-            $table->string('bloodGroup');
-            $table->string('symptoms');
-            $table->string('mobile');
+            $table->integer('age');
             $table->string('email');
+            $table->string('city');
+            $table->string('country');
             $table->string('address');
-            $table->string('image');
-            $table->string('size');
-            $table->string('type');
-            $table->integer('employee_id');
-            $table->integer('seat_id');
+            $table->string('phone');
+            $table->string('cnic');
+            $table->text('note');
+            $table->string('patient_id');
+            $table->integer('clinic_id')->unsigned()->nullable();
+            $table->timestamps();
         });
     }
 
@@ -40,6 +39,6 @@ class CreatePatientsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('patients');
+        Schema::dropIfExists('patients');
     }
 }
