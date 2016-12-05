@@ -88,7 +88,8 @@
       <div class="pull-right">
         <div class="chat-toggler"> <a href="#" class="dropdown-toggle" id="my-task-list" data-placement="bottom"  data-content='' data-toggle="dropdown" data-original-title="Notifications">
           <div class="user-details">
-            <div class="username"> <span class="badge badge-important">3</span> Dr. John <span class="bold">Doe</span> </div>
+            <div class="username"> <span class="badge badge-important">3</span> Dr.<span class="bold">
+            {{ Auth::user()->name??'UNKNOWN' }}</span> </div>
           </div>
           <div class="iconset top-down-arrow"></div>
           </a>
