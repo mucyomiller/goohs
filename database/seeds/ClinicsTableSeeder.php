@@ -14,7 +14,7 @@ class ClinicsTableSeeder extends Seeder
     	Clinic::where('id', 1)->delete();
         Clinic::create([
             'id' => '1',
-            'name' => 'EMR Clinic',
+            'name' => 'KHI Clinic',
             'address' => 'Kigali Rwanda'
         ]);
     }

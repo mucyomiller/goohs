@@ -18,7 +18,7 @@ class CreateDutydaysTable extends Migration
             $table->string('day')->nullable();
             $table->time('start')->nullable();
             $table->time('end')->nullable();
-            $table->integer('employee_id');
+            $table->integer('user_id');
             $table->integer('clinic_id')->unsigned()->nullable();
             $table->timestamps();
         });
