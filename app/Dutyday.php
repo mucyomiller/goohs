@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\Timeslot;
 class Dutyday extends Model
 {
-	protected $fillable = ['day', 'start', 'end', 'employee_id', 'clinic_id'];
+	protected $fillable = ['day', 'start', 'end', 'user_id', 'clinic_id'];
 
     public static function makeSlots($start_time, $end_time, $day_id, $emp_id){
     $fifteen_mins  = 15 * 60;
@@ -19,7 +20,7 @@ class Dutyday extends Model
             $timeslot->save();
             $timeslot->dutyday_id = $day_id;
             $timeslot->save();
-            $timeslot->employee_id = $emp_id;
+            $timeslot->user_id = $emp_id;
             $timeslot->save();
             $start += $fifteen_mins;
         }

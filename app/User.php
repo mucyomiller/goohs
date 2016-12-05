@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Dutyday;
+use App\Appointment;
+use App\Prescription;
+use App\Clinic;
 
 class User extends Authenticatable
 {
@@ -15,7 +19,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','gender', 'age', 'city', 'country',
+        'address', 'phone', 'cnic', 'branch', 'note', 'status', 'role', 'clinic_id'
     ];
 
     /**
@@ -26,4 +31,26 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Relationships
+     */
+    public function dutydays()
+    {
+        return $this->hasMany('Dutyday');
+    }
+
+    public function appointments()
+    {
+        return $this->hasMany('Appointment');
+    }
+
+    public function prescriptions()
+    {
+        return $this->hasMany('Prescription');
+    }
+
+    public function clinic(){
+        return $this->belongsTo('Clinic');
+    }
 }

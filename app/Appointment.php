@@ -3,11 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Patient;
+use App\User;
+use App\Prescription;
+use App\Timeslot;
+use App\Vitalsign;
+use App\Diagonosticprocedure;
+use App\Labtest;
+use App\CheckupFee;
 
 class Appointment extends Model
 {
     protected $fillable = ['checkup_reason', 'time', 'date', 'status', 'checkup_fee', 'fee_note',
-    'timeslot_id', 'patient_id', 'employee_id', 'clinic_id'];
+    'timeslot_id', 'patient_id', 'user_id', 'clinic_id'];
 
 
     // Relationships
