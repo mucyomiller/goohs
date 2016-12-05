@@ -10,7 +10,7 @@
         <div class="profile-wrapper"> <img src="{{ asset('dashboard/assets/img/profiles/avatar.jpg')}}"  alt="" data-src="{{ asset('dashboard/assets/img/profiles/avatar.jpg')}}" data-src-retina="{{ asset('dashboard/assets/img/profiles/avatar2x.jpg')}}" width="69" height="69" /> </div>
         <div class="user-info">
           <div class="greeting">Welcome</div>
-          <div class="username">Dr. John <span class="semi-bold">Doe</span></div>
+          <div class="username"><span class="semi-bold">Dr.</span>{{ Auth::user()->name??'UNKNOWN' }}</div>
           <div class="status">Status<a href="#">
             <div class="status-icon green"></div>
             Available</a></div>
