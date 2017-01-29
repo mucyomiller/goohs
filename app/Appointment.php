@@ -3,59 +3,50 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Patient;
-use App\User;
-use App\Prescription;
-use App\Timeslot;
-use App\Vitalsign;
-use App\Diagonosticprocedure;
-use App\Labtest;
-use App\CheckupFee;
 
 class Appointment extends Model
 {
-    protected $fillable = ['checkup_reason', 'time', 'date', 'status', 'checkup_fee', 'fee_note',
-    'timeslot_id', 'patient_id', 'user_id', 'clinic_id'];
+    protected $fillable = ['checkup_reason', 'date', 'start_time', 'end_time', 'approved', 'user_id', 'patient_id', 'clinic_id'];
 
 
     // Relationships
     public function patient()
     {
-        return $this->belongsTo('Patient');
+        return $this->belongsTo('App\Patient');
     }
 
     public function user()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo('App\User');
     }
 
     public function prescription()
     {
-        return $this->hasOne('Prescription');
+        return $this->hasOne('App\Prescription');
     }
 
-    public function timeslot()
-    {
-        return $this->belongsTo('Timeslot', 'timeslot_id');
-    }
+    // public function timeslot()
+    // {
+    //     return $this->belongsTo('App\Timeslot', 'timeslot_id');
+    // }
 
     public function vitalsign()
     {
-        return $this->hasOne('Vitalsign');
+        return $this->hasOne('App\Vitalsign');
     }
 
     public function diagonosticprocedure()
     {
-        return $this->hasOne('Diagonosticprocedure');
+        return $this->hasOne('App\Diagonosticprocedure');
     }
 
     public function labtests()
     {
-        return $this->hasMany('Labtest');
+        return $this->hasMany('App\Labtest');
     }
 
-    public function checkupfee()
-    {
-        return $this->hasOne('CheckupFee');
-    }
+    // public function checkupfee()
+    // {
+    //     return $this->hasOne('App\Checkupfee');
+    // }
 }

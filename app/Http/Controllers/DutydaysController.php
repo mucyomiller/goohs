@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use Validator;
 use App\Dutyday;
 use App\User;
 use App\Timeslot;
@@ -15,9 +17,9 @@ class DutydaysController extends Controller
      */
     public function index()
     {
-        $dutydays = Dutyday::where('clinic_id', Auth::user()->clinic_id)->groupBy('employee_id')->paginate(10);
+        $dutydays = Dutyday::where('clinic_id', Auth::user()->clinic_id)->groupBy('user_id')->paginate(10);
 
-        return view('dutydays.index')->with(['dutydays'=>$dutydays]);
+        return view('dashboard.dutydays.index')->with(['dutydays'=>$dutydays]);
     }
 
     /**
@@ -29,7 +31,7 @@ class DutydaysController extends Controller
     {
         $doctors = User::has('dutydays', '=', 0)->where('role', 'Doctor')
                 ->where('status', 'Active')->where('clinic_id', Auth::user()->clinic_id)->get();
-        return view('dutydays.create')->with(['doctors'=>$doctors]);
+        return view('dashboard.dutydays.create')->with(['doctors'=>$doctors]);
     }
 
     /**
@@ -169,7 +171,7 @@ class DutydaysController extends Controller
 
         $doctor = User::findOrFail($id);
 
-        return view:('dutydays.edit')->with(['dutydays'=>$dutydays, 'doctor'=>$doctor]);
+        return view('dutydays.edit')->with(['dutydays'=>$dutydays, 'doctor'=>$doctor]);
     }
 
     /**
@@ -181,7 +183,7 @@ class DutydaysController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = Validator::make($data = $request->all(), [/* 'title' => 'required' */]]);
+        $validator = Validator::make($data = $request->all(), [/* 'title' => 'required' */]);
 
         if ($validator->fails())
         {

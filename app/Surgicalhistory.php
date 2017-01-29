@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Patient;
+
 class Surgicalhistory extends Model
 {
     protected $fillable = [
@@ -13,6 +13,6 @@ class Surgicalhistory extends Model
     // Relationships
     public function patient()
     {
-        return $this->belongsTo('Patient');
+        return $this->belongsTo('App\Patient');
     }
 }

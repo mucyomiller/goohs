@@ -3,8 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Patient
-use App\Appointment;
+
 class Checkupfee extends Model
 {
     protected $fillable = ['checkup_fee', 'fee_note', 'patient_id', 'appointment_id', 'clinic_id'];
@@ -12,12 +11,12 @@ class Checkupfee extends Model
     // Relationships
     public function patient()
     {
-        return $this->belongsTo('Patient');
+        return $this->belongsTo('App\Patient');
     }
 
 	public function appointment()
     {
-        return $this->belongsTo('Appointment');
+        return $this->belongsTo('App\Appointment');
     }
 
 }

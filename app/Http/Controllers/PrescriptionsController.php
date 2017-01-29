@@ -21,7 +21,7 @@ class PrescriptionsController extends Controller
         $patient_id = $request->input('id');
         $patient = Patient::find($patient_id);
         $appointments = $patient->appointments()->has('prescription')->paginate(10);
-        return view('prescriptions.index')
+        return view('dashboard.prescriptions.index')
         ->with(['appointments'=>$appointments,'patient_id'=>$patient_id]);
     }
 

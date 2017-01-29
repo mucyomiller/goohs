@@ -18,15 +18,7 @@ class AppointmentsController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->role == 'Doctor'){
-            $appointments = Auth::user()->appointments()->paginate(10);
-        }
-        else
-        {
-        $appointments = Appointment::where('clinic_id', Auth::user()->clinic_id)->paginate(10);
-        }
-
-        return view('appointments.index')->with(['appointments'=>$appointments]);
+        return view('dashboard.appointments.index')->with([]);
     }
 
     /**
@@ -36,10 +28,7 @@ class AppointmentsController extends Controller
      */
     public function create()
     {
-        $doctors = User::where('role', 'Doctor')->where('status', 'active')
-                    ->where('clinic_id', Auth::user()->clinic_id)->get();
-        $patients = Patient::where('clinic_id', Auth::user()->clinic_id)->get();
-        return view('appointments.create')->with(['doctors'=>$doctors, 'patients'=>$patients]);
+        return view('dashboard.appointments.create');
     }
 
     /**
@@ -60,7 +49,7 @@ class AppointmentsController extends Controller
         $data['clinic_id'] = Auth::user()->clinic_id;
         Appointment::create($data);
 
-        return redirect->route('appointments.index');
+        return redirect()->route('appointments.index');
     }
 
     /**
@@ -114,7 +103,7 @@ class AppointmentsController extends Controller
 
         if ($validator->fails())
         {
-            return redirect->back()->withErrors($validator)->withInput();
+            return redirect()->back()->withErrors($validator)->withInput();
         }
         $data['time'] = Timeslot::findOrFail($data['timeslot_id'])->slot;
 

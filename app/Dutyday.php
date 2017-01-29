@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
 use App\Timeslot;
 class Dutyday extends Model
 {
@@ -46,11 +45,11 @@ class Dutyday extends Model
     // Relationships
 	public function user()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo('App\User');
     }
 
     public function timeslots()
     {
-        return $this->hasMany('Timeslot');
+        return $this->hasMany('App\Timeslot');
     }
 }

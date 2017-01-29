@@ -3,75 +3,78 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Allergy;
-use App\Drugusage;
-use App\Familyhistory;
-use App\Previousdisease;
-use App\Surgicalhistory;
-use App\Diagonosticprocedure;
-use App\Vitalsign;
-use App\Labtest;
-use App\Appointment;
-use App\Prescription;
-use App\Checkupfee;
+
 class Patient extends Model
 {
-    protected $fillable = ['name', 'dob', 'gender', 'age', 'email', 'city', 'country', 'address',
-    'phone', 'cnic', 'note', 'clinic_id'];
+    protected $fillable = ['user_id', 'patientID', 'dob', 'fathername', 'mothername','cell_id', 'sector_id', 'district_id','gender'];
 
-	//  Relationships
+	/**
+     * Relationships
+     */
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+    public function cell(){
+        return $this->belongsTo('App\Cell');
+    }
+    public function sector(){
+        return $this->belongsTo('App\Sector');
+    }
+    public function district(){
+        return $this->belongsTo('App\District');
+    }
     public function allergies()
     {
-        return $this->hasMany('Allergy');
+        return $this->hasMany('App\Allergy');
     }
 
     public function drugusages()
     {
-        return $this->hasMany('Drugusage');
+        return $this->hasMany('App\Drugusage');
     }
 
     public function familyhistories()
     {
-        return $this->hasMany('Familyhistory');
+        return $this->hasMany('App\Familyhistory');
     }
 
     public function previousdiseases()
     {
-        return $this->hasMany('Previousdisease');
+        return $this->hasMany('App\Previousdisease');
     }
 
     public function surgicalhistories()
     {
-        return $this->hasMany('Surgicalhistory');
+        return $this->hasMany('App\Surgicalhistory');
     }
 
     public function diagonosticprocedures()
     {
-        return $this->hasMany('Diagonosticprocedure');
+        return $this->hasMany('App\Diagonosticprocedure');
     }
 
     public function vitalsigns()
     {
-        return $this->hasMany('Vitalsign');
+        return $this->hasMany('App\Vitalsign');
     }
 
     public function labtests()
     {
-        return $this->hasMany('Labtest');
+        return $this->hasMany('App\Labtest');
     }
 
     public function appointments()
     {
-        return $this->hasMany('Appointment');
+        return $this->hasMany('App\Appointment');
     }
 
     public function prescriptions()
     {
-        return $this->hasMany('Prescription');
+        return $this->hasMany('App\Prescription');
     }
 
     public function checkupfees()
     {
-        return $this->hasMany('Checkupfee');
+        return $this->hasMany('App\Checkupfee');
     }
 }

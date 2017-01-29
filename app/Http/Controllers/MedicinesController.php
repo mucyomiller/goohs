@@ -16,7 +16,7 @@ class MedicinesController extends Controller
     public function index()
     {
         $medicines = Medicine::where('clinic_id', Auth::user()->clinic_id)->paginate(10);
-        return view('medicines.index')
+        return view('dashboard.medicines.index')
         ->with(['medicines'=>$medicines]);
     }
 
@@ -27,7 +27,7 @@ class MedicinesController extends Controller
      */
     public function create()
     {
-        return view('medicines.create');
+        return view('dashboard.medicines.create');
     }
 
     /**
@@ -57,7 +57,7 @@ class MedicinesController extends Controller
     public function show($id)
     {
         $medicine = Medicine::findOrFail($id);
-        return view('medicines.show')
+        return view('dashboard.medicines.show')
         ->with(['medicine'=>$medicine]);
     }
 
@@ -70,8 +70,8 @@ class MedicinesController extends Controller
     public function edit($id)
     {
         $medicine = Medicine::find($id);
-        return view('medicines.edit')
-        ->with('medicine'=>$medicine);
+        return view('dashboard.medicines.edit')
+        ->with(['medicine'=>$medicine]);
     }
 
     /**

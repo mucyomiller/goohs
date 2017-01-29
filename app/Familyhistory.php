@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Patient;
+
 class Familyhistory extends Model
 {
     protected $fillable = ['f_member_name','patient_relation','gender','age',
@@ -12,6 +12,6 @@ class Familyhistory extends Model
     // Relationships
     public function patient()
     {
-        return $this->belongsTo('Patient');
+        return $this->belongsTo('App\Patient');
     }
 }

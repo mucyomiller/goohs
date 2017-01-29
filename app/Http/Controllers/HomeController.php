@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use PDF;
 use App\Patient;
 use App\Prescription;
 use App\Labtest;
 use App\Appointment;
+use App\Checkupfee;
 class HomeController extends Controller
 {
     /**
@@ -19,7 +21,7 @@ class HomeController extends Controller
     {
         //$this->middleware('auth');
     }
-
+    
     /**
      * Show the application dashboard.
      *
@@ -28,6 +30,10 @@ class HomeController extends Controller
     public function index()
     {
         return view('dashboard.index');
+    }
+      public function message()
+    {
+        return view('dashboard.message');
     }
     public function showDoctor_home()
     {
@@ -63,16 +69,208 @@ class HomeController extends Controller
 
         return view('admin.register_user');
     }
+    /* added new controller to reduce spaghetti code in web route */
+    public function app_vitals(Request $request)
+    {
+        if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('receptionist')){
+        $appointments = Appointment::has('vitalsign', '=', 0)->where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        }elseif(Auth::user()->role == 'Doctor'){
+        $appointments = Appointment::has('vitalsign')->where('employee_id', Auth::id())->paginate(10);
+        }
+        $flag = "vitals";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag'));
+    }
+    public function app_prescription()
+    {
+        $appointments = Appointment::has('prescription', '=', 0)->where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        $flag = "prescription";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag'));
+    }
+    public function app_tests(Request $request)
+    {
+        if($request->input('id') !== null){
+            $appointments = Appointment::where('patient_id', $request->input('id'))
+            ->paginate(10);
+        }
+        else
+        {
+            $appointments = Appointment::where('clinic_id', Auth::user()->clinic_id)
+            ->paginate(10);
+        }
+        $flag = "test";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag'));
+    }
+    public function app_proc()
+    {
+        $appointments = Appointment::has('diagonosticprocedure', '=', 0)
+        ->where('clinic_id', Auth::user()->clinic_id)->get();
+        $flag = "proc";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag'));
+    }
+    public function app_check_fee()
+    {
+        if(Auth::user()->hasRole('accountant')){
+            $appointments = Appointment::where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        }
+        else
+        {
+            $appointments = Appointment::has('checkupfee', '=', 0)->where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        }
+        $flag = "check_fee";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag'));
+    }
+    public function app_test_fee(Request $request)
+    {
+        if($request->input('id') !== null){
+        $appointments = Appointment::where('patient_id', $request->input('id'))
+        ->paginate(10);
+        }
+        else
+        {
+        $appointments = Appointment::has('labtests')->where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        }
+        $flag = "test_fee";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag'));
+    }
+
+    public function app_pres_print()
+    {
+        $appointments = Appointment::has('prescription')->where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        $flag = "pres_print";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag'));
+    }
+    public function pres_print(Request $request)
+    {
+        $id = $request->input('id');
+        $prescription = Prescription::findOrFail($id);
+        $date = date('j F, Y', strtotime($prescription->appointment->date));
+        $time = date('H:i:s', strtotime($prescription->appointment->time));
+        $doctor_name = $prescription->appointment->employee->name;
+        $patient = $prescription->appointment->patient;
+
+        $medicines = [];
+
+        if($prescription->medicine1_id){
+            $name = $prescription->medicine1->name;
+            $qty = $prescription->med1_qty;
+            array_push($medicines, ['name' => $name, 'qty' => $qty]);
+        }
+
+        if($prescription->medicine2_id){
+            $name = $prescription->medicine2->name;
+            $qty = $prescription->med2_qty;
+            array_push($medicines, ['name' => $name, 'qty' => $qty]);
+        }
+
+        if($prescription->medicine3_id){
+            $name = $prescription->medicine3->name;
+            $qty = $prescription->med3_qty;
+            array_push($medicines, ['name' => $name, 'qty' => $qty]);
+        }
+
+        if($prescription->medicine4_id){
+            $name = $prescription->medicine4->name;
+            $qty = $prescription->med4_qty;
+            array_push($medicines, ['name' => $name, 'qty' => $qty]);
+        }
+
+        if($prescription->medicine5_id){
+            $name = $prescription->medicine5->name;
+            $qty = $prescription->med5_qty;
+            array_push($medicines, ['name' => $name, 'qty' => $qty]);
+        }
+
+        if($prescription->medicine6_id){
+            $name = $prescription->medicine6->name;
+            $qty = $prescription->med6_qty;
+            array_push($medicines, ['name' => $name, 'qty' => $qty]);
+        }
+
+        return view('dashboard.printables.prescription_print',
+            compact('prescription', 'date', 'time', 'doctor_name', 'patient', 'medicines'));
+    }
+
+    public function app_test_print()
+    {
+        $appointments = Appointment::has('labtests')->where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        $flag = "test_print";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag'));
+    }
+    public function test_print(Request $request)
+    {
+        $id = $request->input('id');
+        $test = Labtest::findOrFail($id);
+        $patient = $test->appointment->patient;
+        $date = date('j F, Y', strtotime($test->appointment->date));
+        $time = date('H:i:s', strtotime($test->appointment->time));
+        $doctor_name = $test->appointment->employee->name;
+
+        return view('dashboard.printables.test_print',
+            compact('test', 'date', 'time', 'doctor_name', 'patient'));
+    }
+
+    public function app_checkup_fee_print()
+    {
+        $appointments = Appointment::has('checkupfee')->where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        $flag = "checkup_invoice";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag'));
+    }
+    public function checkup_invoice_print(Request $request)
+    {
+        $id = $request->input('id');
+        $fee = Checkupfee::findOrFail($id);
+        $patient = $fee->appointment->patient;
+        $date = date('j F, Y', strtotime($fee->appointment->date));
+        $time = date('H:i:s', strtotime($fee->appointment->time));
+        $doctor_name = $fee->appointment->employee->name;
+        return view('printables.checkup_invoice_print',
+            compact('fee', 'date', 'time', 'doctor_name', 'patient'));
+    }
+    public function app_test_fee_print()
+    {
+         $appointments = Appointment::has('labtests')->where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        $flag = "test_invoice";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag'));
+    }
+    public function test_invoice_print(Request $request)
+    {
+        $id = $request->input('id');
+        $appointment = Appointment::findOrFail($id);
+        $tests = $appointment->labtests()->where('total_fee', '!=', 0)->get();
+
+        $patient = $appointment->patient;
+        $date = date('j F, Y', strtotime($appointment->date));
+        $time = date('H:i:s', strtotime($appointment->time));
+        $doctor_name = $appointment->employee->name;
+
+        $sum = 0;
+        foreach($tests as $test){
+            $sum += $test->total_fee;
+        }
+
+        return view('dashboard.printables.test_invoice_print',
+            compact('sum', 'tests', 'date', 'time', 'doctor_name', 'patient'));
+    }
+    public function pdf_records(Request $request)
+    {
+        $id = $request->input('id');
+        $patient = Patient::find($id);
+        $appointments = $patient->appointments()->paginate(10);
+        $flag = "pdf_record";
+        return view('dashboard.appointment_based_data.appointments', compact('appointments', 'flag', 'patient'));
+    }
+    /** end of new controller **/
+
 
     public function showSearchPMR(){
         $patients = Patient::where('clinic_id', Auth::user()->clinic_id)->paginate(10);
-        return view('medical_records.search-pmr')->wtih(['patients'=>$patients]);
+        return view('dashboard.medical_records.search-pmr')->with(['patients'=>$patients]);
     }
 
     public function showViewPMR(Request $request){
         $patient_id = $request->input('id');
         $patient = Patient::findOrFail($patient_id);
-        return view('medical_records.view-pmr')
+        return view('dashboard.medical_records.view-pmr')
         ->with(['patient_id'=>$patient_id, 'patient'=>$patient]);
     }
 
@@ -616,5 +814,10 @@ class HomeController extends Controller
 
         $html .= "</body></html>";
         return PDF::load($html, 'A4', 'portrait')->show($patient->name. ' Medical Record');
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
     }
 }

@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
 use Auth;
+use Mail;
 use App\Patient;
+use App\Appointment;
+
 class PatientsController extends Controller
 {
     /**
@@ -15,7 +19,7 @@ class PatientsController extends Controller
     public function index()
     {
         $patients = Patient::where('clinic_id', Auth::user()->clinic_id)->paginate(10);
-        return view('patients.index')
+        return view('dashboard.patients.index')
         ->with(['patients'=>$patients]);
     }
 
@@ -26,7 +30,7 @@ class PatientsController extends Controller
      */
     public function create()
     {
-        return view('patients.create');
+        return view('dashboard.patients.create');
     }
 
     /**
@@ -37,7 +41,7 @@ class PatientsController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($data = Input::all(), 
+        $validator = Validator::make($data = $request->all(), 
             [
             'name' => 'required',
             'gender' => 'required',
@@ -107,7 +111,7 @@ class PatientsController extends Controller
     public function show($id)
     {
         $patient = Patient::findOrFail($id);
-        return view('patients.show')
+        return view('dashboard.patients.show')
         ->with(['patient'=>$patient]);
     }
 
@@ -120,7 +124,7 @@ class PatientsController extends Controller
     public function edit($id)
     {
        $patient = Patient::find($id);
-        return view('patients.edit')
+        return view('dashboard.patients.edit')
         ->with(['patient'=>$patient]);
     }
 
@@ -165,7 +169,7 @@ class PatientsController extends Controller
 
     public function patients_reporting(){
         $appointments = Appointment::where('clinic_id', Auth::user()->clinic_id)->where('status', 5)->paginate(1);
-        return view('patients.checked_patients')
+        return view('dashboard.patients.checked_patients')
         ->with(['appointments'=>$appointments]);
     }
 }

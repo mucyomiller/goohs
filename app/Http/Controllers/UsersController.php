@@ -19,7 +19,7 @@ class UsersController extends Controller
     {
         $employees = User::where('clinic_id', Auth::user()->clinic_id)->paginate(10);
 
-        return view('employees.index')->with(['employees'=>$employees]);
+        return view('dashboard.employees.index')->with(['employees'=>$employees]);
     }
 
     /**
@@ -29,7 +29,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('employees.create');
+        return view('dashboard.employees.create');
     }
 
     /**
@@ -100,7 +100,7 @@ class UsersController extends Controller
             $message->to($request->input('email'), $request->input('name'))->subject('Welcome to GOOHS!');
         });
 
-        return redirect()->route('employees.index');
+        return redirect()->route('users.index');
     }
 
     /**
@@ -112,7 +112,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $employee = User::findOrFail($id);
-        return view('employees.show')->with(['employee'=>$employee]);
+        return view('dashboard.employees.show')->with(['employee'=>$employee]);
     }
 
     /**
@@ -124,7 +124,7 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('employees.edit')->with(['employee'=>$user]);
+        return view('dashboard.employees.edit')->with(['employee'=>$user]);
     }
 
     /**
@@ -163,7 +163,7 @@ class UsersController extends Controller
 
         $user->update($data);
 
-        return redirect()->route('employees.index');
+        return redirect()->route('users.index');
     }
 
     /**
@@ -175,55 +175,6 @@ class UsersController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect()->route('employees.index');
-    }
-
-    #########################################################
-    #                                                       #
-    #                  Validate User                        #
-    #                                                       #
-    #########################################################
-
-    public function validate()
-    {
-        $email = $request->input('email');
-        $password = $request->input('password');
-
-        if (Auth::attempt(['email' => $email, 'password' => $password], true))
-        {
-            if(Auth::user()->status == 'Active' && Auth::user()->role == 'Doctor' && Auth::user()->clinic->admin->status == 'Active'){
-                 return redirect()->to('doctor_home');
-            }else if(Auth::user()->status == 'Active' && Auth::user()->role == 'Administrator'){
-                return redirect()->to('admin_home');
-            }
-            else if(Auth::user()->status == 'Active' && Auth::user()->role == 'Receptionist' && Auth::user()->clinic->admin->status == 'Active'){
-                return redirect()->to('receptionist_home');
-            }
-            else if(Auth::user()->status == 'Active' && Auth::user()->role == 'Lab Manager' && Auth::user()->clinic->admin->status == 'Active'){
-                return redirect()->to('labmanager_home');
-            }
-            else if(Auth::user()->status == 'Active' && Auth::user()->role == 'Accountant' && Auth::user()->clinic->admin->status == 'Active'){
-                return redirect()->to('accountant_home');
-            }
-            else if(Auth::user()->status == 'Active' && Auth::user()->role == 'Super User'){
-                return redirect()->to('super_home');
-            }else{
-                return view('login')->withErrors('You are not Activated!');
-                Auth::logout();
-            }
-
-        }else{
-            $validator = Validator::make($request->all(), 
-                [
-                'email' => 'exists:user',
-                'password' => 'exists:user'
-                ]);
-            if ($validator->fails())
-            {
-                Auth::logout();
-                return view('login')->withErrors($validator);
-            }
-        }
-
+        return redirect()->route('users.index');
     }
 }

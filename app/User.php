@@ -2,16 +2,14 @@
 
 namespace App;
 
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Dutyday;
-use App\Appointment;
-use App\Prescription;
-use App\Clinic;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use EntrustUserTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -19,8 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','gender', 'age', 'city', 'country',
-        'address', 'phone', 'cnic', 'branch', 'note', 'status', 'role', 'clinic_id'
+        'names', 'email','password', 'email', 'active'
     ];
 
     /**
@@ -35,22 +32,25 @@ class User extends Authenticatable
     /**
      * Relationships
      */
+    public function patient(){
+        return $this->hasOne('App\Patient');
+    }
     public function dutydays()
     {
-        return $this->hasMany('Dutyday');
+        return $this->hasMany('App\Dutyday');
     }
 
     public function appointments()
     {
-        return $this->hasMany('Appointment');
+        return $this->hasMany('App\Appointment');
     }
 
     public function prescriptions()
     {
-        return $this->hasMany('Prescription');
+        return $this->hasMany('App\Prescription');
     }
 
     public function clinic(){
-        return $this->belongsTo('Clinic');
+        return $this->belongsTo('App\Clinic');
     }
 }

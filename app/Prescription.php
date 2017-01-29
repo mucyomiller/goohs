@@ -3,10 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Patient;
-use App\Appointment;
-use App\User;
-use App\Medicine;
 class Prescription extends Model
 {
     protected $fillable = [
@@ -18,46 +14,46 @@ class Prescription extends Model
     // Relationships
     public function patient()
     {
-        return $this->belongsTo('Patient');
+        return $this->belongsTo('App\Patient');
     }
 
     public function appointment()
     {
-        return $this->belongsTo('Appointment');
+        return $this->belongsTo('App\Appointment');
     }
 
     public function user()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo('App\User');
     }
 
     public function medicine1()
     {
-        return $this->belongsTo('Medicine', 'medicine1_id');
+        return $this->belongsTo('App\Medicine', 'medicine1_id');
     }
 
     public function medicine2()
     {
-        return $this->belongsTo('Medicine', 'medicine2_id');
+        return $this->belongsTo('App\Medicine', 'medicine2_id');
     }
 
     public function medicine3()
     {
-        return $this->belongsTo('Medicine', 'medicine3_id');
+        return $this->belongsTo('App\Medicine', 'medicine3_id');
     }
 
     public function medicine4()
     {
-        return $this->belongsTo('Medicine', 'medicine4_id');
+        return $this->belongsTo('App\Medicine', 'medicine4_id');
     }
 
     public function medicine5()
     {
-        return $this->belongsTo('Medicine', 'medicine5_id');
+        return $this->belongsTo('App\Medicine', 'medicine5_id');
     }
 
     public function medicine6()
     {
-        return $this->belongsTo('Medicine', 'medicine6_id');
+        return $this->belongsTo('App\Medicine', 'medicine6_id');
     }
 }

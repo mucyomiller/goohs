@@ -19,7 +19,7 @@ class ClinicsController extends Controller
     public function index()
     {
         $clinics = Clinic::paginate(10);
-        return view('clinics.index')->with(['clinics'=>$clinics]);
+        return view('dashboard.clinics.index')->with(['clinics'=>$clinics]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ClinicsController extends Controller
      */
     public function create()
     {
-        return view('clinics.create');
+        return view('dashboard.clinics.create');
     }
 
     /**
@@ -116,7 +116,7 @@ class ClinicsController extends Controller
     {
         $clinic = Clinic::find($id);
         $admin = User::where('role', 'Administrator')->where('clinic_id', $clinic->id)->first();
-        return view('clinics.show')->with(['clinic'=>$clinic, 'admin'=>$admin]);
+        return view('dashboard.clinics.show')->with(['clinic'=>$clinic, 'admin'=>$admin]);
     }
 
     /**
@@ -129,7 +129,7 @@ class ClinicsController extends Controller
     {
         $clinic = Clinic::find($id);
         $admin = User::where('role', 'Administrator')->where('clinic_id', $clinic->id)->first();
-        return view('clinics.edit')->with(['clinic'=>$clinic, 'admin'=>$admin]);
+        return view('dashboard.clinics.edit')->with(['clinic'=>$clinic, 'admin'=>$admin]);
     }
 
     /**
@@ -204,6 +204,6 @@ class ClinicsController extends Controller
     public function destroy($id)
     {
         Clinic::destroy($id);
-        return redirect()->route('clinics.index');
+        return redirect()->route('dashboard.clinics.index');
     }
 }

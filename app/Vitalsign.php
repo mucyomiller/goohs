@@ -3,8 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Patient;
-use App\Appointment;
+
 class Vitalsign extends Model
 {
     protected $fillable = [
@@ -15,11 +14,11 @@ class Vitalsign extends Model
 
 	public function patient()
     {
-        return $this->belongsTo('Patient', 'patient_id');
+        return $this->belongsTo('App\Patient', 'patient_id');
     }
 
     public function appointment()
     {
-        return $this->belongsTo('Appointment');
+        return $this->belongsTo('App\Appointment');
     }
 }
