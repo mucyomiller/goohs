@@ -15,19 +15,15 @@ class CreatePatientsTable extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->integer('user_id')->unsigned();
+            $table->integer('patientID');
             $table->date('dob');
+            $table->string('fathername');
+            $table->string('mothername');
+            $table->integer('cell_id')->unsigned();
+            $table->integer('sector_id')->unsigned();
+            $table->integer('district_id')->unsigned();    
             $table->string('gender');
-            $table->integer('age');
-            $table->string('email');
-            $table->string('city');
-            $table->string('country');
-            $table->string('address');
-            $table->string('phone');
-            $table->string('cnic');
-            $table->text('note');
-            $table->string('patient_id');
-            $table->integer('clinic_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }
