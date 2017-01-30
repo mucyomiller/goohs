@@ -141,10 +141,12 @@
 					<li class="dropdown">
                         <a data-toggle="dropdown" href="#">OUR DOCTORS</a>
                         <ul class="dropdown-menu" role="menu">
-							<li><a href="doctors.html">Our doctors</a></li>
-                            <li><a href="doctor.html">Doctor</a></li>
+							<li><a href="{{route('doctors')}}">Our doctors</a></li>
+                            <li><a href="{{route('doctor')}}">Doctor</a></li>
                         </ul>
                     </li>
+                    <li><a href="{{url('login')}}">LOGIN</a></li>
+                    <li><a href="{{url('register')}}">REGISTER</a></li>
                     <li><a href="{{route('about')}}">ABOUT US</a></li>
                     <li><a href="{{route('contact')}}">CONTACT US</a></li>
                 </ul>
