@@ -37,7 +37,7 @@ Search Patient Medical Record
 @endforeach
 </tbody>
 </table>
-{{ $patients->links('partials.pagination') }}
+{{--pagination here--}}
 </center>
 @endsection
 

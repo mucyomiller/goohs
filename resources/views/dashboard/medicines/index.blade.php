@@ -37,7 +37,7 @@ Medicines
 @endforeach
 </tbody>
 </table>
-{{ $medicines->links('partials.pagination') }}
+{{-- $medicines->links('partials.pagination') --}}
 </center>
 @endsection
 

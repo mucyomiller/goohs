@@ -9,7 +9,7 @@
 						<div class="col-md-3 col-sm-4 col-xs-12">
 							<h4>Hosptial Information</h4>
 							<p>
-								Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including.
+								here some GOOHS system information.
 							</p>
 							<ul class="list-unstyled address-list">
 								<li class="clearfix address">
@@ -47,8 +47,8 @@
 							<ul class="list-unstyled tweets-list">
 								<li>
 									<i class="fa fa-twitter"></i>
-									Our Hospitals Website Launched.
-									<a href="#">http://t.co/xyz12abc</a>
+									Goohs on twitter.
+									<a href="#">@goohs_rw</a>
 								</li>
 							</ul>
 						</div>
@@ -82,7 +82,7 @@
 					<ul class="list-unstyled list-inline pull-right">
 						<li><a href="#">Terms Of Services</a></li>
 						<li><a href="#">Privacy</a></li>
-						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="{{ route('contact') }}">Contact Us</a></li>
 					</ul>
 				</div>
 			</div>

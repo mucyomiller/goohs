@@ -10,7 +10,7 @@ Manage Employees
 </div>
 </div>
 <center style="margin-top: 7%;">
-<center>{{ link_to_route('employees.create', 'Register Employee', '', ['class' => 'btn_1'])}}</center>
+<center>{{ link_to_route('users.create', 'Register Employee', '', ['class' => 'btn_1'])}}</center>
 <br>
 <table id="example" style=" border: 1px solid black" class="display" cellspacing="0" width="80%">
 <thead>
@@ -36,16 +36,15 @@ Manage Employees
 <td>{{{ $employee->branch }}}</td>
 <td>{{{ $employee->status }}}</td>
 <td>
-{{ link_to_route('employees.show', 'View', [$employee->id], ['class' => 'data_table_btn', 'style' => 'margin-bottom: 2px'])}}
+{{ link_to_route('users.show', 'View', [$employee->id], ['class' => 'data_table_btn', 'style' => 'margin-bottom: 2px'])}}
 @if($employee->role != 'Administrator' && $employee->role != 'Super User')
-{{ link_to_route('employees.edit', 'Edit', [$employee->id], ['class' => 'data_table_btn'])}}
+{{ link_to_route('users.edit', 'Edit', [$employee->id], ['class' => 'data_table_btn'])}}
 @endif
 </td>
 </tr>
 @endforeach
 </tbody>
 </table>
-{{ $employees->links('partials.pagination') }}
 </center>
 @endsection
 

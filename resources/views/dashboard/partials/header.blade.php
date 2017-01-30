@@ -4,22 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>GOOHS | home</title>
-<link href="{{asset('dashboard/img/favicon.png')}}" rel="icon" type="image/png">
-<link href="{{asset('dashboard/img/favicon.ico')}}" rel="shortcut icon">
+<title>dashboard/</title>
+<link href="img/favicon.png" rel="icon" type="image/png">
+<link href="img/favicon.ico" rel="shortcut icon">
+
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+<link rel="stylesheet" href="{{asset('dashboard/css/separate/vendor/bootstrap-datetimepicker.min.css')}}">
+<link rel="stylesheet" href="{{asset('dashboard/css/lib/fullcalendar/fullcalendar.min.css')}}">
+<link rel="stylesheet" href="{{asset('dashboard/css/separate/pages/calendar.min.css')}}">
 <link rel="stylesheet" href="{{asset('dashboard/css/lib/font-awesome/font-awesome.min.css')}}">
 <link rel="stylesheet" href="{{asset('dashboard/css/lib/bootstrap/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('dashboard/css/main.css')}}">
+@stack('styles')
 </head>
 <body class="with-side-menu">
 
 <header class="site-header">
 <div class="container-fluid">
+
 <a href="#" class="site-logo">
 <img class="hidden-md-down" src="{{asset('dashboard/img/logo-2.png')}}" alt="">
 <img class="hidden-lg-up" src="{{asset('dashboard/img/logo-2-mob.png')}}" alt="">
@@ -36,35 +42,30 @@
 <div class="site-header-content-in">
 <div class="site-header-shown">
 <div class="dropdown dropdown-notification notif">
-<a href="#"
-class="header-alarm dropdown-toggle active"
-id="dd-notification"
-data-toggle="dropdown"
-aria-haspopup="true"
-aria-expanded="false">
+<a href="#" class="header-alarm dropdown-toggle active" id="dd-notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 <i class="font-icon-alarm"></i>
 </a>
 <div class="dropdown-menu dropdown-menu-right dropdown-menu-notif" aria-labelledby="dd-notification">
 <div class="dropdown-menu-notif-header">
 Notifications
-<span class="label label-pill label-danger">4</span>
+<span class="label label-pill label-danger">2</span>
 </div>
 <div class="dropdown-menu-notif-list">
 <div class="dropdown-menu-notif-item">
-    <div class="photo">
-        <img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
-    </div>
-    <div class="dot"></div>
-    <a href="#">Mucyo</a> want to meet with you
-    <div class="color-blue-grey-lighter">2 minutes ago</div>
+<div class="photo">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
+</div>
+<div class="dot"></div>
+<a href="#">Morgan</a> was bothering about something
+<div class="color-blue-grey-lighter">7 hours ago</div>
 </div>
 <div class="dropdown-menu-notif-item">
-    <div class="photo">
-        <img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
-    </div>
-    <div class="dot"></div>
-    <a href="#">Bov</a> is the next on schedule
-    <div class="color-blue-grey-lighter">5 minutes ago</div>
+<div class="photo">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
+</div>
+<div class="dot"></div>
+<a href="#">Lioneli</a> had commented on this <a href="#">Super Important Thing</a>
+<div class="color-blue-grey-lighter">7 hours ago</div>
 </div>
 </div>
 <div class="dropdown-menu-notif-more">
@@ -86,10 +87,7 @@ aria-expanded="false">
 <div class="dropdown-menu-messages-header">
 <ul class="nav" role="tablist">
 <li class="nav-item">
-<a class="nav-link active"
-data-toggle="tab"
-href="#tab-incoming"
-role="tab">
+<a class="nav-link active" data-toggle="tab" href="#tab-incoming" role="tab">
 Inbox
 <span class="label label-pill label-danger">8</span>
 </a>
@@ -104,8 +102,13 @@ Inbox
 <div class="dropdown-menu-messages-list">
 <a href="#" class="mess-item">
 <span class="avatar-preview avatar-preview-32"><img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""></span>
-<span class="mess-item-name">Mucyo Miller</span>
-<span class="mess-item-txt">hello sir i was asking if we can meet tommorrow .</span>
+<span class="mess-item-name">Christian Burton</span>
+<span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something.</span>
+</a>
+<a href="#" class="mess-item">
+<span class="avatar-preview avatar-preview-32"><img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""></span>
+<span class="mess-item-name">Christian Burton</span>
+<span class="mess-item-txt">Morgan was bothering about something...</span>
 </a>
 </div>
 </div>
@@ -118,12 +121,14 @@ Inbox
 
 <div class="dropdown dropdown-lang">
 <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<span class="flag-icon flag-icon-us"></span>
+<span class="flag-icon flag-icon-rw"></span>
 </button>
 <div class="dropdown-menu dropdown-menu-right">
 <div class="dropdown-menu-col">
-<a class="dropdown-item current" href="#"><span class="flag-icon flag-icon-us"></span>English</a>
+</div>
+<div class="dropdown-menu-col">
 <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-rw"></span>Kinyarwanda</a>
+<a class="dropdown-item current" href="#"><span class="flag-icon flag-icon-us"></span>English</a>
 <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-fr"></span>Français</a>
 </div>
 </div>
@@ -137,7 +142,7 @@ Inbox
 <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
 <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-cog"></span>Settings</a>
 <div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
+<a class="dropdown-item" href="{{route('backend.logout')}}"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
 </div>
 </div>
 
@@ -149,6 +154,9 @@ Inbox
 <div class="mobile-menu-right-overlay"></div>
 <div class="site-header-collapsed">
 <div class="site-header-collapsed-in">
+<a class="btn btn-nav btn-rounded btn-inline btn-success-outline">
+You're logged in as : <em>{{Auth::user()->roles->first()->name??''}}</em>
+</a>
 <div class="site-header-search-container">
 <form class="site-header-search closed">
 <input type="text" placeholder="Search"/>
@@ -164,3 +172,4 @@ Inbox
 </div><!--.site-header-content-->
 </div><!--.container-fluid-->
 </header><!--.site-header-->
+<div class="mobile-menu-left-overlay"></div>

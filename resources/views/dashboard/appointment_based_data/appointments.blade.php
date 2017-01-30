@@ -48,7 +48,7 @@ Unpaid
 </td>
 <td>
 @if($flag == 'vitals')
-@if(Auth::user()->role == 'Administrator' || Auth::user()->role == 'Receptionist')
+@if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('receptionist'))
 {{ link_to_route('vitalsigns.create', 'Add', ['id' => $appointment->id], ['class' => 'data_table_btn'])}}
 @elseif(Auth::user()->role == 'Doctor')
 {{ link_to_route('vitalsigns.show', 'View', ['id' => $appointment->id], ['class' => 'data_table_btn'])}}
@@ -89,9 +89,9 @@ Unpaid
 </tbody>
 </table>
 @if($flag == 'pdf_record')
-{{ $appointments->appends(['id' => $patient->id])->links('partials.pagination') }}
+{{-- $appointments->appends(['id' => $patient->id])->links('partials.pagination') --}}
 @else
-{{ $appointments->links('partials.pagination') }}
+{{-- $appointments->links('partials.pagination') --}}
 @endif
 </center>
 @endsection

@@ -17,7 +17,7 @@ Employee Registration
 <br/>
 <center>
 <div style="border: 4px solid #129894; width: 800px; border-radius: 10px; background-color: #EBEBEB">
-{{ Form::open(array('action' => 'EmployeesController@store', 'style' => 'padding: 40px', 'id' => 'regForm', 'onsubmit' => 'checkForm()')) }}
+{{ Form::open(array('action' => 'UsersController@store', 'style' => 'padding: 40px', 'id' => 'regForm', 'onsubmit' => 'checkForm()')) }}
 <table width="621" height="720" border="0">
 <tr>
 <td width="272" height="55"><label>Employee Name*</label> </td>

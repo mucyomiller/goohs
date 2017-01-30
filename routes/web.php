@@ -12,7 +12,6 @@
 */
 Route::get('/',['as'=>'index','uses'=>'FrontendController@index']);
 Route::get('about',['as'=>'about','uses'=>'FrontendController@about']);
-Route::get('/reg_patient',['as'=>'about','uses'=>'FrontendController@reg_patient']);
 Route::get('contact',['as'=>'contact','uses'=>'ContactController@index']);
 Route::post('subscribe',['as'=>'subscribe','uses'=>'NewsLetterController@subscribe']); 
 Route::post('contactsend',['as'=>'contactSend','uses'=>'ContactController@contactsend']);
@@ -21,6 +20,7 @@ Auth::routes();
 //backend routes
 Route::group(['prefix'=>'backend','middleware' => ['auth']],function(){
     Route::get('/',['as'=>'backend.index','uses'=>'HomeController@index']);
+    Route::resource('profile','ProfileController');
     Route::get('pdf_test',['as'=>'backend.pdf_test','uses'=>'HomeController@pdf_test']);
 	Route::get('message',['as'=>'backend.message','uses'=>'HomeController@message']);
 	Route::get('logout',['as'=>'backend.logout','uses'=> 'HomeController@logout']);

@@ -26,7 +26,7 @@ Create Doctor Schedule
 <td width="333">
 
 {{--Employee id will be stored in workingdays table as FK--}}
-{{ Form::select('employee_id', $doctors->lists('name', 'id'), null, ['required' => 'true', 'id' => 'employee_id'] ); }}
+{{ Form::select('employee_id', $doctors->pluck('name', 'id'), null, ['required' => 'true', 'id' => 'employee_id'] ) }}
 </td>
 </tr>
 <tr><td><br></td><td></td></tr>

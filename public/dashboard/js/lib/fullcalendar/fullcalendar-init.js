@@ -22,6 +22,10 @@ $(document).ready(function(){
         eventLimit: true, // allow "more" link when too many events
         events: [
             {
+                title: 'Meet Mucyo',
+                start: '2016-12-12'
+            },
+            {
                 title: 'All Day Event',
                 start: '2016-01-01'
             },
@@ -85,7 +89,6 @@ $(document).ready(function(){
             }
         ],
         viewRender: function(view, element) {
-            // При переключении вида инициализируем нестандартный скролл
             if (!("ontouchstart" in document.documentElement)) {
                 $('.fc-scroller').jScrollPane({
                     autoReinitialise: true,

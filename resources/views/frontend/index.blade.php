@@ -7,21 +7,21 @@
 	<div data-src="images/slider/slider-img1.jpg">
 		<div class="camera_caption fadeFromLeft hidden-sm hidden-xs">
 			<h2>One Stop Solution</h2>
-			<h2>For All <span>Medical Needs</span></h2>
+			<h2>For All Your <span>Medical Needs</span></h2>
 			<p>
-				Lorem Ipsum is simply dummy text printer took a galley of type and scrambled it to make a type specimen book.
+				Register yourself today to start using this system.
 			</p>
-			<a href="services.html" class="btn btn-secondary">View Services</a>
+			<a href="{{ url('/reg_patient')}}" class="btn btn-secondary">register now</a>
 		</div>
 	</div>
 <!-- Slide #1 Ends -->
 <!-- Slide #2 Starts -->
 	<div data-src="images/slider/slider-img2.jpg">
 		<div class="camera_caption fadeIn hidden-sm hidden-xs">
-			<h2>Main Heading</h2>
-			<h2><span>Some Caption</span> Here</h2>
+			<h2>Take Test</h2>
+			<h2><span>Come to us</span></h2>
 			<p>
-				Lorem Ipsum is simply dummy text printer took a galley of type and scrambled it to make a type specimen book.
+				we are waiting for you to deliver great service.
 			</p>
 			<a href="#" class="btn btn-secondary">Read More</a>
 		</div>
@@ -52,7 +52,7 @@
 			<i class="fa fa-user-md"></i>
 			<h4>Qualified Doctors</h4>
 			<p>
-				Lorem ipsum dolorit amet consetur adipiscing Morbi sollicitudin just non odio molestie.
+				We have so many qaulified Doctors.
 			</p>
 			<a href="#" class="btn btn-transparent">Read More</a>
 		</div>
@@ -64,7 +64,7 @@
 			<i class="fa fa-stethoscope"></i>
 			<h4>Regular Checkup</h4>
 			<p>
-				Lorem ipsum dolorit amet consetur adipiscing Morbi sollicitudin just non odio molestie.
+				Come to us to make regular test!.
 			</p>
 			<a href="#" class="btn btn-transparent">Read More</a>
 		</div>
@@ -76,7 +76,7 @@
 			<i class="fa fa-flask"></i>
 			<h4>Lab Test</h4>
 			<p>
-				Lorem ipsum dolorit amet consetur adipiscing Morbi sollicitudin just non odio molestie.
+				Lab Test is quiecker than ever with sms results!.
 			</p>
 			<a href="#" class="btn btn-transparent">Read More</a>
 		</div>
@@ -86,9 +86,9 @@
 	<div class="col-md-3 col-sm-6 col-xs-12">
 		<div class="box">
 			<i class="fa fa-comments-o"></i>
-			<h4>Clinic News</h4>
+			<h4>Hospital Announcement</h4>
 			<p>
-				Lorem ipsum dolorit amet consetur adipiscing Morbi sollicitudin just non odio molestie.
+				Realtime notifications.
 			</p>
 			<a href="#" class="btn btn-transparent">Read More</a>
 		</div>

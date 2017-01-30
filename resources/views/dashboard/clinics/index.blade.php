@@ -36,6 +36,5 @@ Manage Clinics
 @endforeach
 </tbody>
 </table>
-{{ $clinics->links('partials.pagination') }}
 </center>
 @endsection

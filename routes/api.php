@@ -13,16 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-// Route::get('/user', function (Request $request) {
-//     return 
-//     App\User::all();
-// });
-//middleware('auth:api');
-Route::get('/appointments', function (Request $request) {
-    return 
-    App\Appointment::all();
-});
-Route::get('/appointments/{id}', function (Request $request,$id) {
-    return App\Appointment::where('id',$id)->first();
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
 });
 

@@ -14,8 +14,4 @@ class FrontendController extends Controller
     {
     	return view('frontend.about');
     }
-    public function reg_patient()
-    {
-    	return view('frontend.register');
-    }
 }

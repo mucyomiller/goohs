@@ -67,7 +67,7 @@ Employee Details
 </table>
 <center>
 <section style="margin-bottom: 10%">
-{{ link_to_route('employees.index', 'Back', '', ['class' => 'btn_3']) }}
+{{ link_to_route('users.index', 'Back', '', ['class' => 'btn_3']) }}
 </section>
 </center>
 </div>

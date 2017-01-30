@@ -18,7 +18,7 @@ Edit Clinic
 <center>
 <div style="border: 4px solid #129894; width: 800px; border-radius: 10px; background-color: #EBEBEB">
 {{ Form::model($admin, ['route' => ['clinics.update', $clinic->id], 'method' => 'put' ,'style' => 'padding: 40px', 'id' => 'regForm'])}}
-@include('clinics._form')
+@include('dashboard.clinics._form')
 {{ Form::close() }}
 </div>
 </center>

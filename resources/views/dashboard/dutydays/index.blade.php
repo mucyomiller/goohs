@@ -33,6 +33,6 @@ Manage Doctors' Schedules
 @endif
 </tbody>
 </table>
-{{ $dutydays->links('partials.pagination') }}
+{{--pagination here--}}
 </center>
 @endsection

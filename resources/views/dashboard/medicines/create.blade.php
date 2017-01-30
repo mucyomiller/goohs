@@ -19,7 +19,7 @@ Add New Medicine
 <div style="border: 4px solid #129894; width: 800px; border-radius: 10px; background-color: #EBEBEB">
 
 {{ Form::open(array('action' => 'MedicinesController@store', 'style' => 'padding: 40px', 'id' => 'regForm')) }}
-@include('medicines._form')
+@include('dashboard.medicines._form')
 {{ Form::close() }}
 </div>
 </center>

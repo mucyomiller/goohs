@@ -1,4 +1,4 @@
-@extends('prescriptions.layouts.master')
+@extends('dashboard.theme')
 @push('title')
     Manage Prescriptions
 @endpush
@@ -37,7 +37,7 @@ Manage Prescriptions
 @endforeach
 </tbody>
 </table>
-{{ $appointments->appends(['id' => $patient_id])->links('partials.pagination') }}
+{{--$appointments->appends(['id' => $patient_id])->links('partials.pagination')--}}
 </center>
 @endsection
 

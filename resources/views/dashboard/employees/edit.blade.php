@@ -19,7 +19,7 @@ Edit Employee
 <center>
 <div style="border: 4px solid #129894; width: 800px; border-radius: 10px; background-color: #EBEBEB">
 
-{{ Form::model($employee, ['route' => ['employees.update', $employee->id], 'method' => 'put' ,'style' => 'padding: 40px', 'id' => 'regForm'])}}
+{{ Form::model($employee, ['route' => ['users.update', $employee->id], 'method' => 'put' ,'style' => 'padding: 40px', 'id' => 'regForm'])}}
 
 <table width="621" height="720" border="0">
 <tr>

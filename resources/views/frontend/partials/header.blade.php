@@ -83,8 +83,10 @@
 								<li class="active"><a href="{{ route('index')}}">Home</a></li>
 								<li><a href="#">Services</a></li>
 								<li><a href="#">make Appointment</a></li>
-								<li><a href="{{ route('about')}}">About</a></li>
-								<li><a href="{{ route('contact')}}">Contact</a></li>
+								<li><a href="{{ url('/login') }}">login</a></li>
+								<li><a href="{{ url('/register') }}">register</a></li> 
+								<li><a href="{{ route('about') }}">About</a></li>
+								<li><a href="{{ route('contact') }}">Contact</a></li>
 							</ul>
 						</div>
 					<!-- Navbar Collapse Ends -->
