@@ -30,13 +30,13 @@
     <div class="map-info" id="map-info">
         <div class="map-info-contacts">
             <div class="map-info-phone">
-                <i class="fa fa-phone"></i> <span>120 852-4632</span>
+                <i class="fa fa-phone"></i> <span>+2507817-27018</span>
             </div>
             <div class="map-info-mail">
-                <i class="fa fa-envelope"></i> <span><a href="mailto:office@dantal.com">office@dantal.com</a></span>
+                <i class="fa fa-envelope"></i> <span><a href="mailto:office@dantal.com">care@goohs.com</a></span>
             </div>
             <div class="map-info-location">
-                <i class="flaticon-navigation-arrow"></i> <span>Henderson Blvd PO Box <br>356012, Tampa, FL 54452</span>
+                <i class="flaticon-navigation-arrow"></i> <span>Kigali Rwanda PO Box <br>x, KG, ST 1</span>
             </div>
         </div>
         <div class="map-info-socials">
