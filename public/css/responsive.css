@@ -1,1 +1,574 @@
-/* Large Devices Styles Starts */@media (min-width: 1200px) {	/* Heading Styles Starts */	.side-heading1.top {		margin-top: 0;	}		/* Navigation Styles Starts */	#nav .dropdown:hover .dropdown-menu {		display: block;	}		/* Welcome Section Styles Starts */	.welcome-area p:last-of-type {		margin-bottom: 0;	}			/* List Styles Starts */	.progress-bar-list h6 {		line-height: 35px;		text-align: right;	}	.progress-bar-list li .progress .progress-bar {		padding-right: 20px;		text-align: right;	}		.progress-bar-list > li.row > .col-md-8 {			border-left: 1px solid #e0e0e0;		}		.progress-bar-list > li.row > .col-md-4, 		.progress-bar-list > li.row > .col-md-8 {			padding-top: 15px;			padding-bottom: 15px;		}		.progress-bar-list > li:first-of-type.row > .col-md-4, 		.progress-bar-list > li:first-of-type.row > .col-md-8 {			padding-top: 10px;		}		.progress-bar-list > li:last-of-type.row > .col-md-4, 		.progress-bar-list > li:last-of-type.row > .col-md-8 {			padding-bottom: 10px;		}			/* Contact Info Section Styles Starts */	.contact-info-box {		margin-top: 160px;	}		.contact-info-box .box-img {			position: absolute;			right: 40px;			bottom: -369px;		}	}/* Medium Devices Styles Starts */@media (min-width: 992px) and (max-width: 1199px) {	/* Heading Styles Starts */	.side-heading1.top {		margin-top: 0;	}		/* Navigation Styles Starts */	#nav .dropdown:hover .dropdown-menu {		display: block;	}		/* Welcome Section Styles Starts */	.welcome-area p:last-of-type {		margin-bottom: 0;	}	/* Doctors Pages Styles Starts */	ul#doctors-grid.grid > li > .bio-box {		min-height: 466px;		height: auto !important;		height: 466px;	}		.featured-doctors .bio-box .profile-img .overlay ul.sm-links {			margin-top: 30%;		}			.featured-doctors .bio-box .profile-img .overlay ul.sm-links li {				width: 40px;				height: 40px;				line-height: 48px;						}			.featured-doctors .bio-box .profile-img .overlay ul.sm-links li + li {				margin-left: 15px;			}		.doctors-grid .bio-box .profile-img .overlay ul.sm-links {			margin-top: 25%;		}	/* Doctors Profile Block Styles Starts */	.panel-profile > .panel-footer .btn {		margin-top: 15px;	}		/* Accordions Styles Starts */				#accordion .panel-title, 	#accordion .panel-title .fa {		font-size: 16px;	}		/* Book Appointment Box Styles Starts */	.book-appointment-box .box-img {		right: 5px;		bottom: -119px;	}	.book-appointment-box h3 {		font-size: 32px;	}	.book-appointment-box h4 {		font-size: 20px;	}	.book-appointment-box .btn-main {		margin-top: 25px;		padding: 8px 16px;	}	/* Tabs Styles Starts */		.tabs-wrap .nav-tabs > li > a {		padding: 0 10px 10px;	}		.tabs-wrap .nav li .icon {			margin: 0 auto;							width: 110px;			height: 110px;			line-height: 110px;			background-color: #009bdb;		}	.tabs-wrap-2 .nav-tabs > li > a {		padding: 10px 18px;		font-size: 16px;	}			/* List Styles Starts */	.progress-bar-list h6 {		line-height: 35px;				text-align: right;	}	.progress-bar-list li .progress .progress-bar {		padding-right: 20px;		text-align: right;	}		.progress-bar-list > li.row > .col-md-8 {			border-left: 1px solid #e0e0e0;		}			.progress-bar-list > li.row > .col-md-4, 		.progress-bar-list > li.row > .col-md-8 {			padding-top: 15px;			padding-bottom: 15px;		}		.progress-bar-list > li:first-of-type.row > .col-md-4, 		.progress-bar-list > li:first-of-type.row > .col-md-8 {			padding-top: 10px;		}		.progress-bar-list > li:last-of-type.row > .col-md-4, 		.progress-bar-list > li:last-of-type.row > .col-md-8 {			padding-bottom: 10px;		}		/* Contact Info Section Styles Starts */	.contact-info-box {		margin-top: 100px;	}		.contact-info-box .box-img {			position: absolute;			right: 0;			bottom: -436px;		}		/* Genric Styles Starts */			.text-center-md {		text-align: center;	}	.img-center-md {		margin-left: auto;		margin-right: auto;	}			}/* Small Devices Styles Starts */@media (min-width: 768px) and (max-width: 991px) {	/* Heading Styles Starts */	.side-heading1.top {		margin-top: 0;	}			/* Top Bar Styles Starts */	.top-bar li {		padding-right: 0;		border: none;	}		/* Navigation Styles Starts */			#nav .navbar-header {		margin-top: 25px;		padding-bottom: 20px;		border-bottom: 1px solid #d3d3d3;	}	#nav .navbar-header, 	#nav .navbar-brand, 	#nav .navbar-nav, 	#nav .navbar-right {		float: none !important;	}	#nav .navbar-header, 	#nav .nav {		text-align: center;			}	#nav .nav {		margin-top: 15px;		margin-bottom: 15px;	}	#nav .dropdown:hover .dropdown-menu {		display: block;	}	/* Welcome Section Styles Starts */	.welcome-area.about {		background: none;	}	/* Doctors Bio Boxes Styles Starts */	ul#doctors-grid.grid > li > .bio-box {		min-height: 498px;		height: auto !important;		height: 498px;	}		.featured-doctors .bio-box .profile-img .overlay ul.sm-links {			margin-top: 26%;		}		.doctors-grid .bio-box .profile-img .overlay ul.sm-links {			margin-top: 25%;		}	/* Doctors Profile Block Styles Starts */	.panel-profile > .panel-footer .btn {		margin-top: 15px;	}		/* Book Appointment Box Styles Starts */		.book-appointment-box {		margin-top: 30px;	}		.book-appointment-box .btn-main {			margin-top: 20px;		}		/* Tabs Styles Starts */		.tabs-wrap ul.nav-tabs {		padding-bottom: 10px;		border-bottom: 1px solid #cecece;	}	.tabs-wrap .nav-tabs > li > a {		padding: 0 7px;	}	.tabs-wrap .nav li h5 {		margin-top: 0;		margin-bottom: 0;		font-size: 16px;	}	.tabs-wrap .tab-content { 		padding-left: 5px;		padding-right: 5px;	}	.tabs-wrap-2 .nav-tabs > li > a {		padding: 10px 5px;		font-size: 14px;	}	/* News Page Styles Starts */	.news-post {		margin-right: 0;	}	/* Blog Author Bio Box Styles Starts */	.blog-author-bio {		margin-right: 0;	}		/* Comments Area Styles Starts */	.comments-area .media {		margin-right: 0;	}	/* Comments Form Styles Starts */	.comment-form {		margin-bottom: 50px;	}		/* Pagination Styles Starts */	.pagination-wrap {		margin-right: 0;	}	/* Footer Top Bar Styles Starts */	.footer-top-bar .pull-left, 	.footer-top-bar .pull-right {		float: none !important;	}	.footer-top-bar h3 {		margin-top: 0;		margin-bottom: 30px;	}	/* Footer Styles Starts */		.footer-area .newsletter-block {		margin-top: 40px;	}	/* Genric Styles Starts */			.text-center-sm {		text-align: center;	}	.img-center-sm {		margin-left: auto;		margin-right: auto;	}		}/* Extra Small Devices Styles Starts */@media (max-width: 767px) {	/* Navigation Styles Starts */	#nav .nav {		margin-top: 10px;	}	#nav .navbar-collapse {		margin-top: 20px;	}	/* Welcome Section Styles Starts */	.welcome-area.about {		background: none;	}		/* Doctors Bio Boxes Styles Starts */	ul#doctors-grid.grid > li > .bio-box {		min-height: 471px;		height: auto !important;		height: 471px;	}	.featured-doctors .bio-box .profile-img .overlay ul.sm-links {		margin-top: 13%;	}		.featured-doctors .bio-box .profile-img .overlay ul.sm-links li {			width: 40px;			height: 40px;			line-height: 48px;				}		.featured-doctors .bio-box .profile-img .overlay ul.sm-links li + li {			margin-left: 15px;		}		.doctors-grid .bio-box .profile-img .overlay ul.sm-links {		margin-top: 15%;	}	/* Doctors Profile Block Styles Starts */	.panel-profile {		margin-bottom: 50px;	}		.panel-profile > .panel-footer .btn {			margin-top: 15px;		}			/* Latest News Carousel Starts */	.news-carousel .news-post {		margin-top: 20px;	}	/* Book Appointment Box Styles Starts */	.book-appointment-box {		margin-top: 30px;	}		/* Tabs Styles Starts */		.tabs-wrap ul.nav-tabs {		padding-bottom: 10px;		border-bottom: 1px solid #cecece;	}	.tabs-wrap .nav-tabs > li > a {		padding: 0 10px 10px;	}	.tabs-wrap .nav li h5 {		margin-top: 0;		margin-bottom: 0;		font-size: 16px;	}	.tabs-wrap .tab-content { 		padding-left: 5px;		padding-right: 5px;	}	.tabs-wrap-2 .nav-tabs > li, 	.tabs-wrap-2 .nav-tabs > li:last-of-type {		width: 100%;	}	.tabs-wrap-2 .nav-tabs > li, 	.tabs-wrap-2 .nav-tabs > li > a {		display: block;		float: none !important;	}	.tabs-wrap-2 .nav-tabs > li > a {		border: 1px solid #e2e2e2;	}	.tabs-wrap-2 .nav-tabs > li > a:after {		display: none;	}	/* News Page Styles Starts */	.news-post {		margin-right: 0;	}	/* Blog Author Bio Box Styles Starts */	.blog-author-bio {		margin-right: 0;	}		/* Comments Area Styles Starts */	.comments-area .media {		margin-right: 0;	}	/* Pagination Styles Starts */	.pagination-wrap {		margin-right: 0;	}	/* Contact Form Styles Starts */	#main-contact-form {		margin-bottom: 50px;	}		/* Footer Top Bar Styles Starts */	.footer-top-bar .pull-left, 	.footer-top-bar .pull-right {		float: none !important;	}	.footer-top-bar h3 {		margin-top: 0;		margin-bottom: 30px;	}		/* Footer Styles Starts */		.footer-area .col-xs-12 h4 {		margin-top: 30px;		margin-bottom: 20px;	}		.footer-area .col-xs-12:first-of-type h4 {		margin-top: 0;	}		.footer-area .tweets-list {			margin-left: 15px;	}	/* Copyright Styles Starts */	.copyright {		text-align: center;	}		.copyright .pull-left, 		.copyright .pull-right {			float: none !important;		}		.copyright ul {			margin-top: 15px;		}		/* Genric Styles Starts */			.text-center-xs {		text-align: center;	}	.img-center-xs {		margin-left: auto;		margin-right: auto;	}				}/* Extremely Small Devices Styles Starts */@media (max-width: 478px) {	/* Navigation Styles Starts */	#nav .navbar-brand {		padding-top: 35px;		font-size: 24px;	}		#nav .navbar-brand .fa {			margin-right: 3px;			font-size: 30px;		}	#nav .navbar-collapse {		margin-top: 20px;	}	/* Main Banner Styles Starts */	.main-banner h2 {		display: none;	}	/* About Featured Section Starts */	.about-featured .btn-transparent {		margin-top: 20px;		padding: 10px 20px;		font-size: 16px;	}		.about-featured .btn-transparent .fa {			margin-left: 10px;		}	/* Doctors Bio Boxes Styles Starts */	ul#doctors-grid.grid > li > .bio-box {		min-height: 465px;		height: auto !important;		height: 465px;	}		.featured-doctors .bio-box .profile-img .overlay ul.sm-links {			margin-top: 30%;		}				.doctors-grid .bio-box .profile-img .overlay ul.sm-links {			margin-top: 24%;		}	/* Latest News Carousel Starts */	.news-carousel .news-post {		margin-top: 40px;	}	.news-carousel .carousel-control {		top: -7px;	}	.news-carousel .carousel-control.left {		left: 0;		right: auto;	}	/* Accordions Styles Starts */	#accordion .panel-heading {		padding: 10px 15px;	}	#accordion .panel-title a, 	#accordion .panel-title span.fa.pull-right {		padding: 0;	}	#accordion .panel-title, 	#accordion .panel-title .fa {		font-size: 16px;	}	#accordion .panel-title .icon {		display: none;	}	#accordion .panel-body {		padding: 15px;	}	/* Book Appointment Box Styles Starts */	.book-appointment-box {		margin-top: 20px;		padding: 20px 15px;	}	.book-appointment-box h3 {		margin-top: 15px;				font-size: 26px;	}	.book-appointment-box h4 {		font-size: 22px;	}	.book-appointment-box .btn-main {		margin-top: 15px;		padding: 8px 14px;		font-size: 15px;	}		/* Tabs Styles Starts */		.tabs-wrap .nav-tabs > li, 	.tabs-wrap .nav-tabs > li a {		display: block !important;	}		/* Contact Info Section Styles Starts */	.contact-info-box .info-box {		padding: 50px 30px 30px;	}	.contact-info-box .info-box h3 {		font-size: 32px;	}	.contact-info-box .info-box h5 {		font-size: 16px;		line-height: 26px;	}	.contact-info-box .info-box h4 {		font-size: 20px;	}	}
+/* --------------------------------------
+=========================================
+RESPONSIVE FIXES
+=========================================
+-----------------------------------------*/
+
+
+@media (max-width: 1200px){
+    .slider .container {
+        margin-left: -485px;
+    }
+    .slider .sp-buttons {
+        margin-left: -485px;
+    }
+    .stories-item-before {
+        margin-top: 88px;
+    }
+    .stories-item-after {
+        margin-top: 60px;
+    }
+    .footer-title {
+        font-size: 19px;
+    }
+    .opening-right {
+        font-size: 12px;
+    }
+    .blog-2.blog .blog-item-date {
+        width: 100px;
+        font-size: 11px;
+    }
+    .blog-2.blog .blog-item-comments {
+        width: 45px;
+        font-size: 11px;
+    }
+    .blog-2.blog .blog-item-view {
+        width: 55px;
+        font-size: 11px;
+    }
+    .blog-2.blog .blog-item-category {
+        font-size: 12px;
+    }
+    .related-item-button {
+        margin-top: 70px;
+    }
+    .doctor-info-hours-right {
+        font-size: 12px;
+    }
+    .nav-tabs li a {
+        font-size: 11px;
+        padding: 17px 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-phone {
+        font-size: 16px;
+        padding: 5px 16px;
+    }
+    .header-button .btn {
+        padding: 7px 16px;
+        font-size: 15px;
+    }
+    .slider .container {
+        margin-left: -375px;
+    }
+    .slider .sp-buttons {
+        margin-left: -375px;
+    }
+    .service h3 {
+        font-size: 20px;
+    }
+    .review-item-quote {
+        right: 20px;
+        bottom: 20px;
+    }
+    .h2, h2 {
+        font-size: 30px;
+    }
+    .opening-left {
+        width: 41%;
+        margin-left: 0%;
+        font-size: 10px;
+    }
+    .opening-right {
+        width: 59%;
+        font-size: 10px;
+    }
+    .footer-item-3-phone {
+        font-size: 16px;
+    }
+    .footer-item-3-location {
+        margin-bottom: 20px;
+    }
+    .footer-item-3-mail {
+        font-size: 12px;
+    }
+    .footer-item-3-socials a {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+        line-height: 29px;
+        margin-right: 1px;
+    }
+    .right-bar-archive ul {
+        padding-left: 25px;
+    }
+    .right-bar-archive ul li a {
+        font-size: 11px;
+    }
+    .related-item-button {
+        margin-top: 30px;
+    }
+    .tt-calendar-day {
+        font-size: 11px;
+    }
+    .tt-row-item {
+        padding: 15px 2px;
+    }
+    .makeform-container {
+        padding: 60px 150px;
+    }
+    .feedback .container {
+        padding: 0 70px;
+    }
+    .blog-2.blog .blog-item-bottom-socials {
+        display: table;
+        margin: 0 auto;
+        padding: 10px 0;
+        float: none;
+    }
+}
+
+@media (min-width: 769px){
+	.top-menu ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;    
+    }
+    .top-menu .navbar-nav{
+       	display: block !important;
+    }
+    .t-tooltip:hover .t-tooltip-text {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        font-size: 11px;
+    }
+    .top-bar-social i {
+        font-size: 15px;
+        top: 0px;
+    }
+    .top-bar-mail {
+        margin-right: 0;
+    }
+    .header-logo {
+        display: table;
+        margin: 0 auto;
+    }
+    .header-logo img {
+        width: 23px;
+        margin-right: 0px;
+        top: -1px;
+    }
+    .header-button {
+        margin: 15px auto 10px;
+        display: table;
+        float: none;
+    }
+    .header-phone {
+        float: none;
+        display: table;
+        margin: 0 auto;
+    }
+    .top-menu{
+        top: 253px;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+    .top-menu .navbar-nav{
+        display: none;
+    }
+    .color-sw-open{
+        display: none;
+    }
+    .color-sw{
+        top: 150px;
+    }
+    .mobile-bar {
+        display: block;
+    }
+    .slider .container {
+        margin-left: 0;
+        left: 0px;
+    }
+    .slider-welcome {
+        font-size: 25px;
+    }
+    .slider-title {
+        font-size: 37px;
+    }
+    .slider-subtitle {
+        font-size: 27px;
+    }
+    .slider-text {
+        font-size: 24px;
+ 
+    }
+    .slider .sp-buttons {
+        left: 0;
+        margin-left: 0;
+        bottom: 15px;
+    }
+    .about-bg {
+        display: none;
+    }
+    .carousel-next {
+        right: 15px;
+    }
+    .carousel-prev {
+        left: 15px;
+    }
+    .h2, h2 {
+        font-size: 26px;
+    }
+    .section-subtitle {
+        font-size: 13px;
+        padding: 0 15px;
+    }
+    .doctors .carousel-next {
+        right: 40px;
+    }
+    .doctors .carousel-prev {
+        left: 40px;
+    }
+    .numbers-item {
+        margin-bottom: 40px;
+    }
+    .stories-item-before {
+        margin-top: 28px;
+    }
+    .stories-item-after {
+        margin-top: 17px;
+    }
+    .tips {
+        margin-bottom: 40px;
+    }
+    .footer-item-4 {
+        position: relative;
+        width: 100% !important;
+        height: 200px;
+    }
+    .opening-left {
+        width: 41%;
+        margin-left: 5%;
+        font-size: 13px;
+    }
+    .opening-right {
+        width: 54%;
+        font-size: 13px;
+    }
+    .page-title h1 {
+        font-size: 30px;
+    }
+    .page-title p {
+        font-size: 13px;
+    }
+    .history-text {
+        margin-top: 30px;
+    }
+    .make-text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .make-text h2 {
+        font-size: 27px;
+    }
+    .make-text p {
+        font-size: 13px;
+    }
+    .make-button {
+        text-align: center;
+    }
+    .services-1-text {
+        padding: 0 15px;
+    }
+    .services-1-title {
+        padding: 0 15px;
+    }
+    .services-1 .service-text {
+        margin-bottom: 40px;
+    }
+    .serv ul#isotope-filter li a {
+        display: block;
+    }
+    .right-bar-archive ul li a {
+        font-size: 14px;
+    }
+    .quote {
+        font-size: 13px;
+    }
+    .blog-2.blog .blog-item-text-image.left {
+        margin-bottom: 20px;
+    }
+    .blog-2.blog .blog-item-poster-image {
+        margin-right: 20px;
+        width: 50px;
+    }
+    .comment-avatar {
+        width: 55px;
+        padding: 20px 20px 0 0;
+    }
+    .comment-avatar img {
+        width: 40px;
+    }
+    .comment-body {
+        width: calc(100% - 55px);
+        padding-right: 0px;
+    }
+    .comment .comment {
+        margin-left: 55px;
+    }
+    .blog-2.blog .blog-item-commform {
+        padding: 50px 30px;
+    }
+    .blog-2.blog .blog-item-commform .latest-row span {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    .subscribe {
+        margin-top: 40px;
+    }
+    .subscribe-text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .btn-sm {
+        padding: 5px 20px;
+    }
+    .doctors-text-text {
+        float: none;
+        width: 100%;
+    }
+    .doctors-text-doctor {
+        float: none;
+        width: 100%;
+    }
+    .doctor-text-booking {
+        padding: 50px 20px;
+    }
+    .gallery-text {
+        padding: 0 15px;
+    }
+    .gallery-1 ul#isotope-filter li a {
+        display: block;
+    }
+    .gallery-1-items {
+        margin-top: 220px;
+    }
+    .prices-text {
+        padding: 0 15px;
+    }
+    .prices-item-desc-image {
+        float: none;
+        width: 100%;
+    }
+    .prices-item-desc-text {
+        float: none;
+        width: 100%;
+    }
+    .prices-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        line-height: 18px;
+        margin: 0;
+    }
+    .prices-item-table-title {
+        font-size: 11px;
+    }
+    .prices-item-table-cost {
+        font-size: 13px;
+    }
+    .prices-item-offer-cost {
+        right: 10px;
+        font-size: 23px;
+        width: 100px;
+        height: 100px;
+        line-height: 18px;
+        padding: 29px 0;
+    }
+    .prices-item-offer-text {
+        padding-right: 100px;
+    }
+    .prices-item-table-cost-old {
+        padding-right: 0;
+    }
+    .timetable {
+        width: 750px;
+        overflow: scroll;
+        white-space: nowrap;
+    }
+    .makeform-container {
+        padding: 60px 20px;
+    }
+    .map-info {
+        position: relative;
+        top: 0;
+        left: 50% !important;
+        margin-left: -145px;
+    }
+    .get-item {
+        margin: 15px 0;
+    }
+    .feedback .container {
+        padding: 0 20px;
+    }
+    .bookform-left {
+        width: 320px;
+        float: none;
+        padding: 20px;
+        height: 670px;
+    }
+    .bookform-right {
+        width: 320px;
+        float: none;
+    }
+    .bookform.bookform-1 .bookform-left {
+        padding: 40px 25px 40px 25px;
+        height: 770px
+    }
+    .section-title {
+        padding: 0 15px;
+        text-align: center !important;
+    }
+    .owl-review2 .owl-controls {
+        top: -29px;
+        right: 50%;
+        margin-right: -27px;
+    }
+    .fancybox-close-btn {
+        top: 5px;
+        right: 5px;
+        color: #fff;
+        border: 2px solid #666;
+        background: #666;
+    }
+    .right-bar-tags {
+        margin-bottom: 30px;
+    }
+    .panel-group .panel-heading h4 a {
+        font-size: 16px;
+    }
+    .serv ul#isotope-filter li a {
+        font-size: 11px;
+        padding: 14px 25px;
+    }
+    .bookform.bookform-1 .bookform-right {
+        padding: 50px 35px 0 35px;
+    }
+    .bookform.bookform-1 .bookform-right-info-1:after {
+        display: none;
+    }
+    .gallery-1 ul#isotope-filter {
+        padding: 15px 15px;
+        text-align: center;
+    }
+    .gallery-1 ul#isotope-filter li a {
+        font-size: 11px;
+        padding: 14px 20px;
+    }
+    .t-tooltip-text {
+        width: 232px;
+    }
+    .t-left .t-tooltip-text {
+        margin-right: -18px;
+    }
+    .t-tooltip-text .btn-sm {
+        padding: 4px 15px;
+        font-size: 14px;
+    }
+    .top-menu-logo {
+        font-size: 20px;
+    }
+    .top-menu .navbar-nav li a:hover, .top-menu .navbar-nav li a:focus {
+        background: transparent;
+        color: #455f68;
+    }
+    .top-menu ul.dropdown-menu.with-bg {
+        background: #fff;
+    }
+    .mobile-bar-cont {
+        float: none;
+    }
+    .bookform-right {
+        display: none;
+    }
+    .blog-2.blog .blog-item-navs-prev {
+        width: 50%;
+    }
+    .blog-2.blog .blog-item-navs-next {
+        width: 50%;
+    }
+    .serv-item-image {
+        float: none;
+        width: 100%;
+    }
+    .tt-search input{
+        padding: 26px 20px;
+        font-size: 13px;
+    }
+    .tt-search button{
+        right: 10px;
+    }
+    .review-item-image {
+        float: none;
+        width: 94px;
+        margin: 0 auto;
+    }
+    .review-item-text {
+        padding: 15px;
+    }
+    .review-item-name {
+        padding-left: 15px;
+    }
+    .review-item-position {
+        padding-left: 15px;
+    }
+    .notfound-image {
+        float: none;
+        width: 100%;
+        height: 300px;
+    }
+    .booking-form-item textarea {
+        height: 120px !important;
+    }
+	.slider .container{
+		display:none;
+	}
+	.service{
+		display:block;
+	}
+}
+
+@media (max-width: 359px){
+    .top-bar-social i {
+        margin-left: 10px;
+    }
+    .top-bar {
+        font-size: 10px;
+    }
+    .top-menu-logo {
+        font-size: 18px;
+        margin-right: 0px;
+    }
+    .bookform-left {
+        width: 280px;
+    }
+	.service{
+		display:block;
+	}
+	.slider .container{
+		display:none;
+	}
+	.review-item-text,
+	.owl-review2 .review-item-name,
+	.owl-review2 .review-item-position{
+		padding-left:15px !important;
+	}
+	iframe {
+		width:100%;
+	}
+}

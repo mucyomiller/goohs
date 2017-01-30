@@ -13,6 +13,9 @@
 Route::get('/',['as'=>'index','uses'=>'FrontendController@index']);
 Route::get('about',['as'=>'about','uses'=>'FrontendController@about']);
 Route::get('contact',['as'=>'contact','uses'=>'ContactController@index']);
+Route::get('services',['as'=>'services','uses'=>'FrontendController@services']);
+Route::get('doctor',['as'=>'doctor','uses'=>'FrontendController@doctor']);
+Route::get('doctors',['as'=>'doctors','uses'=>'FrontendController@doctors']);
 Route::post('subscribe',['as'=>'subscribe','uses'=>'NewsLetterController@subscribe']); 
 Route::post('contactsend',['as'=>'contactSend','uses'=>'ContactController@contactsend']);
 Auth::routes();

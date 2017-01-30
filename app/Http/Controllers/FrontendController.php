@@ -14,4 +14,17 @@ class FrontendController extends Controller
     {
     	return view('frontend.about');
     }
+    public function services(){
+    	//get some services
+    	return view('frontend.services');
+    }
+    public function doctor(Request $request)
+    {
+    	//get some doctor
+    	return view('frontend.doctor');
+    }
+    public function doctors(){
+    	//get all doctors
+    	return view('frontend.doctors');
+    }
 }
