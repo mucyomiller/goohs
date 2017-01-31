@@ -155,7 +155,7 @@ Inbox
 <div class="site-header-collapsed">
 <div class="site-header-collapsed-in">
 <a class="btn btn-nav btn-rounded btn-inline btn-success-outline">
-You're logged in as : <em>{{Auth::user()->roles->first()->name?Auth::user()->roles->first()->name:''}}</em>
+You're logged in as : <em> {{Auth::user()->roles->first()?Auth::user()->roles->first()->name:''}}</em>
 </a>
 <div class="site-header-search-container">
 <form class="site-header-search closed">

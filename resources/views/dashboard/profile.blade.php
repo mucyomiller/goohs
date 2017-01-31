@@ -15,7 +15,7 @@
 </div>
 <div class="profile-card-name">{{ $user->names }}</div>
 <div class="profile-card-status">Company Founder</div>
-<div class="profile-card-location">{{ $user->patient->district->district_name}} {{$user->patient->sector->sector_name}} {{$user->patient->cell->cell_name}}</div>
+<div class="profile-card-location">{{ $user->patient?$user->patient->district->district_name:''}} {{$user->patient?$user->patient->sector->sector_name:''}} {{$user->patient?$user->patient->cell->cell_name:''}}</div>
 <button type="button" class="btn btn-rounded">Follow</button>
 <div class="btn-group">
 <button type="button"
