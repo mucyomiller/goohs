@@ -3,7 +3,13 @@
 <li class="blue">
 <a href="{{route('profile.index')}}">
 <i class="font-icon font-icon-user"></i>
-<span class="lbl">Profile</span>
+<span class="lbl">My Profile</span>
+</a>
+</li>
+<li class="blue">
+<a href="#">
+<i class="font-icon font-icon-heart"></i>
+<span class="lbl">My Patient info</span>
 </a>
 </li>
 @role('superUser')

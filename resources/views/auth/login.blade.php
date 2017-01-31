@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>Goohs - Sign In</title>
-<link href="img/favicon.png" rel="icon" type="image/png">
-<link href="img/favicon.ico" rel="shortcut icon">
+<link href="{{asset('images/favicon.ico')}}" rel="icon" type="image/png">
+<link href="{{asset('images/favicon.ico')}}" rel="shortcut icon">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

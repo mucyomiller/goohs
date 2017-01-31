@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>dashboard/</title>
-<link href="img/favicon.png" rel="icon" type="image/png">
-<link href="img/favicon.ico" rel="shortcut icon">
+<title>GOOHS | dashboard</title>
+<link href="{{asset('images/favicon.ico')}}" rel="icon" type="image/png">
+<link href="{{asset('images/favicon.ico')}}" rel="shortcut icon">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -27,8 +27,8 @@
 <div class="container-fluid">
 
 <a href="#" class="site-logo">
-<img class="hidden-md-down" src="{{asset('dashboard/img/logo-2.png')}}" alt="">
-<img class="hidden-lg-up" src="{{asset('dashboard/img/logo-2-mob.png')}}" alt="">
+<img class="hidden-md-down" src="{{asset('images/logo.svg')}}" alt=""><span style="text-size:5em;font-weight: bold">GOOHS</span>&nbsp;
+<img class="hidden-lg-up" src="{{asset('images/logo.svg')}}" alt="">
 </a>
 
 <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
@@ -155,7 +155,7 @@ Inbox
 <div class="site-header-collapsed">
 <div class="site-header-collapsed-in">
 <a class="btn btn-nav btn-rounded btn-inline btn-success-outline">
-You're logged in as : <em>{{Auth::user()->roles->first()->name??''}}</em>
+You're logged in as : <em>{{Auth::user()->roles->first()->name?Auth::user()->roles->first()->name:''}}</em>
 </a>
 <div class="site-header-search-container">
 <form class="site-header-search closed">
