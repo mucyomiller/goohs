@@ -154,9 +154,11 @@ Inbox
 <div class="mobile-menu-right-overlay"></div>
 <div class="site-header-collapsed">
 <div class="site-header-collapsed-in">
+@if(Auth::user()->roles->first())
 <a class="btn btn-nav btn-rounded btn-inline btn-success-outline">
-You're logged in as : <em> {{Auth::user()->roles->first()?Auth::user()->roles->first()->name:''}}</em>
+You're logged in as : <em> {{Auth::user()->roles->first()->name}}</em>
 </a>
+@endif
 <div class="site-header-search-container">
 <form class="site-header-search closed">
 <input type="text" placeholder="Search"/>
