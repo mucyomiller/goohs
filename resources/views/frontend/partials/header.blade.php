@@ -7,6 +7,7 @@
 <meta name="description" content="goohs online & offline health  services">
 <meta name="keywords" content="goohs, Rwanda, Health system, Appointment">
 <meta name="author" content="computer geek tech">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- SITE TITLE -->
 <title>GOOHS - Health System</title>
