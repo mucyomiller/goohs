@@ -8,6 +8,7 @@
 <script src="{{asset('dashboard/js/lib/fullcalendar/fullcalendar.min.js')}}"></script>
 <script src="{{asset('dashboard/js/app.js')}}"></script>
 @stack('scripts')
+<script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
 <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

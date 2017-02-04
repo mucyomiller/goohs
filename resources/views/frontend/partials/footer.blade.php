@@ -722,10 +722,12 @@
 
 <!-- CUSTOM SCRIPT -->
 <script src="{{asset('js/theme.js')}}"></script>
+@stack('scripts')
+<script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
+<script src="{{asset('js/app.js')}}"></script>
 
 <!-- GOOGLE MAPS -->
-<!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC1N87a_NHjocaepKKcovPAYTMUkJBr9pQ&amp;language=en&amp;sensor=true"></script>-->
-
+<!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=xxx&amp;language=en&amp;sensor=true"></script>-->
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
