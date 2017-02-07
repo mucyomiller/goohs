@@ -43,6 +43,15 @@ value="{{ old('email') }}" />
 </span>
 @endif
 </div>
+<div class="form-group {{ $errors->has('phone') ? ' has-error' : '' }}">
+<input type="text" class="form-control" name="phone" placeholder="Phone Number" 
+value="{{ old('phone') }}" />
+@if ($errors->has('phone'))
+<span class="help-block">
+<strong>{{ $errors->first('phone') }}</strong>
+</span>
+@endif
+</div>
 <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
 <input type="password" class="form-control" name="password" placeholder="Password"/>
 @if ($errors->has('password'))
