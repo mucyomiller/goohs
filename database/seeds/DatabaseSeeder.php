@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
          DB::table('sectors')->truncate();
          DB::table('cells')->truncate();
          $this->call(UsersTableSeeder::class);
-         $this->call(ClinicsTableSeeder::class);
+         $this->call(HospitalsTableSeeder::class);
          $this->call(PatientsTableSeeder::class);
          $this->call(RolesTableSeeder::class);
          $this->call(AppointmentsTableSeeder::class);

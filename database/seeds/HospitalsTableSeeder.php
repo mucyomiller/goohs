@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Clinic;
-class ClinicsTableSeeder extends Seeder
+use App\Hospital;
+class HospitalsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,11 +11,11 @@ class ClinicsTableSeeder extends Seeder
      */
     public function run()
     {
-    	Clinic::where('id', 1)->delete();
-        Clinic::create([
-            'id' => '1',
+    	Hospital::where('id', 1)->delete();
+        Hospital::create([
             'name' => 'KHI Clinic',
-            'address' => 'Kigali Rwanda'
+            'location' => 'Kigali Rwanda',
+            'is_activated' => 1
         ]);
     }
 }
