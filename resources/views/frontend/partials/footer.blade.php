@@ -113,18 +113,18 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item f-doctor">
                             <select id="form-doctor" class="form-doctor" name="form-doctor">
-                                <option value="1" selected="selected">Select doctor</option>
-                                <option value="2">Arnie Alban</option>
-                                <option value="3">Wyatt Esmond</option>
-                                <option value="4">Dustin Callahan</option>
-                                <option value="5">Kristin Weaver</option>
+                                <option value="1" selected="selected">Select hospital</option>
+                                <option value="2">KHI Clinic</option>
+                                <option value="3">CHUK Hospital</option>
+                                <option value="4">Nyirinkwaya</option>
+                                <option value="5">Clinic du plateaux</option>
                             </select>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item name">
-                            <input type="text" name="name1" id="name1" data-validation="required" placeholder="Your name" />
+                            <input type="text" name="patient_id" id="name1" data-validation="required" placeholder="Your Patient ID" />
                             <div class="help help-sm help-red">!</div>
                         </div>
                     </div>
@@ -171,13 +171,13 @@
     <div class="bookform-right">
         
         <div class="bookform-right-info-1">
-            <h5>Please select a doctor</h5>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            <h5>Please select a hospital</h5>
+            Here are  lists of all hospitals or clinics you can choose. 
             
         </div>
         
         <div class="bookform-right-info-2">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            We are working hard to work with some many hospital/clinic if yours is not available feel free to tell us maybe next time will be available. 
         </div>
         
     </div>

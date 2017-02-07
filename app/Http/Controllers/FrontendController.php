@@ -1,11 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use View;
+use App\Hospital;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
+    public function __construct(){
+        //i will add chaching mechanism
+        $hospitals = Hospital::all();
+        //sharing all hospitals to Frontend routes
+        View::share('hospitals', $hospitals);
+    }
     public function index()
     {
     	return view('frontend.index');
