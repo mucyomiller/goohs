@@ -11,7 +11,7 @@
 <section class="box-typical">
 <div class="profile-card">
 <div class="profile-card-photo">
-<img src="img/photo-220-1.jpg" alt=""/>
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""/>
 </div>
 <div class="profile-card-name">{{ $user->names }}</div>
 <div class="profile-card-status">Company Founder</div>
@@ -73,7 +73,7 @@ Friends
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-2.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -88,7 +88,7 @@ Friends
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-1.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -103,7 +103,7 @@ Friends
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-3.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -118,7 +118,7 @@ Friends
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-4.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -133,7 +133,7 @@ Friends
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-2.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -192,7 +192,7 @@ Posts
 <article class="post-announce">
 <div class="post-announce-pic">
 <a href="#">
-<img src="img/post-1.jpeg" alt="">
+<img src="{{asset('dashboard/img/post-1.jpeg')}}" alt="">
 </a>
 </div>
 <div class="post-announce-title">
@@ -219,7 +219,7 @@ Posts
 <article class="post-announce">
 <div class="post-announce-pic">
 <a href="#">
-<img src="img/post-2.jpg" alt="">
+<img src="{{asset('dashboard/img/post-2.jpg')}}" alt="">
 </a>
 </div>
 <div class="post-announce-title">
@@ -246,7 +246,7 @@ Posts
 <article class="post-announce">
 <div class="post-announce-pic">
 <a href="#">
-<img src="img/post-3.jpeg" alt="">
+<img src="{{asset('dashboard/img/post-3.jpeg')}}" alt="">
 </a>
 </div>
 <div class="post-announce-title">
@@ -273,7 +273,7 @@ Posts
 <article class="post-announce">
 <div class="post-announce-pic">
 <a href="#">
-<img src="img/post-1.jpeg" alt="">
+<img src="{{asset('dashboard/img/post-1.jpeg')}}" alt="">
 </a>
 </div>
 <div class="post-announce-title">
@@ -300,7 +300,7 @@ Posts
 <article class="post-announce">
 <div class="post-announce-pic">
 <a href="#">
-<img src="img/post-2.jpg" alt="">
+<img src="{{asset('dashboard/img/post-2.jpg')}}" alt="">
 </a>
 </div>
 <div class="post-announce-title">
@@ -327,7 +327,7 @@ Posts
 <article class="post-announce">
 <div class="post-announce-pic">
 <a href="#">
-<img src="img/post-3.jpeg" alt="">
+<img src="{{asset('dashboard/img/post-3.jpeg')}}" alt="">
 </a>
 </div>
 <div class="post-announce-title">
@@ -382,7 +382,7 @@ Experience
 <div class="exp-timeline-location"><a href="#">Company</a></div>
 </div>
 <div class="tbl-cell tbl-cell-logo">
-<img src="img/logo-2.png" alt="">
+<img src="{{asset('dashboard/img/logo-2.png')}}" alt="">
 </div>
 </div>
 </div>
@@ -397,7 +397,7 @@ Experience
 <div class="exp-timeline-location"><a href="#">YouTube</a></div>
 </div>
 <div class="tbl-cell tbl-cell-logo">
-<img src="img/logo-2.png" alt="">
+<img src="{{asset('dashboard/img/logo-2.png')}}" alt="">
 </div>
 </div>
 </div>
@@ -412,7 +412,7 @@ Experience
 <div class="exp-timeline-location"><a href="#">Company</a></div>
 </div>
 <div class="tbl-cell tbl-cell-logo">
-<img src="img/logo-2.png" alt="">
+<img src="{{asset('dashboard/img/logo-2.png')}}" alt="">
 </div>
 </div>
 </div>
@@ -436,7 +436,7 @@ Edication
 <div class="exp-timeline-location"><a href="#">BS Computer Science</a></div>
 </div>
 <div class="tbl-cell tbl-cell-logo">
-<img src="img/logo-2.png" alt="">
+<img src="{{asset('dashboard/img/logo-2.png')}}" alt="">
 </div>
 </div>
 </div>
@@ -450,7 +450,7 @@ Edication
 <div class="exp-timeline-status">Lakeside Scool, Seattle</div>
 </div>
 <div class="tbl-cell tbl-cell-logo">
-<img src="img/logo-2.png" alt="">
+<img src="{{asset('dashboard/img/logo-2.png')}}" alt="">
 </div>
 </div>
 </div>
@@ -471,9 +471,9 @@ Skills
 </div>
 <div class="tbl-cell tbl-cell-txt">Social Media Marketing</div>
 <div class="tbl-cell tbl-cell-users">
-<img class="skill-user-photo" src="img/avatar-1-64.png" alt=""/>
-<img class="skill-user-photo" src="img/photo-64-3.jpg" alt=""/>
-<img class="skill-user-photo" src="img/photo-64-4.jpg" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-1-64.png')}}" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-1-64.png')}}" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-1-64.png')}}" alt=""/>
 <div class="skill-circle skill-circle-users">+74</div>
 </div>
 </div>
@@ -486,9 +486,9 @@ Skills
 </div>
 <div class="tbl-cell tbl-cell-txt">Web Development</div>
 <div class="tbl-cell tbl-cell-users">
-<img class="skill-user-photo" src="img/avatar-2-64.png" alt=""/>
-<img class="skill-user-photo" src="img/photo-64-2.jpg" alt=""/>
-<img class="skill-user-photo" src="img/photo-64-3.jpg" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-1-64.png')}}" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-1-64.png')}}" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-1-64.png')}}" alt=""/>
 <div class="skill-circle skill-circle-users">+82</div>
 </div>
 </div>
@@ -501,9 +501,9 @@ Skills
 </div>
 <div class="tbl-cell tbl-cell-txt">Search Engine Optimization</div>
 <div class="tbl-cell tbl-cell-users">
-<img class="skill-user-photo" src="img/avatar-3-64.png" alt=""/>
-<img class="skill-user-photo" src="img/photo-64-1.jpg" alt=""/>
-<img class="skill-user-photo" src="img/photo-64-2.jpg" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-3-64.png')}}" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-3-64.png')}}" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-3-64.png')}}" alt=""/>
 <div class="skill-circle skill-circle-users">+4</div>
 </div>
 </div>
@@ -516,9 +516,9 @@ Skills
 </div>
 <div class="tbl-cell tbl-cell-txt">User Experience Design</div>
 <div class="tbl-cell tbl-cell-users">
-<img class="skill-user-photo" src="img/photo-64-3.jpg" alt=""/>
-<img class="skill-user-photo" src="img/photo-64-4.jpg" alt=""/>
-<img class="skill-user-photo" src="img/photo-64-1.jpg" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-1-64.png')}}" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-1-64.png')}}" alt=""/>
+<img class="skill-user-photo" src="{{asset('dashboard/img/avatar-1-64.png')}}" alt=""/>
 <div class="skill-circle skill-circle-users">+13</div>
 </div>
 </div>
@@ -569,7 +569,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-3.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -589,7 +589,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-1.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -609,7 +609,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-2.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -629,7 +629,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-4.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -649,7 +649,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-2.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -669,7 +669,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-4.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -689,7 +689,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="col">
 <article class="follow-group">
 <div class="follow-group-logo">
-<a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
+<a href="#" class="follow-group-logo-in"><img src="{{asset('dashboard/img/logo-2.png')}}" alt=""></a>
 </div>
 <div class="follow-group-name">
 <a href="#">KIPP Foundation</a>
@@ -705,7 +705,7 @@ Follow
 <div class="col">
 <article class="follow-group">
 <div class="follow-group-logo">
-<a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
+<a href="#" class="follow-group-logo-in"><img src="{{asset('dashboard/img/logo-2.png')}}" alt=""></a>
 </div>
 <div class="follow-group-name">
 <a href="#">KIPP Foundation</a>
@@ -721,7 +721,7 @@ Follow
 <div class="col">
 <article class="follow-group">
 <div class="follow-group-logo">
-<a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
+<a href="#" class="follow-group-logo-in"><img src="{{asset('dashboard/img/logo-2.png')}}" alt=""></a>
 </div>
 <div class="follow-group-name">
 <a href="#">KIPP Foundation</a>
@@ -737,7 +737,7 @@ Follow
 <div class="col">
 <article class="follow-group">
 <div class="follow-group-logo">
-<a href="#" class="follow-group-logo-in"><img src="img/logo-2.png" alt=""></a>
+<a href="#" class="follow-group-logo-in"><img src="{{asset('dashboard/img/logo-2.png')}}" alt=""></a>
 </div>
 <div class="follow-group-name">
 <a href="#">KIPP Foundation</a>
@@ -765,7 +765,7 @@ Follow
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-2.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -783,7 +783,7 @@ Follow
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-1.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -801,7 +801,7 @@ Follow
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-3.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -819,7 +819,7 @@ Follow
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-4.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -837,7 +837,7 @@ Follow
 <div class="tbl-row">
 <div class="tbl-cell tbl-cell-photo">
 <a href="#">
-<img src="img/photo-64-2.jpg" alt="">
+<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </a>
 </div>
 <div class="tbl-cell">
@@ -862,7 +862,7 @@ Follow
 <div class="slide">
 <div class="profile-card">
 <div class="profile-card-photo">
-<img src="img/photo-220-1.jpg" alt=""/>
+<img src="{{asset('dashboard/img/avatar-2-256.png')}}" alt=""/>
 </div>
 <div class="profile-card-name">Jackie Tran</div>
 <div class="profile-card-status">Company Founder</div>
@@ -872,7 +872,7 @@ Follow
 <div class="slide">
 <div class="profile-card">
 <div class="profile-card-photo">
-<img src="img/avatar-1-256.png" alt=""/>
+<img src="{{asset('dashboard/img/avatar-2-256.png')}}" alt=""/>
 </div>
 <div class="profile-card-name">Jackie Tran</div>
 <div class="profile-card-status">Company Founder</div>
@@ -882,7 +882,7 @@ Follow
 <div class="slide">
 <div class="profile-card">
 <div class="profile-card-photo">
-<img src="img/avatar-2-256.png" alt=""/>
+<img src="{{asset('dashboard/img/avatar-2-256.png')}}" alt=""/>
 </div>
 <div class="profile-card-name">Sarah Sanchez</div>
 <div class="profile-card-status">Longnameexample<br/>corporation</div>
@@ -892,7 +892,7 @@ Follow
 <div class="slide">
 <div class="profile-card">
 <div class="profile-card-photo">
-<img src="img/avatar-3-256.png" alt=""/>
+<img src="{{asset('dashboard/img/avatar-3-256.png')}}" alt=""/>
 </div>
 <div class="profile-card-name">Sarah Sanchez</div>
 <div class="profile-card-status">Longnameexample<br/>corporation</div>
@@ -908,22 +908,12 @@ Follow
 <div class="people-rel-list">
 <div class="people-rel-list-name"><a href="#">Jackie Tran Anh</a>  /  Designer</div>
 <ul class="people-rel-list-photos">
-<li><a href="#"><img src="img/photo-92-1.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-2.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-3.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/avatar-1-128.png" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-2.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/avatar-2-128.png" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-1.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/avatar-3-128.png" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-3.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-1.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-2.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-3.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-1.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-2.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-3.jpg" alt=""></a></li>
-<li><a href="#"><img src="img/photo-92-1.jpg" alt=""></a></li>
+<li><a href="#"><img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""></a></li>
+<li><a href="#"><img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""></a></li>
+<li><a href="#"><img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""></a></li>
+<li><a href="#"><img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""></a></li>
+<li><a href="#"><img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""></a></li>
+<li><a href="#"><img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""></a></li>
 </ul>
 <form class="site-header-search">
 <input type="text" placeholder="Search for people"/>
