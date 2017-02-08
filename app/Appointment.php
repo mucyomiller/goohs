@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Appointment extends Model
 {
-    protected $fillable = ['checkup_reason', 'date', 'start_time', 'end_time', 'approved', 'user_id', 'patient_id', 'clinic_id'];
+    protected $fillable = ['hospital_id', 'patient_id', 'date', 'start_time', 'approved'];
 
 
     // Relationships
@@ -24,12 +24,7 @@ class Appointment extends Model
     {
         return $this->hasOne('App\Prescription');
     }
-
-    // public function timeslot()
-    // {
-    //     return $this->belongsTo('App\Timeslot', 'timeslot_id');
-    // }
-
+    
     public function vitalsign()
     {
         return $this->hasOne('App\Vitalsign');

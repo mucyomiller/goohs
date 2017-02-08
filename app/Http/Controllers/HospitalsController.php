@@ -7,9 +7,9 @@ use Validator;
 use Hash;
 use Mail;
 use URL;
-use App\Clinic;
+use App\Hospital;
 use App\User;
-class ClinicsController extends Controller
+class HospitalsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class ClinicsController extends Controller
      */
     public function index()
     {
-        $clinics = Clinic::paginate(10);
-        return view('dashboard.clinics.index')->with(['clinics'=>$clinics]);
+        $hospitals = Hospital::paginate(10);
+        return view('dashboard.clinics.index')->with(['clinics'=>$hospitals]);
     }
 
     /**
@@ -55,7 +55,7 @@ class ClinicsController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $clinic = Clinic::create(['name' => $data['clinic_name'], 'address' => $data['clinic_address']]);
+        $clinic = Hospital::create(['name' => $data['clinic_name'], 'address' => $data['clinic_address']]);
 
         $User = new User();
         $User->clinic_id = $clinic->id;
@@ -114,7 +114,7 @@ class ClinicsController extends Controller
      */
     public function show($id)
     {
-        $clinic = Clinic::find($id);
+        $clinic = Hospital::find($id);
         $admin = User::where('role', 'Administrator')->where('clinic_id', $clinic->id)->first();
         return view('dashboard.clinics.show')->with(['clinic'=>$clinic, 'admin'=>$admin]);
     }
@@ -127,7 +127,7 @@ class ClinicsController extends Controller
      */
     public function edit($id)
     {
-        $clinic = Clinic::find($id);
+        $clinic = Hospital::find($id);
         $admin = User::where('role', 'Administrator')->where('clinic_id', $clinic->id)->first();
         return view('dashboard.clinics.edit')->with(['clinic'=>$clinic, 'admin'=>$admin]);
     }
@@ -142,7 +142,7 @@ class ClinicsController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $clinic = Clinic::findOrFail($id);
+        $clinic = Hospital::findOrFail($id);
         $admin = User::where('role', 'Administrator')->where('clinic_id', $clinic->id)->first();
 
         if ($data['email'] !== $admin->email) {
@@ -203,7 +203,7 @@ class ClinicsController extends Controller
      */
     public function destroy($id)
     {
-        Clinic::destroy($id);
+        Hospital::destroy($id);
         return redirect()->route('dashboard.clinics.index');
     }
 }

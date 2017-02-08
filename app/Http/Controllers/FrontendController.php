@@ -34,4 +34,7 @@ class FrontendController extends Controller
     	//get all doctors
     	return view('frontend.doctors');
     }
+    public function contact(){
+        return view('frontend.contact');
+    }
 }

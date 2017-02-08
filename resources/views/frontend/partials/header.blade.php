@@ -157,4 +157,22 @@
 </div>
 <!-- =========================
      END MAIN MENU
-============================== -->    
+============================== -->
+
+<!-- =============================
+     SWEET ALERT GLOBAL  MESSAGE
+============================== -->
+
+@if(request()->session()->has('message'))
+<script type="text/javascript">
+$(document).ready(function() {
+    swal({
+        title: "Thanks!",
+        text: "You clicked the button!",
+        type: "success",
+        confirmButtonClass: "btn-success",
+        confirmButtonText: "Success"
+    });
+});
+</script>
+@endif

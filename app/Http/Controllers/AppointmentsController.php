@@ -12,7 +12,7 @@ use App\Timeslot;
 class AppointmentsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the appointments.
      *
      * @return \Illuminate\Http\Response
      */
@@ -22,7 +22,7 @@ class AppointmentsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new appoitments.
      *
      * @return \Illuminate\Http\Response
      */
@@ -39,17 +39,21 @@ class AppointmentsController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($data = $request->all(), Appointment::$rules);
+        //storing newly created Appointment
+        $this->validate([
+            'hospital_id' => 'required|numeric|exists:hospitals,id',
+            'patient_id'  => 'required|numeric|exists:patients,patientID',
+            'date'        => 'required|date',
+            'start_time'  => 'required|date_format:H:i:A',
+            ]);
 
-        if ($validator->fails())
-        {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-        $data['time'] = Timeslot::findOrFail($data['timeslot_id'])->slot;
-        $data['clinic_id'] = Auth::user()->clinic_id;
-        Appointment::create($data);
-
-        return redirect()->route('appointments.index');
+        Appointment::create([
+            'hospital_id' => $request->input('hospital_id'),
+            'patient_id'  => $request->input('patient_id'), 
+            'date'        => $request->input('date'), 
+            'start_time'  => $request->input('start_time'),
+            ]);
+        return redirect()->back()->with(['message'=>'Appointment Successful saved!']);
     }
 
     /**

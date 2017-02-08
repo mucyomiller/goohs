@@ -44,7 +44,8 @@ $factory->define(App\Patient::class, function (Faker\Generator $faker) {
 });
 $factory->define(App\Appointment::class, function (Faker\Generator $faker) {
     return [
-        'checkup_reason' => $faker->text(15),
+        'hospital_id'     => $faker->randomNumber($nbDigits = 1),
+        'patient_id'      => $faker->randomNumber($nbDigits = 1),
         'date' =>   $faker->dateTimeInInterval(
                     $startDate = '-1 days',
                     $interval = '+ 5 days',
@@ -53,9 +54,6 @@ $factory->define(App\Appointment::class, function (Faker\Generator $faker) {
         'start_time'      => $faker->time($format = 'H:i:s', $max = 'now'),
         'end_time'        => $faker->time($format = 'H:i:s', $max = '+2 hours'),
         'approved'        => $faker->boolean(),
-        'user_id' 		  => $faker->numberBetween(1,6),
-        'patient_id' 	  => $faker->randomNumber($nbDigits = 1),
-        'clinic_id'	      => $faker->randomNumber($nbDigits = 1),
     ];
 });
 

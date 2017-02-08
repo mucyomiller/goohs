@@ -6,10 +6,6 @@ use Illuminate\Http\Request;
 use App\Contact;
 class ContactController extends Controller
 {
-    public function index()
-    {
-     return view('frontend.contact');
-    }
 
     public function contactSend(Request $request)
     {

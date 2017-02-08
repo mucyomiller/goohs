@@ -12,7 +12,7 @@
 */
 Route::get('/',['as'=>'index','uses'=>'FrontendController@index']);
 Route::get('about',['as'=>'about','uses'=>'FrontendController@about']);
-Route::get('contact',['as'=>'contact','uses'=>'ContactController@index']);
+Route::get('contact',['as'=>'contact','uses'=>'FrontendController@index']);
 Route::get('services',['as'=>'services','uses'=>'FrontendController@services']);
 Route::get('doctor',['as'=>'doctor','uses'=>'FrontendController@doctor']);
 Route::get('doctors',['as'=>'doctors','uses'=>'FrontendController@doctors']);
@@ -21,7 +21,7 @@ Route::post('contactsend',['as'=>'contactSend','uses'=>'ContactController@contac
 Auth::routes();
 
 //backend routes
-Route::group(['prefix'=>'backend','middleware' => ['auth']],function(){
+Route::group(['prefix'=>'backend','middleware' => ['auth'], 'except'=>['AppointmentsController@store']],function(){
     Route::get('/',['as'=>'backend.index','uses'=>'HomeController@index']);
     Route::resource('profile','ProfileController');
     Route::get('pdf_test',['as'=>'backend.pdf_test','uses'=>'HomeController@pdf_test']);
