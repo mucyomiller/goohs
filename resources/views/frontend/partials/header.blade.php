@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="goohs online & offline health  services">
-<meta name="keywords" content="goohs, Rwanda, Health system, Appointment">
+<meta name="description" content="e-vuze online & offline health  services">
+<meta name="keywords" content="e-vuze, Rwanda, Health system">
 <meta name="author" content="computer geek tech">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- SITE TITLE -->
-<title>GOOHS - Health System</title>
+<title>e-vuze - Health System</title>
 
 <!--=========================
       FAV AND TOUCH ICONS  
@@ -55,7 +55,7 @@
                     <a href="#"><i class="fa fa-skype"></i></a> 
                 </div>
                 <div class="top-bar-mail">
-                    <i class="fa fa-envelope"></i> <a href="#">care@goohs.com</a>
+                    <i class="fa fa-envelope"></i> <a href="#">care@e-vuze.com</a>
                 </div>
 			</div>
 			
@@ -78,7 +78,7 @@
 			<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
                 <div class="header-logo">
                     <a href="#"><img src="{{asset('images/logo.svg')}}" alt="" />
-                        <span class="bold600 color-child-6">GOO</span><span class="color-child-5">HS</span>
+                        <span class="bold600 color-child-6">e-</span><span class="color-child-5">vuze</span>
                     </a>
                 </div>
 			</div>
@@ -111,7 +111,7 @@
                 <div class="mobile-bar-cont">
                     <div class="top-menu-logo">
                         <a href="#"><img src="{{asset('images/logo.svg')}}" alt="" />
-                            <span class="bold600 color-child-6">GOO</span><span class="color-child-5">HS</span>
+                            <span class="bold600 color-child-6">e-</span><span class="color-child-5">vuze</span>
                         </a>
                     </div>
                     <div class="mobile-bar">

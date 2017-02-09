@@ -1,3 +1,4 @@
+
 @extends('frontend.theme')
 @section('content')
 <!-- =========================
@@ -15,7 +16,7 @@ data-src="{{asset('images/slide_01.jpg')}}" />
     data-position="leftCenter" data-horizontal="15" data-vertical="-370" 
     data-show-transition="left" data-hide-transition="left"
     data-show-delay="0" data-hide-delay="0">
-    Welcome GOOHS 
+    Welcome to E-VUZE 
 </h3>
 
 <h1 class="sp-layer slider-title" 
@@ -217,7 +218,7 @@ ABOUT
 
 <!-- ABOUT TEXT -->
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 about-text">
-<h2 class="section-title"><span class="bold700">ABOUT</span> GOOHS</h2>
+<h2 class="section-title"><span class="bold700">ABOUT</span> E-VUZE</h2>
 <p>We provide team-based, comprehensive dental care for children and adults, including patients of all ages who are anxious or have an underlying developmental or medical condition that may add complexity to the management of their oral health.</p>
 <ul class="text-list">
 <li>General Dentistry - preventative and restorative dental care.</li>
@@ -500,7 +501,7 @@ NUMBERS
 <div class="container">
 <div class="row">
 
-<h2 class="section-title"><span class="bold700">GOOHS</span> in numbers</h2>
+<h2 class="section-title"><span class="bold700">E-VUZE</span> in numbers</h2>
 <p class="section-subtitle">We can talk for a long time about advantages of our Dental clinic before other medical treatment facilities.<br> But you can read the following facts in order to make sure of all pluses of our clinic:</p>
 
 <!-- NUMBERS ITEM -->

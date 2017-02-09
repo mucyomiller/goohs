@@ -13,7 +13,7 @@
                         <h3 class="footer-title footer-title-line"><i class="fa fa-twitter"></i> LATEST TWEETS</h3>
                         <div class="tweet">
                             <div class="tweet-login">
-                                <a href="#">@goohs</a>
+                                <a href="#">@e-vuze</a>
                             </div>
                             <div class="tweet-text">
                                 Lorem ipsum dolro lobortis quobortisnissim pulvinar ac Lorem.
@@ -24,7 +24,7 @@
                         </div>
                         <div class="tweet">
                             <div class="tweet-login">
-                                <a href="#">@goohs</a>
+                                <a href="#">@e-vuze</a>
                             </div>
                             <div class="tweet-text">
                                 Lorem ipsum dolro lobortis quobortisnissim pulvinar ac Lorem.
@@ -35,7 +35,7 @@
                         </div>
                         <div class="tweet">
                             <div class="tweet-login">
-                                <a href="#">@goohs</a>
+                                <a href="#">@e-vuze</a>
                             </div>
                             <div class="tweet-text">
                                 Lorem ipsum dolro lobortis quobortisnissim pulvinar ac Lorem.
@@ -78,7 +78,7 @@
                             <i class="flaticon-navigation-arrow"></i> Kigali Rwanda PO Box xxx, KG, ST xx
                         </div>
                         <div class="footer-item-3-mail">
-                            <i class="fa fa-envelope"></i> <a href="#">care@goohs.com</a>
+                            <i class="fa fa-envelope"></i> <a href="#">care@e-vuze.com</a>
                         </div>
                         <div class="footer-item-3-socials">
                             <a href="#"><i class="fa fa-facebook"></i></a> 
@@ -89,7 +89,7 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-copyright">
                         <div>
-                            <center>Copyright &copy; {{date('Y')}} <a href="#" target="_blank">GOOHS</a> &nbsp;&nbsp;&nbsp;Product of &nbsp;<a href="#" target="_blank">COMPUTER GEEKS TECH</a></center>
+                            <center>Copyright &copy; {{date('Y')}} <a href="#" target="_blank">e-vuze</a> &nbsp;&nbsp;&nbsp;Product of &nbsp;<a href="#" target="_blank">COMPUTER GEEKS TECH</a></center>
                         </div>
                     </div>
                 </div>
