@@ -40,7 +40,7 @@ class AppointmentsController extends Controller
     public function store(Request $request)
     {
         //storing newly created Appointment
-        $this->validate([
+        $this->validate($request,[
             'hospital_id' => 'required|numeric|exists:hospitals,id',
             'patient_id'  => 'required|numeric|exists:patients,patientID',
             'date'        => 'required|date',

@@ -19,7 +19,12 @@ Route::post('contactsend',['as'=>'contactSend','uses'=>'ContactController@contac
 Auth::routes();
 
 //backend routes
-Route::group(['prefix'=>'backend','middleware' => ['auth'], 'except'=>['AppointmentsController@store']],function(){
+Route::group(['prefix'=>'backend'],function(){
+     Route::resource('appointments', 'AppointmentsController');
+
+     Route::group(['middleware' => 'auth'], function(){
+
+     
     Route::get('/',['as'=>'backend.index','uses'=>'HomeController@index']);
     Route::resource('profile','ProfileController');
     Route::get('pdf_test',['as'=>'backend.pdf_test','uses'=>'HomeController@pdf_test']);
@@ -56,7 +61,6 @@ Route::group(['prefix'=>'backend','middleware' => ['auth'], 'except'=>['Appointm
 
     Route::resource('dutydays', 'DutydaysController');
 
-    Route::resource('appointments', 'AppointmentsController');
     Route::get('patients_reporting', ['as'=>'backend.patients_reporting','uses'=>'PatientsController@patients_reporting']);
 
     Route::get('app_vitals',['as'=>'backend.app_vitals','uses'=>
@@ -121,4 +125,5 @@ Route::group(['prefix'=>'backend','middleware' => ['auth'], 'except'=>['Appointm
 	Route::group(['prefix' => 'doctor'], function() {
 	    //
 	});
+});
 });
