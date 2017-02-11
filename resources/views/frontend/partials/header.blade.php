@@ -131,19 +131,9 @@
                             <li><a href="{{route('services')}}">Oral exams</a></li>
                             <li><a href="{{route('services')}}">Teeth whitening</a></li>
                             <li><a href="{{route('services')}}">Teeth cleaning</a></li>
-                            <li><a href="{{route('services')}}">X-rays</a></li>
                             <li><a href="{{route('services')}}">Crowns</a></li>
-                            <li><a href="{{route('services')}}">Fillings and bridges</a></li>
-                            <li><a href="{{route('services')}}">Implants</a></li>
                             <li><a href="{{route('services')}}">Root canals</a></li>
                             <li><a href="{{route('services')}}">Surgical implant placements</a></li>
-                        </ul>
-                    </li>
-					<li class="dropdown">
-                        <a data-toggle="dropdown" href="#">OUR DOCTORS</a>
-                        <ul class="dropdown-menu" role="menu">
-							<li><a href="{{route('doctors')}}">Our doctors</a></li>
-                            <li><a href="{{route('doctor')}}">Doctor</a></li>
                         </ul>
                     </li>
                     <li><a href="{{url('login')}}">LOGIN</a></li>
