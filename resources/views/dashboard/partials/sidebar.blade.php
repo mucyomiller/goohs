@@ -142,7 +142,7 @@
 </ul>
 </li>
 <li class="magenta opened">
-<a href="{{url('#')}}">
+<a href="{{route('schedule.index')}}">
 <i class="font-icon font-icon-calend"></i>
 <span class="lbl">Schedules</span>
 </a>

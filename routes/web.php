@@ -53,7 +53,6 @@ Route::group(['prefix'=>'backend'],function(){
     Route::resource('prescriptions', 'PrescriptionsController');
 
     Route::resource('medicines', 'MedicinesController');
-    Route::resource('clinics', 'ClinicsController');
 
     // Medical Record Routes
     Route::get('search_pmr', ['as'=>'backend.search_pmr','uses'=>'HomeController@showSearchPMR']);
@@ -80,6 +79,9 @@ Route::group(['prefix'=>'backend'],function(){
     Route::resource('checkupfees', 'CheckupfeesController');
 
     Route::resource('testfees', 'TestfeesController');
+
+       // Doctor Routes
+    Route::resource('schedule','SchedulesController');
 
     // PDF Reports
     Route::any('print_pres', ['uses' => 'HomeController@print_pres']);  // Prescription PDF
