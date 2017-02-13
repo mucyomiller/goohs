@@ -185,6 +185,58 @@
     END POPUP FORMS
 ============================== -->
 
+<!-- ===================================
+    POPUP FORMS FOR Taking Number
+===================================== -->
+<div class="bookform bookform-1" id="bookform2">
+    <div class="bookform-left">
+        <h2 class="section-title"><span class="bold700">TAKE  NUMBER</span></h2>
+                <form method="post" action="{{ route('appointments.store') }}">
+                    {{ csrf_field() }}
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item f-doctor">
+                            <select id="form-doctor" class="form-doctor" name="hospital_id">
+                                <option selected="selected">Select hospital</option>
+                                @foreach($hospitals as $hospital)
+                                <option value="{{$hospital->id}}">{{$hospital->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item name">
+                            <input type="text" name="patient_id" id="name1" data-validation="required" placeholder="Your Patient ID" />
+                            <div class="help help-sm help-red">!</div>
+                        </div>
+                    </div>    
+                    <div class="row latest-row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item">
+                            <button type="submit" class="btn btn-primary">Send</button>
+                            <a class="fb-close" id="fb-close1" href="javascript:jQuery.fancybox.close();">Cancel</a>
+                        </div>
+                    </div>
+                    
+                </form>
+    </div>
+    <div class="bookform-right">
+        
+        <div class="bookform-right-info-1">
+            <h5>Please select a hospital</h5>
+            Here are  lists of all hospitals or clinics you can choose. 
+            
+        </div>
+        
+        <div class="bookform-right-info-2">
+            We are working hard to work with some many hospital/clinic if yours is not available feel free to tell us maybe next time will be available. 
+        </div>
+        
+    </div>
+</div
+<!-- =========================
+    END POPUP Numbering
+============================== -->
+
 <div class="totop" id="totop">
     <i class="fa fa-angle-up"></i>
 </div>

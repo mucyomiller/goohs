@@ -85,6 +85,9 @@
 			
             <!-- HEADER BUTTONS -->
 			<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+               <div class="header-button" style="padding-left: 10px;">
+                    <a href="#bookform2" class="fancybox-2 btn btn-default"><span class="plus">~</span> TAKE NUMBER</a>
+                </div>
                 <div class="header-button">
                     <a href="#bookform1" class="fancybox-2 btn btn-default"><span class="plus">+</span> MAKE AN APPOINTMENT</a>
                 </div>
