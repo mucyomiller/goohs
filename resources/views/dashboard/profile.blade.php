@@ -930,7 +930,7 @@ Follow
 </div><!--.page-content-->
 @endsection
 @push('scripts')
-<script src="js/lib/slick-carousel/slick.min.js"></script>
+<script src="{{asset("dashboard/js/lib/slick-carousel/slick.min.js")}}"></script>
 <script>
 $(function () {
 $(".profile-card-slider").slick({

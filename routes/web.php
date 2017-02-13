@@ -53,7 +53,7 @@ Route::group(['prefix'=>'backend'],function(){
     Route::resource('prescriptions', 'PrescriptionsController');
 
     Route::resource('medicines', 'MedicinesController');
-    Route::resource('clinics', 'ClinicsController');
+    Route::resource('hospitals', 'HospitalsController');
 
     // Medical Record Routes
     Route::get('search_pmr', ['as'=>'backend.search_pmr','uses'=>'HomeController@showSearchPMR']);

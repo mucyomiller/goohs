@@ -17,6 +17,7 @@ class CreateHospitalsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('location');
+            $table->integer('quota_per_day');
             $table->boolean('is_activated')->default(0);
             $table->timestamps();
         });

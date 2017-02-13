@@ -7,7 +7,7 @@
 </a>
 </li>
 <li class="blue">
-<a href="#">
+<a href="{{ route('patients.index') }}">
 <i class="font-icon font-icon-heart"></i>
 <span class="lbl">My Patient info</span>
 </a>

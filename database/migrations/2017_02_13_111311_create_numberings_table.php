@@ -16,7 +16,8 @@ class CreateNumberingsTable extends Migration
         Schema::create('numberings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('hospital_id')->unsigned();
-            $table->
+            $table->string('patient_id');
+            $table->integer('queue_no');
             $table->timestamps();
         });
     }

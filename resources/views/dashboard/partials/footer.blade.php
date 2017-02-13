@@ -1,4 +1,7 @@
 <script src="{{asset('dashboard/js/lib/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('dashboard/js/lib/jScrollPane/jquery.jscrollpane.min.js')}}"></script>
+<script src="{{asset('dashboard/js/lib/jScrollPane/jquery.mousewheel.js')}}"></script>
+<script src="{{asset('dashboard/js/lib/jScrollPane/mwheelIntent.js')}}"></script>
 <script src="{{asset('dashboard/js/lib/tether/tether.min.js')}}"></script>
 <script src="{{asset('dashboard/js/lib/bootstrap/bootstrap.min.js')}}"></script>
 <script src="{{asset('dashboard/js/plugins.js')}}"></script>

@@ -18,9 +18,9 @@ class PatientsController extends Controller
      */
     public function index(Request $request)
     {
-        $patients = Patient::all()->paginate(10);
+        $patient = Patient::where('id', $request->user()->id)->first();
         return view('dashboard.patients.index')
-        ->with(['patients'=>$patients]);
+        ->with(['patients'=>$patient]);
     }
 
     /**
