@@ -21,7 +21,7 @@
 <!--=========================
 #   STYLESHEETS              #
 ===========================-->
-
+<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{asset('css/master.css')}}" />
 
 </head>
@@ -42,7 +42,7 @@
 			<!-- TOP BAR LEFT -->
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <div class="top-bar-adress">
-                    <i class="flaticon-navigation-arrow"></i> Kigali Rwanda PO Box xxx, KG, ST xx
+                    <i class="flaticon-navigation-arrow"></i> Kigali Rwanda
                 </div>
 			</div>
 			
@@ -55,7 +55,7 @@
                     <a href="#"><i class="fa fa-skype"></i></a> 
                 </div>
                 <div class="top-bar-mail">
-                    <i class="fa fa-envelope"></i> <a href="#">care@e-vuze.com</a>
+                    <i class="fa fa-envelope"></i> <a href="#">info@e-vuze.com</a>
                 </div>
 			</div>
 			
@@ -128,17 +128,6 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{route('index')}}" class="active">HOME</a></li>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" href="{{route('services')}}">SERVICES</a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{route('services')}}">Oral exams</a></li>
-                            <li><a href="{{route('services')}}">Teeth whitening</a></li>
-                            <li><a href="{{route('services')}}">Teeth cleaning</a></li>
-                            <li><a href="{{route('services')}}">Crowns</a></li>
-                            <li><a href="{{route('services')}}">Root canals</a></li>
-                            <li><a href="{{route('services')}}">Surgical implant placements</a></li>
-                        </ul>
-                    </li>
                     <li><a href="{{url('login')}}">LOGIN</a></li>
                     <li><a href="{{url('register')}}">REGISTER</a></li>
                     <li><a href="{{route('about')}}">ABOUT US</a></li>

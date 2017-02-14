@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Province;
+use App\District;
+use App\Sector;
+use App\Cell;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +20,17 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('provinces',function(){
+		$provinces = Province::all();
+		return response()->json($provinces);
+});
+Route::get('districts/{province_id}', function($id){
+		$districts = District::where('province_id',$id)->get();
+		return response()->json($districts);
+})->where('province_id', '[1-5]+');
+
+Route::get('sectors/{district_id}', function($id){
+		$sectors = Sector::where('district_id',$id)->get();
+		return response()->json($sectors);
+})->where('district_id', '[0-9]+');
 

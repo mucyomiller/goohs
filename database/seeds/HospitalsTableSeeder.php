@@ -14,17 +14,17 @@ class HospitalsTableSeeder extends Seeder
     	DB::table('hospitals')->truncate();
         $hospitals = [
                         [
-                            'name' => 'KHI Clinic',
+                            'name' => 'UR CMHS Polyclinic',
                             'location' => 'Kigali Rwanda',
                             'quota_per_day' => 100,
                             'is_activated' => 1
                         ],
-                        [
-                            'name' => 'CHUK Hospital',
-                            'location' => 'Kigali Rwanda',
-                            'quota_per_day' => 2000,
-                            'is_activated' => 1
-                        ]
+                        // [
+                        //     'name' => 'CHUK Hospital',
+                        //     'location' => 'Kigali Rwanda',
+                        //     'quota_per_day' => 2000,
+                        //     'is_activated' => 1
+                        // ]
                     ];
 
       foreach($hospitals as $hospital){

@@ -16,39 +16,18 @@
                                 <a href="#">@e-vuze</a>
                             </div>
                             <div class="tweet-text">
-                                Lorem ipsum dolro lobortis quobortisnissim pulvinar ac Lorem.
+                                No tweets.
                             </div>
                             <div class="tweet-date">
-                                03.10.2016
-                            </div>
-                        </div>
-                        <div class="tweet">
-                            <div class="tweet-login">
-                                <a href="#">@e-vuze</a>
-                            </div>
-                            <div class="tweet-text">
-                                Lorem ipsum dolro lobortis quobortisnissim pulvinar ac Lorem.
-                            </div>
-                            <div class="tweet-date">
-                                03.10.2016
-                            </div>
-                        </div>
-                        <div class="tweet">
-                            <div class="tweet-login">
-                                <a href="#">@e-vuze</a>
-                            </div>
-                            <div class="tweet-text">
-                                Lorem ipsum dolro lobortis quobortisnissim pulvinar ac Lorem.
-                            </div>
-                            <div class="tweet-date">
-                                03.10.2016
+                                {{ date('d-m-Y')}}
                             </div>
                         </div>
                     </div>
                     
                     <!-- FOOTER ITEM 2 -->
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-item footer-item-2">
-                        <h3 class="footer-title footer-title-line"><i class="fa fa-clock-o"></i> OPENING HOURS</h3>
+                        <h3 class="footer-title footer-title-line"><i class="fa fa-home"></i> HOSPITALS / CLINICS</h3>
+                        <h3 style="color:white;font-family: 'Sansita', sans-serif;">UR Polyclinc:</h3>
                         <div class="opening-left">
                             Monday<br>
                             Tuesday<br>
@@ -59,13 +38,13 @@
                             Sunday       
                         </div>
                         <div class="opening-right">
+                            7:00 am - 7:00 pm<br>
+                            7:00 am - 7:00 pm<br>
+                            7:00 am - 7:00 pm<br>
+                            7:00 am - 7:00 pm<br>
+                            7:00 am - 7:00 pm<br>
+                            7:00 am - 7:00 pm<br>
                             Closed<br>
-                            9:00 am - 7:15 pm<br>
-                            9:00 am - 7:15 pm<br>
-                            9:00 am - 7:15 pm<br>
-                            9:00 am - 7:15 pm<br>
-                            9:00 am - 7:15 pm<br>
-                            Closed
                         </div>
                     </div>
                     <!-- FOOTER ITEM 3 -->
@@ -75,10 +54,10 @@
                             <i class="fa fa-phone"></i> +2507817-27018
                         </div>
                         <div class="footer-item-3-location">
-                            <i class="flaticon-navigation-arrow"></i> Kigali Rwanda PO Box xxx, KG, ST xx
+                            <i class="flaticon-navigation-arrow"></i> Kigali Rwanda
                         </div>
                         <div class="footer-item-3-mail">
-                            <i class="fa fa-envelope"></i> <a href="#">care@e-vuze.com</a>
+                            <i class="fa fa-envelope"></i> <a href="#">info@e-vuze.com</a>
                         </div>
                         <div class="footer-item-3-socials">
                             <a href="#"><i class="fa fa-facebook"></i></a> 

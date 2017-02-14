@@ -12,7 +12,7 @@
 */
 Route::get('/',['as'=>'index','uses'=>'FrontendController@index']);
 Route::get('about',['as'=>'about','uses'=>'FrontendController@about']);
-Route::get('contact',['as'=>'contact','uses'=>'FrontendController@index']);
+Route::get('contact',['as'=>'contact','uses'=>'FrontendController@contact']);
 Route::get('services',['as'=>'services','uses'=>'FrontendController@services']);
 Route::post('subscribe',['as'=>'subscribe','uses'=>'NewsLetterController@subscribe']); 
 Route::post('contactsend',['as'=>'contactSend','uses'=>'ContactController@contactsend']);
