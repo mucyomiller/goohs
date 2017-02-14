@@ -56,8 +56,7 @@
 	<div class="col-sm-3">
 		<select id="province" class="wide">
 			<option data-display="Select"></option>
-			<option value="female">female</option>
-			<option value="male">male</option>
+			<option value="">Not Available now</option>
 		</select>
 	</div>
 </div>
@@ -66,8 +65,7 @@
 	<div class="col-sm-3">
 		<select id="district" class="wide">
 			<option data-display="Select"></option>
-			<option value="female">female</option>
-			<option value="male">male</option>
+			<option value="">Not Available now</option>
 		</select>
 	</div>
 </div>
@@ -76,8 +74,7 @@
 	<div class="col-sm-3">
 		<select id="sector" class="wide">
 			<option data-display="Select"></option>
-			<option value="female">female</option>
-			<option value="male">male</option>
+			<option value="">Not Available now</option>
 		</select>
 	</div>
 </div>
