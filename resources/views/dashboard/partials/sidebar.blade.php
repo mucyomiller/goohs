@@ -261,7 +261,7 @@
 <ul>
 <li>
 <a href="#">
-<span class="lbl">Messages</span><span class="label label-custom label-pill label-danger">8</span>
+<span class="lbl">Messages</span><span class="label label-custom label-pill">0</span>
 </a>
 </li>
 </ul>

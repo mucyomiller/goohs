@@ -82,7 +82,7 @@ aria-expanded="false">
 <li class="nav-item">
 <a class="nav-link active" data-toggle="tab" href="#tab-incoming" role="tab">
 Inbox
-<span class="label label-pill label-danger">8</span>
+<span class="label label-pill">0</span>
 </a>
 </li>
 </ul>
@@ -92,18 +92,6 @@ Inbox
 </div>
 <div class="tab-content">
 <div class="tab-pane active" id="tab-incoming" role="tabpanel">
-<div class="dropdown-menu-messages-list">
-<a href="#" class="mess-item">
-<span class="avatar-preview avatar-preview-32"><img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""></span>
-<span class="mess-item-name">Christian Burton</span>
-<span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something.</span>
-</a>
-<a href="#" class="mess-item">
-<span class="avatar-preview avatar-preview-32"><img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""></span>
-<span class="mess-item-name">Christian Burton</span>
-<span class="mess-item-txt">Morgan was bothering about something...</span>
-</a>
-</div>
 </div>
 </div>
 <div class="dropdown-menu-notif-more">
