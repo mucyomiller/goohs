@@ -23,6 +23,7 @@
 <div class="box-typical box-typical-padding">
 <h5 class="m-t-lg with-border">Complete Your Patient Information Form</h5>
 <form  action="#" method="post">
+{{ csrf_field() }}
 <div class="form-group row">
 <label for="inputPassword" class="col-sm-2 form-control-label">Fathername</label>
 <div class="col-sm-10">
