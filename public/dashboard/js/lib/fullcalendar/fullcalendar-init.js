@@ -22,7 +22,7 @@ $(document).ready(function(){
         eventLimit: true, // allow "more" link when too many events
         events: [
             {
-                title: 'Meet Mucyo',
+                title: 'Meet Doctor',
                 start: '2016-12-12'
             },
             {

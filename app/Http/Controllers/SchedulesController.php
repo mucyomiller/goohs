@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Appointment;
 
 class SchedulesController extends Controller
 {
@@ -13,7 +14,9 @@ class SchedulesController extends Controller
      */
     public function index()
     {
-        return view('dashboard.doctor.scheduler');
+        $appointments=Appointment::All();
+       // dd($appointments);
+        return view('dashboard.doctor.scheduler')->with(['appointments'=>$appointments]);
     }
 
     /**

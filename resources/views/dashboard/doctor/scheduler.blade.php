@@ -16,7 +16,7 @@
 							<div id='calendar'></div>
 						</div><!--.calendar-page-content-in-->
 					</div><!--.calendar-page-content-->
-
+                     
 					<div class="calendar-page-side">
 						<section class="calendar-page-side-section">
 							<div class="calendar-page-side-section-in">
@@ -25,7 +25,7 @@
 						</section>
 
 						<section class="calendar-page-side-section">
-							<header class="box-typical-header-sm">Surgery on march 18</header>
+							<header class="box-typical-header-sm">Today Appointment</header>
 							<div class="calendar-page-side-section-in">
 								<ul class="exp-timeline">
 									<li class="exp-timeline-item">
@@ -49,22 +49,6 @@
 									<li>
 										<div class="color-double green"><div></div></div>
 										Appointments
-									</li>
-									<li>
-										<div class="color-double"><div></div></div>
-										Meetings
-									</li>
-									<li>
-										<div class="color-double orange"><div></div></div>
-										Supervision
-									</li>
-									<li>
-										<div class="color-double red"><div></div></div>
-										Surgey
-									</li>
-									<li>
-										<div class="color-double coral"><div></div></div>
-										Training
 									</li>
 								</ul>
 							</div>
