@@ -17,6 +17,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'names' => $faker->name, //i will add uui
         'email' => $faker->unique()->safeEmail,
+        'idnumber' => $faker->tollFreePhoneNumber,
         'phone' => $faker->tollFreePhoneNumber,
         'password' => $password ?: $password = bcrypt('secret'),
         'active'   =>  $faker->boolean,

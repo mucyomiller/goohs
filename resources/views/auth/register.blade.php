@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Goohs - register</title>
+<title>e-vuze - register</title>
 <link href="{{asset('images/favicon.png')}}" rel="icon" type="image/png">
 <link href="{{asset('images/favicon.ico')}}" rel="shortcut icon">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -34,8 +34,17 @@ value="{{ old('names') }}" />
 </span>
 @endif
 </div>
+<div class="form-group {{ $errors->has('idnumber') ? ' has-error' : '' }}">
+<input type="text" class="form-control" placeholder="Idnumber or passport"  name="idnumber"
+value="{{ old('idnumber') }}" />
+@if ($errors->has('idnumber'))
+<span class="help-block">
+<strong>{{ $errors->first('idnumber') }}</strong>
+</span>
+@endif
+</div>
 <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
-<input type="text" class="form-control" name="email" placeholder="E-Mail" 
+<input type="text" class="form-control" name="email" placeholder="E-Mail (Optional)" 
 value="{{ old('email') }}" />
 @if ($errors->has('email'))
 <span class="help-block">

@@ -8,6 +8,8 @@ use Hash;
 use Mail;
 use Validator;
 use App\User;
+use App\Employee;
+
 class UsersController extends Controller
 {
     /**
@@ -17,7 +19,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $employees = User::where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        $employees = Employee::where('hospital_id', Auth::user()->employee->hospital_id)->paginate(10);
 
         return view('dashboard.employees.index')->with(['employees'=>$employees]);
     }
@@ -111,7 +113,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $employee = User::findOrFail($id);
+        $employee = Employee::findOrFail($id);
         return view('dashboard.employees.show')->with(['employee'=>$employee]);
     }
 

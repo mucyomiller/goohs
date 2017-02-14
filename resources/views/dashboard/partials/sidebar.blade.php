@@ -20,8 +20,8 @@
 </span>
 <ul>
 <li>
-<a href="{{route('clinics.index')}}">
-<span class="lbl">Manage Clinics</span><span class="label label-custom label-pill label-danger">new</span>
+<a href="{{route('hospitals.index')}}">
+<span class="lbl">Manage Hospitals</span><span class="label label-custom label-pill label-danger">new</span>
 </a>
 </li>
 </ul>
@@ -42,11 +42,6 @@
 <li>
 <a href="{{route('appointments.index')}}">
 <span class="lbl">Manage Appointments</span>
-</a>
-</li>
-<li>
-<a href="{{route('dutydays.index')}}">
-<span class="lbl">Doctor Schedules</span>
 </a>
 </li>
 <li>
@@ -208,11 +203,6 @@
 <li>
 <a href="{{route('appointments.index')}}">
 <span class="lbl">Manage Appointments</span>
-</a>
-</li>
-<li>
-<a href="{{ route('dutydays.index') }}">
-<span class="lbl">Doctor Schedules</span>
 </a>
 </li>
 <li>

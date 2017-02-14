@@ -1,21 +1,7 @@
 @extends('dashboard.theme')
-@push('title')
-Edit Employee
-@endpush
-@push('sub_title')
-<section id="content">
-<div class = "user_logo">
-<div class="header_1 wrap_3 color_3" style="color: #fff; padding-top: 20px">
-Edit Employee
-</div>
-</div>
-<br><br><br>
-@endpush
 @section('content')
-@foreach($errors->all("<p class='error'>:message</p>") as $message)
-{{ $message }}
-@endforeach
-<br/>
+<div class="page-content">
+<div class="container-fluid">
 <center>
 <div style="border: 4px solid #129894; width: 800px; border-radius: 10px; background-color: #EBEBEB">
 
@@ -361,4 +347,6 @@ Female</label>
 {{ Form::close() }}
 </div>
 </center>
+</div>
+</div>
 @endsection

@@ -10,6 +10,7 @@ use App\Prescription;
 use App\Labtest;
 use App\Appointment;
 use App\Checkupfee;
+use App\Record;
 class HomeController extends Controller
 {
     /**
@@ -263,7 +264,7 @@ class HomeController extends Controller
 
 
     public function showSearchPMR(){
-        $patients = Patient::where('clinic_id', Auth::user()->clinic_id)->paginate(10);
+        $patients = Record::where('hospital_id', Auth::user()->employee->hospital_id)->paginate(10);
         return view('dashboard.medical_records.search-pmr')->with(['patients'=>$patients]);
     }
 

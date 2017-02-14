@@ -17,7 +17,8 @@ class CreateUsersTable extends Migration
             $table->increments('id'); //i will add uuid
             $table->string('names');
             $table->string('email')->unique()->nullable();
-            $table->string('phone')->unique()->nullable();
+            $table->string('phone');
+            $table->string('idnumber')->unique();
             $table->string('password');
             $table->boolean('active')->default(0);
             $table->rememberToken();

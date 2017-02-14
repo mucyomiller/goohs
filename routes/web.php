@@ -57,9 +57,6 @@ Route::group(['prefix'=>'backend'],function(){
     // Medical Record Routes
     Route::get('search_pmr', ['as'=>'backend.search_pmr','uses'=>'HomeController@showSearchPMR']);
     Route::any('view_pmr', 'HomeController@showViewPMR');
-
-    Route::resource('dutydays', 'DutydaysController');
-
     Route::get('patients_reporting', ['as'=>'backend.patients_reporting','uses'=>'PatientsController@patients_reporting']);
 
     Route::get('app_vitals',['as'=>'backend.app_vitals','uses'=>
@@ -73,7 +70,6 @@ Route::group(['prefix'=>'backend'],function(){
     Route::get('app_proc',['as'=>'backend.app_proc','uses'=>'HomeController@app_proc']);
 
     Route::get('app_check_fee',['as'=>'backend.app_check_fee','uses'=>'HomeController@app_check_fee']);
-
     Route::get('app_test_fee',['as'=>'backend.app_test_fee','uses'=>'HomeController@app_test_fee']);
 
     Route::resource('checkupfees', 'CheckupfeesController');
