@@ -49,7 +49,7 @@
 <div class="dropdown-menu dropdown-menu-right dropdown-menu-notif" aria-labelledby="dd-notification">
 <div class="dropdown-menu-notif-header">
 Notifications
-<span class="label label-pill label-danger">2</span>
+<span class="label label-pill label-danger">1</span>
 </div>
 <div class="dropdown-menu-notif-list">
 <div class="dropdown-menu-notif-item">
@@ -57,16 +57,8 @@ Notifications
 <img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
 </div>
 <div class="dot"></div>
-<a href="#">Morgan</a> was bothering about something
-<div class="color-blue-grey-lighter">7 hours ago</div>
-</div>
-<div class="dropdown-menu-notif-item">
-<div class="photo">
-<img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt="">
-</div>
-<div class="dot"></div>
-<a href="#">Lioneli</a> had commented on this <a href="#">Super Important Thing</a>
-<div class="color-blue-grey-lighter">7 hours ago</div>
+<a href="#">{{ Auth::user()->names }}</a> welcome to e-vuze 
+<div class="color-blue-grey-lighter">{{ Auth::user()->created_at->diffForHumans() }}</div>
 </div>
 </div>
 <div class="dropdown-menu-notif-more">
