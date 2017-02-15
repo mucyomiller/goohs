@@ -135,7 +135,7 @@ Inbox
 <div class="mobile-menu-right-overlay"></div>
 <div class="site-header-collapsed">
 <div class="site-header-collapsed-in">
-@if(Auth::user()->roles->first())
+@if(Auth::user()->roles->first() && Auth::user()->roles->first()->name != "user")
 <a class="btn btn-nav btn-rounded btn-inline btn-success-outline">
 You're logged in as : <em> {{Auth::user()->roles->first()->name}}</em>
 </a>

@@ -14,8 +14,15 @@
 <img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""/>
 </div>
 <div class="profile-card-name">{{ $user->names }}</div>
-<div class="profile-card-status">User</div>
-<div class="profile-card-location">{{ $user->patient?$user->patient->district->district_name:''}} {{$user->patient?$user->patient->sector->sector_name:''}} {{$user->patient?$user->patient->cell->cell_name:''}}</div>
+<div class="profile-card-status">{{ $user->roles->first()->name}}</div>
+<div class="profile-card-location">
+@if($user->patient)
+District: {{ $user->patient?$user->patient->district->district_name:''}}<br>
+Sector: {{$user->patient?$user->patient->sector->sector_name:''}}<br>
+<!--temporary setted cell_id as cell_name -->
+Cell: {{$user->patient?$user->patient->cell_id:''}}
+@endif
+</div>
 <button type="button" class="btn btn-rounded">Edit</button>
 <div class="btn-group">
 

@@ -1,6 +1,6 @@
 @extends('dashboard.theme')
 @push('styles')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" />
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" /> --}}
 @endpush
 @section('content')
 <div class="page-content">
@@ -22,67 +22,107 @@
 
 <div class="box-typical box-typical-padding">
 <h5 class="m-t-lg with-border">Complete Your Patient Information Form</h5>
-<form  action="#" method="post">
+<form  action="{{route('patients.store')}}" method="post" id="app">
 {{ csrf_field() }}
 <div class="form-group row">
 <label for="inputPassword" class="col-sm-2 form-control-label">Fathername</label>
 <div class="col-sm-10">
-	<input type="text" class="form-control" id="fathername" placeholder="Enter Your Mothername">
+<input name="fathername" type="text" class="form-control {{ $errors->has('fathername') ? 'form-control-error' : '' }}" id="fathername" placeholder="Enter Your Fathername">
+	@if ($errors->has('fathername'))
+	<span class="help-block">
+	<strong>{{ $errors->first('fathername') }}</strong>
+	</span>
+	@endif
 </div>
 </div>
 <div class="form-group row">		
 <label for="mothername" class="col-sm-2 form-control-label">Mothername</label>
 <div class="col-sm-10">
-	<input type="text" class="form-control" id="mothername" placeholder="Enter Your fathername">
+	<input name="mothername" type="text" class="form-control {{ $errors->has('mothername') ? 'form-control-error' : '' }}" id="mothername" placeholder="Enter Your Mothername">
+	@if ($errors->has('mothername'))
+	<span class="help-block">
+	<strong>{{ $errors->first('mothername') }}</strong>
+	</span>
+	@endif
 </div>
 </div>
 <div class="form-group row">
-	<label for="sex" class="col-sm-2 form-control-label">Sex</label>
+	<label for="gender" class="col-sm-2 form-control-label">Gender</label>
 	<div class="col-sm-2">
-		<select id="sex" class="wide">
-			<option data-display="Select"></option>
+		<select name="gender" id="gender" class="form-control {{ $errors->has('gender') ? 'form-control-error' : '' }}">
+			<option value="">select</option>
 			<option value="female">female</option>
 			<option value="male">male</option>
 		</select>
+			@if ($errors->has('gender'))
+			<span class="help-block">
+			<strong>{{ $errors->first('gender') }}</strong>
+			</span>
+			@endif
 	</div>
 </div>
 <div class="form-group row">		
 <label for="dob" class="col-sm-2 form-control-label">Date of Birth</label>
 <div class="col-sm-10">
-	<input type="text" class="form-control" id="dob" placeholder="Enter Date of Birth">
+	<input name="dob" type="text" class="form-control {{ $errors->has('dob') ? 'form-control-error' : '' }}" id="dob" placeholder="Enter Date of Birth">
+		@if ($errors->has('dob'))
+		<span class="help-block">
+		<strong>{{ $errors->first('dob') }}</strong>
+		</span>
+		@endif
 </div>
 </div>
 <div class="form-group row">
 	<label for="province" class="col-sm-2 form-control-label">Province/City</label>
 	<div class="col-sm-3">
-		<select id="province" class="wide">
-			<option data-display="Select"></option>
-			<option value="">Not Available now</option>
+		<select name="province_id" id="province" class="form-control {{ $errors->has('province_id') ? 'form-control-error' : '' }}" v-model="province_id" @change="fetchDistrict()">
+			<option value="">Select</option>
+			<option v-for="province in provinces" v-bind:value="province.id">@{{ province.province_name }}</option>
 		</select>
+			@if ($errors->has('province_id'))
+			<span class="help-block">
+			<strong>{{ $errors->first('province_id') }}</strong>
+			</span>
+			@endif
 	</div>
 </div>
 <div class="form-group row">
 	<label for="district" class="col-sm-2 form-control-label">District</label>
 	<div class="col-sm-3">
-		<select id="district" class="wide">
-			<option data-display="Select"></option>
-			<option value="">Not Available now</option>
+		<select name="district_id" id="district" class="form-control {{ $errors->has('district_id') ? 'form-control-error' : '' }}" v-model="district_id" @change="fetchSector()">
+			<option value="">Select</option>
+			<option v-for="district in districts" v-bind:value="district.id">@{{district.district_name}}</option>
 		</select>
+			@if ($errors->has('district_id'))
+			<span class="help-block">
+			<strong>{{ $errors->first('district_id') }}</strong>
+			</span>
+			@endif
 	</div>
 </div>
 <div class="form-group row">
 	<label for="sector" class="col-sm-2 form-control-label">Sector</label>
 	<div class="col-sm-3">
-		<select id="sector" class="wide">
-			<option data-display="Select"></option>
-			<option value="">Not Available now</option>
+		<select name="sector_id" id="sector" class="form-control {{ $errors->has('sector_id') ? 'form-control-error' : '' }}">
+			<option value="">Select</option>
+			<option v-for="sector in sectors" v-bind:value="sector.id">@{{sector.sector_name}}</option>
 		</select>
+			@if ($errors->has('sector_id'))
+			<span class="help-block">
+			<strong>{{ $errors->first('sector_id') }}</strong>
+			</span>
+			@endif
 	</div>
 </div>
 <div class="form-group row">
 	<label for="cell" class="col-sm-2 form-control-label">Cell</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="cell" placeholder="Enter Cell name">
+		<input name="cell" type="text" class="form-control {{ $errors->has('cell') ? 'form-control-error' : '' }}" id="cell" placeholder="Enter Cell name">
+			@if ($errors->has('cell'))
+			<span class="help-block">
+			<strong>{{ $errors->first('cell') }}</strong>
+			</span>
+			@endif
 	</div>
 </div>
 	<input type="submit" class="btn btn-success"  value="submit" name="submit" />
@@ -91,18 +131,43 @@
 </div><!--.page-content-->
 @endsection
 @push('scripts')
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script> --}}
 <script src="{{asset("dashboard/js/lib/select2/select2.full.min.js")}}"></script>
 <script src="{{asset("dashboard/js/lib/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js")}}"></script>
 <script>
+new Vue({
+	el:'#app',
+	data:{
+		provinces :[],
+		province_id:'',
+		districts :[],
+		district_id:'',
+		sectors :[],
+
+	},
+	methods:{
+		fetchDistrict(){
+			axios.get('/api/districts/'+this.province_id).then(response => this.districts = response.data);
+		},
+		fetchSector(){
+			axios.get('/api/sectors/'+this.district_id).then(response => this.sectors = response.data);
+		}
+	}
+	,
+	mounted(){
+		axios.get('/api/provinces').then(response => this.provinces = response.data);
+	}
+
+})
 $(document).ready(function() {
 	//retrieve province data from internet with axios
 
-	//initialize niceselect
-	$(document).ready(function() {
-  	$('select').niceSelect();
-	});
+	// //initialize niceselect
+	// $(document).ready(function() {
+ //  	$('select').niceSelect();
+	// });
 	//initialize datetimepicker
 	$("#dob").datetimepicker({
 				format: 'DD/MM/YYYY'
