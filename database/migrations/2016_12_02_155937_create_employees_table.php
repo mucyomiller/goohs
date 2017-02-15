@@ -19,8 +19,8 @@ class CreateEmployeesTable extends Migration
             $table->integer('hospital_id')->unsigned();
             $table->string('country');
             $table->string('address');
-            $table->string('branch');
-            $table->text('note');
+            $table->string('branch')->nullable();
+            $table->text('note')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

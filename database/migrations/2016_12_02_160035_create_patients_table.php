@@ -16,11 +16,11 @@ class CreatePatientsTable extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->integer('patientID');
-            $table->date('dob');
+            $table->string('patientID');
+            $table->string('dob');
             $table->string('fathername');
             $table->string('mothername');
-            $table->integer('cell_id')->unsigned();
+            $table->string('cell_id');
             $table->integer('sector_id')->unsigned();
             $table->integer('district_id')->unsigned();    
             $table->string('gender');
