@@ -15,7 +15,7 @@ data-src="{{asset('images/surgical.jpg')}}" />
     data-position="leftCenter" data-horizontal="15" data-vertical="-370" 
     data-show-transition="left" data-hide-transition="left"
     data-show-delay="0" data-hide-delay="0">
-    Welcome to E-VUZE 
+    Welcome to E-VUZE Platform
 </h3>
 
 <h1 class="sp-layer slider-title" 
@@ -36,7 +36,7 @@ data-src="{{asset('images/surgical.jpg')}}" />
     data-position="leftCenter" data-horizontal="15" data-vertical="80" 
     data-show-transition="left" data-hide-transition="left"
     data-show-delay="600" data-hide-delay="600">
-    And Get Health services.
+    then Get Online and Offline Health Services
 </p>
 
 <p class="sp-layer slider-button" 
@@ -57,7 +57,7 @@ data-src="{{asset('images/skull.jpg')}}" />
     data-position="leftCenter" data-horizontal="15" data-vertical="-370" 
     data-show-transition="left" data-hide-transition="left"
     data-show-delay="0" data-hide-delay="0">
-    Healthy nation
+    Health Nation
 </h3>
 
 <h1 class="sp-layer slider-title" 
@@ -71,7 +71,7 @@ data-src="{{asset('images/skull.jpg')}}" />
     data-position="leftCenter" data-horizontal="15" data-vertical="-120" 
     data-show-transition="left" data-hide-transition="left"
     data-show-delay="400" data-hide-delay="400">
-    privide good services
+    Privide good services
 </h2>
 
 <p class="sp-layer slider-text" 
@@ -99,27 +99,27 @@ data-src="{{asset('images/umusambi.jpg')}}" />
     data-position="leftCenter" data-horizontal="15" data-vertical="-370" 
     data-show-transition="left" data-hide-transition="left"
     data-show-delay="0" data-hide-delay="0">
-    A good health is our mission!
+    We Care Good health
 </h3>
 
 <h1 class="sp-layer slider-title" 
     data-position="leftCenter" data-horizontal="15" data-vertical="-230" 
     data-show-transition="left" data-hide-transition="left"
     data-show-delay="200" data-hide-delay="200">
-    Health services
 </h1>
 
 <h2 class="sp-layer slider-subtitle" 
     data-position="leftCenter" data-horizontal="15" data-vertical="-120" 
     data-show-transition="left" data-hide-transition="left"
     data-show-delay="400" data-hide-delay="400">
-    Health care - healthy body
 </h2>
 
 <p class="sp-layer slider-text" 
     data-position="leftCenter" data-horizontal="15" data-vertical="80" 
     data-show-transition="left" data-hide-transition="left"
     data-show-delay="600" data-hide-delay="600">
+    We Want tobe part of a community
+    Which likes for the wellfare of others
 </p>
 
 <p class="sp-layer slider-button" 
@@ -136,7 +136,6 @@ data-src="{{asset('images/umusambi.jpg')}}" />
 <!-- =========================
 END HEADER SLIDER
 ============================== -->
-
 <!-- =========================
 SERVICES
 ============================== -->
@@ -202,7 +201,7 @@ Plaque is the primary cause of gum disease. However, other factors can contribut
 <!-- =========================
 END SERVICES
 ============================== -->
-
+*/
 
 <!-- =========================
 ABOUT
