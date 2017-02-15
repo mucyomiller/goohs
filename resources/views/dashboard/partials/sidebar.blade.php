@@ -121,7 +121,7 @@
 <ul>
 <li>
 <a href="{{route('backend.search_pmr')}}">
-<span class="lbl">View Medical Record</span>
+<span class="lbl">Add Medical Record</span>
 </a>
 </li>
 <li>

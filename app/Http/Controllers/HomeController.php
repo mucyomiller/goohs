@@ -264,8 +264,7 @@ class HomeController extends Controller
 
 
     public function showSearchPMR(){
-        $patients = Record::where('hospital_id', Auth::user()->employee->hospital_id)->paginate(10);
-        return view('dashboard.medical_records.search-pmr')->with(['patients'=>$patients]);
+        return view('dashboard.medical_records.search-pmr');
     }
 
     public function showViewPMR(Request $request){
