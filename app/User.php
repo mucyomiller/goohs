@@ -35,10 +35,6 @@ class User extends Authenticatable
     public function patient(){
         return $this->hasOne('App\Patient');
     }
-    public function dutydays()
-    {
-        return $this->hasMany('App\Dutyday');
-    }
 
     public function appointments()
     {
