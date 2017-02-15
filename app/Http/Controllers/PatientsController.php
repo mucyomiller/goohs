@@ -43,12 +43,13 @@ class PatientsController extends Controller
     {
         $validator = Validator::make($data = $request->all(), 
             [
-            'name' => 'required',
+            'fathername' => 'required|',
+            'mothername' => 'required',
             'gender' => 'required',
-            'age' => 'required',
-            'city' => 'required',
-            'country' => 'required',
-            'address' => 'required'
+            'dob' => 'required',
+            'district_id' => 'required|numeric|min:1|max:30',
+            'sector_id' => 'required|numeric|min:1|max:416',
+            'cell' => 'required',
             ]);
         if ($validator->fails())
         {
@@ -56,49 +57,19 @@ class PatientsController extends Controller
         }
 
         $patient = new Patient();
-        $patient->name = $request->input('name');
-        $patient->dob = $request->input('dob');
-        if($request->has('email')){
-            $patient->email = $request->input('email');
-        }else{
-            $patient->email = 'N/A';
-        }
+        $patient->user_id  = $request->user()->id;
+        $patient->fathername = $request->input('fathername');
+        $patient->mothername = $request->input('mothername');
         $patient->gender = $request->input('gender');
-        $patient->age = $request->input('age');
-        $patient->city = $request->input('city');
-        $patient->country = $request->input('country');
-        $patient->address = $request->input('address');
-
-        if($request->input('phone') == ''){
-            $patient->phone = 'N/A';
-        }else {
-            $patient->phone = $request->input('phone');
-        }
-
-        if($request->input('cnic') == ''){
-            $patient->cnic = 'N/A';
-        }else {
-            $patient->cnic = $request->input('cnic');
-        }
-
-        if($request->input('note') == ''){
-            $patient->note = 'N/A';
-        }else {
-            $patient->note = $request->input('note');
-        }
+        $patient->dob = $request->input('dob');
+        $patient->district_id = $request->input('district_id');
+        $patient->sector_id = $request->input('sector_id');
+        $patient->cell_id = $request->input('cell');
+        $patient->patientID = "001";
         $patient->save();
-        $patient->patient_id = "P0" . $patient->id;
-        $patient->clinic_id = Auth::user()->clinic_id;
+        $patient->patientID = "001".date('Y-m'). $patient->id;
         $patient->save();
-
-        if($request->has('email')){
-            $data = ['name' => $request->input('name')];
-            Mail::queue('emails.patient_welcome', $data, function($message)
-            {
-                $message->to($request->input('email'), $request->input('name'))->subject('Welcome to GOOHS!');
-            });
-        }
-
+        //send email here
         return redirect()->route('patients.index');
     }
 
