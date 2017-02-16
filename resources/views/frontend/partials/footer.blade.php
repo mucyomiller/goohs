@@ -91,7 +91,7 @@
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item f-doctor">
-                            <select id="form-doctor" class="form-doctor" name="hospital_id">
+                            <select id="form-doctor" class="form-doctor form-control-error" name="hospital_id">
                                 <option selected="selected">Select hospital</option>
                                 @foreach($hospitals as $hospital)
                                 <option value="{{$hospital->id}}">{{$hospital->name}}</option>
@@ -99,24 +99,11 @@
                             </select>
                         </div>
                     </div>
-                    
+                     
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item name">
                             <input type="text" name="patient_id" id="name1" data-validation="required" placeholder="Your Patient ID" />
                             <div class="help help-sm help-red">!</div>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item phone">
-                            <input type="text" name="phone" id="phone1" data-validation="required" placeholder="Phone" />
-                            <div class="help help-sm help-red">!</div>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item email">
-                            <input type="text" name="email" id="email1" placeholder="E-mail" />
                         </div>
                     </div>
                     
@@ -133,7 +120,7 @@
                     
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item">
-                            <textarea name="message" id="message1" placeholder="Your message.."></textarea>
+                            <textarea name="message" id="message1" placeholder="Write how you feel.."></textarea>
                         </div>
                     </div>
                     

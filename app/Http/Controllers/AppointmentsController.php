@@ -41,10 +41,9 @@ class AppointmentsController extends Controller
     {
         //storing newly created Appointment
         $this->validate($request,[
-            'hospital_id' => 'required|numeric|exists:hospitals,id',
-            'patient_id'  => 'required|numeric|exists:patients,patientID',
-            'date'        => 'required|date',
-            'start_time'  => 'required|date_format:H:i:A',
+            'hospital_id' => 'required',
+            'date'        => 'required',
+            'start_time'  => 'required',
             ]);
 
         Appointment::create([
