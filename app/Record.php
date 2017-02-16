@@ -16,4 +16,13 @@ class Record extends Model
     function treatement_plan(){
     	return $this->hasMany('App\TreatementPlan');
     }
+    function user(){
+    	return $this->belongsTo('App\Patient');
+    }
+    function hospital(){
+    	return $this->belongsTo('App\Hospital');
+    }
+    function doctor(){
+    	return $this->belongsTo('App\Employee');
+    }
 }
