@@ -55,7 +55,8 @@ Route::group(['prefix'=>'backend'],function(){
     Route::resource('medicines', 'MedicinesController');
     Route::resource('hospitals', 'HospitalsController');
     // Medical Record Routes
-    Route::get('search_pmr', ['as'=>'backend.search_pmr','uses'=>'HomeController@showSearchPMR']);
+    Route::match(['post','get'],'search_pmr', ['as'=>'backend.search_pmr','uses'=>'HomeController@searchPMR']);
+    Route::match(['post','get'],'add_pmr', ['as'=>'backend.add_pmr','uses'=>'HomeController@addPMR']);
     Route::any('view_pmr', 'HomeController@showViewPMR');
     Route::get('patients_reporting', ['as'=>'backend.patients_reporting','uses'=>'PatientsController@patients_reporting']);
 
