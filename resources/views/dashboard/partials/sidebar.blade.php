@@ -125,7 +125,7 @@
 </a>
 </li>
 <li>
-<a href="{{route('backend.app_vitals')}}">
+<a href="{{-- {{route('backend.app_vitals')}} --}}">
 <span class="lbl">View Vital Signs</span>
 </a>
 </li>
