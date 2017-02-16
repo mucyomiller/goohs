@@ -13,10 +13,11 @@
 <div class="profile-card-photo">
 <img src="{{asset('dashboard/img/avatar-2-64.png')}}" alt=""/>
 </div>
+<div class="profile-card-status"><b>{{ ucfirst($user->roles->first()->name)}}</b></div>
 <div class="profile-card-name">{{ $user->names }}</div>
-<div class="profile-card-status">{{ $user->roles->first()->name}}</div>
 <div class="profile-card-location">
 @if($user->patient)
+Patient ID: {{ $user->patient->patientID }}
 District: {{ $user->patient?$user->patient->district->district_name:''}}<br>
 Sector: {{$user->patient?$user->patient->sector->sector_name:''}}<br>
 <!--temporary setted cell_id as cell_name -->
