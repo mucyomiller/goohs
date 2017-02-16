@@ -27,33 +27,8 @@ class Prescription extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function medicine1()
+    public function medicine()
     {
-        return $this->belongsTo('App\Medicine', 'medicine1_id');
-    }
-
-    public function medicine2()
-    {
-        return $this->belongsTo('App\Medicine', 'medicine2_id');
-    }
-
-    public function medicine3()
-    {
-        return $this->belongsTo('App\Medicine', 'medicine3_id');
-    }
-
-    public function medicine4()
-    {
-        return $this->belongsTo('App\Medicine', 'medicine4_id');
-    }
-
-    public function medicine5()
-    {
-        return $this->belongsTo('App\Medicine', 'medicine5_id');
-    }
-
-    public function medicine6()
-    {
-        return $this->belongsTo('App\Medicine', 'medicine6_id');
+        return $this->belongsTo('App\Medicine', 'medicine_id');
     }
 }
