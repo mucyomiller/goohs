@@ -33,4 +33,5 @@ Route::get('sectors/{district_id}', function($id){
 		$sectors = Sector::where('district_id',$id)->get();
 		return response()->json($sectors);
 })->where('district_id', '[0-9]+');
+Route::get('appointments',['uses'=>'SchedulesController@appointments']);
 

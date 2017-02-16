@@ -3,7 +3,7 @@ $(document).ready(function(){
 /* ==========================================================================
     Fullcalendar
     ========================================================================== */
-
+ // var data=null;
     $('#calendar').fullCalendar({
         header: {
             left: '',
@@ -20,74 +20,7 @@ $(document).ready(function(){
         editable: true,
         selectable: true,
         eventLimit: true, // allow "more" link when too many events
-        events: [
-            {
-                title: 'Meet Doctor',
-                start: '2016-12-12'
-            },
-            {
-                title: 'All Day Event',
-                start: '2016-01-01'
-            },
-            {
-                title: 'Long Event',
-                start: '2016-01-07',
-                end: '2016-01-10',
-                className: 'event-green'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2016-01-09T16:00:00',
-                className: 'event-red'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2016-01-16T16:00:00',
-                className: 'event-orange'
-            },
-            {
-                title: 'Conference',
-                start: '2016-01-11',
-                end: '2016-01-13',
-                className: 'event-coral'
-            },
-            {
-                title: 'Meeting',
-                start: '2016-01-12T10:30:00',
-                end: '2016-01-12T12:30:00',
-                className: 'event-green'
-            },
-            {
-                title: 'Lunch',
-                start: '2016-01-12T12:00:00'
-            },
-            {
-                title: 'Meeting',
-                start: '2016-01-12T14:30:00',
-                className: 'event-red'
-            },
-            {
-                title: 'Happy Hour',
-                start: '2016-01-12T17:30:00'
-            },
-            {
-                title: 'Dinner',
-                start: '2016-01-12T20:00:00',
-                className: 'event-orange'
-            },
-            {
-                title: 'Birthday Party',
-                start: '2016-01-13T07:00:00'
-            },
-            {
-                title: 'Click for Google',
-                url: 'http://google.com/',
-                start: '2016-01-28',
-                className: 'event-coral'
-            }
-        ],
+        events:[],
         viewRender: function(view, element) {
             if (!("ontouchstart" in document.documentElement)) {
                 $('.fc-scroller').jScrollPane({
@@ -264,4 +197,13 @@ $(document).ready(function(){
     });
 })(jQuery, ResponsiveBootstrapToolkit);
 
+function getAppointments(){
+      axios.get('/api/appointments')
+            .then(function (response) {
+                data= response.data;
+                console.log(data);
+                return data;
+            });
+console.log(data);
+}
 
