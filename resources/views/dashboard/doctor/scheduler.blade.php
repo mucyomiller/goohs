@@ -13,8 +13,9 @@
 					<div class="calendar-page-content">
 						<div class="calendar-page-title">Calendar</div>
 						<div class="calendar-page-content-in">
-							<div id='calendar'></div>
-						</div><!--.calendar-page-content-in-->
+						 {!! $calendar->calendar() !!}
+                         {!! $calendar->script() !!}
+						</div>
 					</div><!--.calendar-page-content-->
                      
 					<div class="calendar-page-side">
@@ -64,7 +65,6 @@
 
 @endsection
 @push('scripts')
-<script src="{{asset('dashboard/js/lib/slick-carousel/slick.min.js')}}"></script>
 <script src="{{asset('dashboard/js/lib/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('dashboard/js/lib/tether/tether.min.js')}}"></script>
 <script src="{{asset('dashboard/js/lib/bootstrap/bootstrap.min.js')}}"></script>
@@ -72,6 +72,7 @@
 <script type="text/javascript" src="{{asset('dashboard/js/lib/match-height/jquery.matchHeight.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('dashboard/js/lib/moment/moment-with-locales.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('dashboard/js/lib/eonasdan-bootstrap-datetimepicker/bootstrap-datetimepicker.min.js')}}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="{{asset('dashboard/js/lib/fullcalendar/fullcalendar.min.js')}}"></script>
 <script src="{{asset('dashboard/js/lib/fullcalendar/fullcalendar-init.js')}}"></script>
 <script src="{{asset('dashboard/js/app.js')}}"></script>

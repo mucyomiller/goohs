@@ -39,7 +39,7 @@ class Appointment extends Model
     {
         return $this->hasMany('App\Labtest');
     }
-
+ 
     // public function checkupfee()
     // {
     //     return $this->hasOne('App\Checkupfee');

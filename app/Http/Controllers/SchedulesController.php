@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Response;
 use App\Appointment;
 
 class SchedulesController extends Controller
@@ -10,15 +11,68 @@ class SchedulesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response.
      */
     public function index()
     {
-        $appointments=Appointment::All();
-       // dd($appointments);
-        return view('dashboard.doctor.scheduler')->with(['appointments'=>$appointments]);
+        //$appointments=Appointment::with('patient')->get(['patient_id as title','date as start','id'])->toJson();;
+
+       //dd($appointments);
+       // return view('dashboard.doctor.scheduler')->with(['events'=>$appointments]);
+
+        $event = [];
+        $appointments = Appointment::all();
+        foreach($appointments as $appointment){
+         $event = \Calendar::event(
+            $appointment->patient->user->names,
+            false,
+            new \DateTime($appointment->date),
+            new \DateTime(''),
+            $appointment->id,
+             [
+        'url' => 'http://full-calendar.io',
+        //any other full-calendar supported parameters
+        ]
+            );
+          //dd($event);
+             $calendar=\Calendar::addEvent($event)
+                            ->setOptions([
+                              'firstDay'=> 1
+                            ])->setCallbacks([]);
+             
+        }
+        
+      
+
+        // foreach($appointments as $appointment){
+        //     array_push($events,[
+        //         'title' =>$appointment->patient->user->names,
+        //         'start' =>$appointment->date,
+        //         ]);
+        // }
+        return view('dashboard.doctor.scheduler')->with(['calendar'=>$calendar]);
     }
 
+
+    public function appointments()
+    {
+        //$appointments=Appointment::with('patient')->get(['patient_id as title','date as start','id'])->toJson();;
+
+       //dd($appointments);
+       // return view('dashboard.doctor.scheduler')->with(['events'=>$appointments]);
+
+        $events = [];
+        $appointments = Appointment::all();
+        foreach($appointments as $appointment){
+            array_push($events,[
+                'title' =>$appointment->patient->user->names,
+                'start' =>$appointment->date,
+                ]);
+          
+
+        }
+          return response()->json($events);
+  }
     /**
      * Show the form for creating a new resource.
      *
