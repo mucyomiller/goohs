@@ -23,6 +23,9 @@ class Patient extends Model
     public function district(){
         return $this->belongsTo('App\District');
     }
+    public function records(){
+        return $this->hasMany('App\Record');
+    }
     public function allergies()
     {
         return $this->hasMany('App\Allergy');
