@@ -84,7 +84,7 @@ Basic Information <a href="{{ route('backend.add_pmr',['patient_id'=>$patient->i
 @if(!empty($records) && $records->count())
 <section class="card">
 <header class="card-header card-header-lg">
-Records Informations
+Records Informations <span class="label label-pill label-success">{{$records->count()}}</span>
 </header>
 <div class="card-block">
 <p class="card-text">
@@ -95,13 +95,12 @@ Records Informations
 <th width="1">#</th>
 <th>Names</th>
 <th>Hospital</th>
-<th>Country</th>
-<th>Address</th>
-<th>Branch</th>
-<th>Note</th>
-<th>Status</th>
+<th>Created By</th>
 <th class="table-icon-cell">
 <i class="font-icon font-icon-user"></i>
+</th>
+<th class="table-icon-cell">
+<i class="font-icon font-icon-edit"></i>
 </th>
 <th class="table-icon-cell">
 <i class="font-icon font-icon-edit"></i>
@@ -116,13 +115,10 @@ Records Informations
 <td>{{ $loop->index+1 }}</td>
 <td>{{ $record->patient->user->names }}</td>
 <td>{{ $record->hospital->name}}</td>
-<td>{{$record->country}}</td>
-<td>{{$record->address}}</td>
-<td>{{$record->branch}}</td>
-<td>{{$record->note}}</td>
-<td>{{$record->status}}</td>
-<td>{{ link_to_route('users.show', 'View', [$record->id], ['class' => 'data_table_btn', 'style' => 'margin-bottom: 2px'])}}</td>
-<td>{{ link_to_route('users.edit', 'Edit', [$record->id], ['class' => 'data_table_btn'])}}</td>
+<td>{{$record->doctor->user->names}}</td>
+<td><a href="{{ route('backend.view_pmr',['record'=>$record->id]) }}">view more</a></td>
+<td><a href="{{ route('backend.pmr_treatment_plan',['record'=>$record->id]) }}">add treatment plan</a></td>
+<td><a href="{{ route('backend.pmr_treatment_record_sheet',['record'=>$record->id]) }}">treatment record sheet</a></td>
 <td class="table-date">{{ $record->created_at->diffForHumans()}}</td>
 </tr>
 @endforeach

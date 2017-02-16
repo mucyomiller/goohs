@@ -15,6 +15,6 @@ class Employee extends Model
     	return $this->belongsTo('App\Hospital');
     }
     public function records(){
-    	return $this->hasMany('App\Record');
+    	return $this->hasMany('App\Record','employee_id','id');
     }
 }

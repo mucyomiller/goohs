@@ -41,7 +41,7 @@ class CreateRecordsTable extends Migration
             $table->string('tms')->nullable();
             $table->string('blood_pressure')->nullable();
             $table->string('eyes')->nullable();
-            $table->string('nodes')->nullable();
+            $table->string('noses')->nullable();
             //INTRA ORAL
             $table->string('lips')->nullable();
             $table->string('tongue')->nullable();

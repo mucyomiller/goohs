@@ -11,6 +11,7 @@ use App\Labtest;
 use App\Appointment;
 use App\Checkupfee;
 use App\Record;
+use App\TreatementPlan;
 class HomeController extends Controller
 {
     /**
@@ -281,6 +282,47 @@ class HomeController extends Controller
     }
 
     public function  addPMR(Request $request){
+        if($request->isMethod('post'))
+        {
+            Record::create([
+                'employee_id' => $request->input('employee_id'), 
+                'patient_id' => $request->input('patient_id'),
+                'hospital_id' => $request->input('hospital_id'),
+                'presenting_complant' => $request->input('presenting_complant'),
+                'history_presenting_complant' => $request->input('history_presenting_complant'),
+                'past_medical_history' => $request->input('past_medical_history'),
+                'dietary_habits' => $request->input('dietary_habits'),
+                'family_social_history' => $request->input('family_social_history'), 
+                'gastrointestinal' => $request->input('gastrointestinal'),
+                'genetourinary' => $request->input('genetourinary'),
+                'respiratory' => $request->input('respiratory'),
+                'liver' => $request->input('liver'),
+                'locomotor' => $request->input('locomotor'), 
+                'cardiovascular' => $request->input('cardiovascular'),
+                'kidneys' => $request->input('kidneys'),
+                'other' => $request->input('other'),
+                'scasp_and_hair' => $request->input('scasp_and_hair'),
+                'ears' => $request->input('ears'), 
+                'pulse_rate' => $request->input('pulse_rate'),
+                'skin' => $request->input('skin'),
+                'tms' => $request->input('tms'),
+                'blood_pressure' => $request->input('blood_pressure'),
+                'eyes' => $request->input('eyes'), 
+                'noses' => $request->input('noses'),
+                'lips' => $request->input('lips'),
+                'tongue' => $request->input('tongue'),
+                'hard_tissues' => $request->input('hard_tissues'),
+                'vestibule' => $request->input('vestibule'), 
+                'gingiva' => $request->input('gingiva'),
+                'occlusion' => $request->input('occlusion'),
+                'mucoza' => $request->input('mucoza'),
+                'palate' => $request->input('palate'),
+                'oral_hygiene' => $request->input('oral_hygiene'), 
+                'patient_id' => $request->input('patient_id'),
+                'patient_id' => $request->input('patient_id'),
+                ]);
+           // return redirect()->route('backend.search_pmr');
+        }
         if(!$request->input('patient_id'))
         {
             return;
@@ -294,11 +336,33 @@ class HomeController extends Controller
         return view('dashboard.medical_records.addrecord')->with(['patient'=>$patient,'hospital'=>$hospital,'employee'=>$employee]);
     }
 
+    public function treatments_plan(Request $request){
+        if($request->isMethod('post'))
+        {
+            $this->validate($request,[
+                'record_id'=> 'required',
+                'treatment_plan' => 'required'
+                ]);
+            TreatementPlan::create([
+                'record_id' => $request->input('record_id'),
+                'treatments_plan' => $request->input('treatments_plan')
+                ]);
+        }
+        $record = Record::where('id',$request->input('record'))->first();
+        $treatements_plans = TreatementPlan::where('record_id', $request->input('record_id'))->get();
+        // dd($record);
+        return view('dashboard.medical_records.add_treatment_plan')
+        ->with(['record'=>$record,'treatments'=>$treatements_plans]);
+    }
+    public  function treatments_record_sheet(){
+
+    }
+
     public function showViewPMR(Request $request){
-        $patient_id = $request->input('id');
-        $patient = Patient::findOrFail($patient_id);
+        $record_id = $request->input('record');
+        $record = Record::where('id',$record_id)->first();
         return view('dashboard.medical_records.view-pmr')
-        ->with(['patient_id'=>$patient_id, 'patient'=>$patient]);
+        ->with(['record'=>$record]);
     }
 
     public function print_pres(Request $request){

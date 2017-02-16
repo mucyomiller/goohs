@@ -18,13 +18,14 @@
 </header>
 
 <div class="box-typical box-typical-padding">
-<h5 class="m-t-lg with-border">Long Term Record</h5>
-
+<h5 class="m-t-lg with-border">Medical Record</h5>
+<form action="{{ route('backend.add_pmr') }}" method="post">
+{{csrf_field()}}
 <div class="row">
 <div class="col-md-4 col-sm-6">
 	<fieldset class="form-group">
 		<label class="form-label" for="patient_id">Patient ID</label>
-		<input type="hidden" name="patient_id" value="{{ $patient->id}}" />
+		<input type="hidden" name="patient_id" value="{{ $patient->id }}" />
 		<input type="text" name="patientID" value="{{ $patient->patientID }}" disabled class="form-control" id="patient_id" placeholder="Patient ID">
 	</fieldset>
 </div>
@@ -178,8 +179,8 @@
 <div class="row">
 <div class="col-md-4 col-sm-6">
 	<fieldset class="form-group">
-		<label class="form-label" for="nodes">Nodes</label>
-		<input name="nodes" type="text" class="form-control" id="tms" placeholder="Enter nodes info ">
+		<label class="form-label" for="noses">Noses</label>
+		<input name="noses" type="text" class="form-control" id="tms" placeholder="Enter noses info ">
 	</fieldset>
 </div>
 <div class="col-md-4 col-sm-6">
@@ -247,12 +248,13 @@
 <div class="col-lg-6">
 <div class="form-group">
 <span>
-<input type="checkbox" aria-label="Checkbox for following text input"> <a href="#">Accept Terms And Conditions</a>
+<input type="checkbox" name="agreement" /> <a href="#">Accept Terms And Conditions</a>
 </span>
 </div>
 </div>
 </div>
-<input type="submit"  name="submit" class="btn btn-rounded  btn-primary-outline" value="save record"></input>
+<input type="submit"  name="save" class="btn btn-rounded  btn-primary-outline" value="save record"/>
+</form>
 </div><!--.row-->
 {{-- end --}}
 </div><!--.box-typical-->

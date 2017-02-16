@@ -57,7 +57,9 @@ Route::group(['prefix'=>'backend'],function(){
     // Medical Record Routes
     Route::match(['post','get'],'search_pmr', ['as'=>'backend.search_pmr','uses'=>'HomeController@searchPMR']);
     Route::match(['post','get'],'add_pmr', ['as'=>'backend.add_pmr','uses'=>'HomeController@addPMR']);
-    Route::any('view_pmr', 'HomeController@showViewPMR');
+    Route::any('view_pmr', ['as'=>'backend.view_pmr','uses'=>'HomeController@showViewPMR']);
+    Route::match(['post','get'],'pmr_treatment_plan',['as'=>'backend.pmr_treatment_plan','uses'=>'HomeController@treatments_plan']);
+    Route::match(['post','get'],'pmr_treatment_record_sheet',['as'=>'backend.pmr_treatment_record_sheet','uses'=>'HomeController@treatments_record_sheet']);
     Route::get('patients_reporting', ['as'=>'backend.patients_reporting','uses'=>'PatientsController@patients_reporting']);
 
     Route::get('app_vitals',['as'=>'backend.app_vitals','uses'=>
