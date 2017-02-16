@@ -10,7 +10,7 @@ class TreatementRecordSheet extends Model
     'record_id','procedure_code','tooths_no','sextant_no','treatement_notes','treatments_id'
     ];
 
-    function record(){
+    public function record(){
     	return $this->belongsTo('App\Record');
     }
 }

@@ -8,10 +8,13 @@ class Employee extends Model
 {
     protected $fillable = ['user_id','hospital_id','country','address','branch','note','status'];
 
-    function user(){
+    public function user(){
     	return $this->belongsTo('App\User');
     }
-    function hospital(){
+    public function hospital(){
     	return $this->belongsTo('App\Hospital');
+    }
+    public function records(){
+    	return $this->hasMany('App\Record');
     }
 }

@@ -10,7 +10,7 @@ class TreatementPlan extends Model
     'record_id','treatments_plan'
     ];
 
-    function record(){
+    public function record(){
     	return $this->belongsTo('App\Record');
     }
 }
