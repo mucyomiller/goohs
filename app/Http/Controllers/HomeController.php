@@ -263,8 +263,35 @@ class HomeController extends Controller
     /** end of new controller **/
 
 
-    public function showSearchPMR(){
-        return view('dashboard.medical_records.search-pmr');
+    public function searchPMR(Request $request){
+        if($request->isMethod('post')){
+            $this->validate($request,[
+                'patient_info'=>'required'
+                ]);
+            $patient = Patient::where('patientID',$request->input('patient_info'))->first();
+            $patient_id = $patient?$patient->id:'';
+            if(!is_null($patient_id)){
+                $records = Record::where('patient_id',$patient_id)->paginate(15);
+            }
+            return view('dashboard.medical_records.search-pmr')->with(['records'=>$records,'patient'=>$patient]);
+        }else
+        {
+            return view('dashboard.medical_records.search-pmr');
+        }
+    }
+
+    public function  addPMR(Request $request){
+        if(!$request->input('patient_id'))
+        {
+            return;
+            exit(0);
+        }
+        //get patient id
+        $patient = Patient::where('id',$request->input('patient_id'))->first();
+        $hospital = Auth::user()->employee->hospital;
+        $employee = Auth::user()->employee->user;
+        //return view to add new record
+        return view('dashboard.medical_records.addrecord')->with(['patient'=>$patient,'hospital'=>$hospital,'employee'=>$employee]);
     }
 
     public function showViewPMR(Request $request){
