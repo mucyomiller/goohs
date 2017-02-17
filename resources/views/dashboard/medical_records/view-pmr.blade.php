@@ -88,7 +88,7 @@
 <td>Eyes:</td><td>{{ $record->eyes }}</td>
 </tr>
 <tr>
-<td>Noses:</td><td>{{ $record->nodes }}</td>
+<td>Noses:</td><td>{{ $record->noses }}</td>
 </tr>
 <tr>
 <td>Lips:</td><td>{{ $record->lips }}</td>

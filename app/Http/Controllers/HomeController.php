@@ -11,7 +11,8 @@ use App\Labtest;
 use App\Appointment;
 use App\Checkupfee;
 use App\Record;
-use App\TreatementPlan;
+use App\TreatmentPlan;
+use App\Employee;
 class HomeController extends Controller
 {
     /**
@@ -318,8 +319,6 @@ class HomeController extends Controller
                 'mucoza' => $request->input('mucoza'),
                 'palate' => $request->input('palate'),
                 'oral_hygiene' => $request->input('oral_hygiene'), 
-                'patient_id' => $request->input('patient_id'),
-                'patient_id' => $request->input('patient_id'),
                 ]);
            // return redirect()->route('backend.search_pmr');
         }
@@ -331,7 +330,8 @@ class HomeController extends Controller
         //get patient id
         $patient = Patient::where('id',$request->input('patient_id'))->first();
         $hospital = Auth::user()->employee->hospital;
-        $employee = Auth::user()->employee->user;
+        $employee = Employee::where('user_id',Auth::user()->id)->first();
+        //dd($employee);
         //return view to add new record
         return view('dashboard.medical_records.addrecord')->with(['patient'=>$patient,'hospital'=>$hospital,'employee'=>$employee]);
     }
@@ -343,13 +343,13 @@ class HomeController extends Controller
                 'record_id'=> 'required',
                 'treatment_plan' => 'required'
                 ]);
-            TreatementPlan::create([
+            TreatmentPlan::create([
                 'record_id' => $request->input('record_id'),
                 'treatments_plan' => $request->input('treatments_plan')
                 ]);
         }
         $record = Record::where('id',$request->input('record'))->first();
-        $treatements_plans = TreatementPlan::where('record_id', $request->input('record_id'))->get();
+        $treatements_plans = TreatmentPlan::where('record_id', $request->input('record_id'))->get();
         // dd($record);
         return view('dashboard.medical_records.add_treatment_plan')
         ->with(['record'=>$record,'treatments'=>$treatements_plans]);

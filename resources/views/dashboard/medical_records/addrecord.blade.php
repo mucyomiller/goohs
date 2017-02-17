@@ -40,7 +40,7 @@
 	<fieldset class="form-group">
 		<label class="form-label" for="employee_id">Employee Name</label>
 		<input type="hidden" name="employee_id" value="{{$employee->id}}" />
-		<input type="text"  name="employee_name" value="{{ $employee->names}}" class="form-control" id="employee_id" placeholder="Employee ID" disabled>
+		<input type="text"  name="employee_name" value="{{ $employee->user->names}}" class="form-control" id="employee_id" placeholder="Employee Name" disabled>
 	</fieldset>
 </div>
 </div><!--.row-->
