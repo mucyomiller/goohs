@@ -384,6 +384,7 @@ jQuery(document).ready(function($){
 
 	$('.datepicker-f').datetimepicker({
 		format: "DD/MM/YYYY",
+		minDate: new Date(),
 		icons: {
 			up: 'fa fa-angle-up',
 			down: 'fa fa-angle-down',

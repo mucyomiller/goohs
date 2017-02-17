@@ -65,9 +65,9 @@ class PatientsController extends Controller
         $patient->district_id = $request->input('district_id');
         $patient->sector_id = $request->input('sector_id');
         $patient->cell_id = $request->input('cell');
-        $patient->patientID = "001";
+        $patient->patientID = "1";
         $patient->save();
-        $patient->patientID = "001".date('Ym'). $patient->id;
+        $patient->patientID = "1".date('Ymd'). $patient->id;
         $patient->save();
         //send email here
         return redirect()->route('patients.index');
