@@ -341,21 +341,29 @@ class HomeController extends Controller
         {
             $this->validate($request,[
                 'record_id'=> 'required',
-                'treatment_plan' => 'required'
+                'treatments_plan' => 'required'
                 ]);
             TreatmentPlan::create([
                 'record_id' => $request->input('record_id'),
                 'treatments_plan' => $request->input('treatments_plan')
                 ]);
+            return redirect()->back();
         }
         $record = Record::where('id',$request->input('record'))->first();
-        $treatements_plans = TreatmentPlan::where('record_id', $request->input('record_id'))->get();
-        // dd($record);
+        $treatements_plans = TreatmentPlan::where('record_id', $request->input('record'))->get();
+         //dd($treatements_plans);
         return view('dashboard.medical_records.add_treatment_plan')
-        ->with(['record'=>$record,'treatments'=>$treatements_plans]);
+        ->with(['record'=>$record,'treatments_plans'=>$treatements_plans]);
     }
     public  function treatments_record_sheet(){
 
+    }
+
+    public function delete(Request $request){
+        if($request->has('treatment_plan') && $request->input('treatment_plan') == true){
+            TreatmentPlan::where('id',$request->input('id'))->delete();
+            return redirect()->back();
+        }
     }
 
     public function showViewPMR(Request $request){

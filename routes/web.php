@@ -24,7 +24,7 @@ Route::group(['prefix'=>'backend'],function(){
 
      Route::group(['middleware' => 'auth'], function(){
 
-     
+    Route::get('delete',['as'=>'backend.delete','uses'=>'HomeController@delete']); 
     Route::get('/',['as'=>'backend.index','uses'=>'HomeController@index']);
     Route::resource('profile','ProfileController');
     Route::get('pdf_test',['as'=>'backend.pdf_test','uses'=>'HomeController@pdf_test']);
