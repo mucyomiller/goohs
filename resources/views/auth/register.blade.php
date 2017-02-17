@@ -26,7 +26,7 @@
 <div class="sign-avatar no-photo">&plus;</div>
 <header class="sign-title">Sign Up</header>
 <div class="form-group {{ $errors->has('names') ? ' has-error' : '' }}">
-<input type="text" class="form-control" placeholder="Names"  name="names"
+<input type="text" class="form-control" placeholder="Firstname"  name="names"
 value="{{ old('names') }}" />
 @if ($errors->has('names'))
 <span class="help-block">
@@ -34,7 +34,10 @@ value="{{ old('names') }}" />
 </span>
 @endif
 </div>
-{{-- <div class="form-group {{ $errors->has('idnumber') ? ' has-error' : '' }}">
+<div class="form-group">
+<input type="text" class="form-control" name="email" placeholder="E-mail"  />
+</div>
+<div class="form-group {{ $errors->has('idnumber') ? ' has-error' : '' }}">
 <input type="text" class="form-control" placeholder="Idnumber or passport"  name="idnumber"
 value="{{ old('idnumber') }}" />
 @if ($errors->has('idnumber'))
@@ -42,7 +45,7 @@ value="{{ old('idnumber') }}" />
 <strong>{{ $errors->first('idnumber') }}</strong>
 </span>
 @endif
-</div> --}}
+</div>
 <div class="form-group {{ $errors->has('phone') ? ' has-error' : '' }}">
 <input type="text" class="form-control" name="phone" placeholder="Phone Number" 
 value="{{ old('phone') }}" />
@@ -62,15 +65,6 @@ value="{{ old('phone') }}" />
 </div>
 <div class="form-group">
 <input type="password" class="form-control" name="password_confirmation" placeholder="Repeat password"/>
-</div>
-<div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
-<input type="text" class="form-control" name="email" placeholder="E-Mail (Optional)" 
-value="{{ old('email') }}" />
-@if ($errors->has('email'))
-<span class="help-block">
-<strong>{{ $errors->first('email') }}</strong>
-</span>
-@endif
 </div>
 <button type="submit" class="btn btn-rounded btn-success sign-up">register</button>
 <p class="sign-note">Already have an account? <a href="{{url('login')}}">login</a></p>

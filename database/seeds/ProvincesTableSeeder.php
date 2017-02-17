@@ -12,7 +12,7 @@ class ProvincesTableSeeder extends Seeder
     public function run()
     {
         DB::table('provinces')->truncate();
-        $provinces  = array("city of kigali","northern province","southern province","estern province","western province");
+        $provinces  = array("kigali City","northern province","southern province","estern province","western province");
         foreach ($provinces as $value) {
             Province::create(['province_name'=>$value]);
         }
