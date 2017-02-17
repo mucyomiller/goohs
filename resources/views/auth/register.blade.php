@@ -26,7 +26,7 @@
 <div class="sign-avatar no-photo">&plus;</div>
 <header class="sign-title">Sign Up</header>
 <div class="form-group {{ $errors->has('names') ? ' has-error' : '' }}">
-<input type="text" class="form-control" placeholder="Firstname"  name="names"
+<input type="text" class="form-control" placeholder="Your Names"  name="names"
 value="{{ old('names') }}" />
 @if ($errors->has('names'))
 <span class="help-block">
