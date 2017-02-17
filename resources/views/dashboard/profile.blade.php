@@ -17,7 +17,7 @@
 <div class="profile-card-name">{{ $user->names }}</div>
 <div class="profile-card-location">
 @if($user->patient)
-Patient ID: {{ $user->patient->patientID }}
+Patient ID: {{ $user->patient->patientID }}<br>
 District: {{ $user->patient?$user->patient->district->district_name:''}}<br>
 Sector: {{$user->patient?$user->patient->sector->sector_name:''}}<br>
 <!--temporary setted cell_id as cell_name -->

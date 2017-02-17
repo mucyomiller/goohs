@@ -33,7 +33,7 @@
 </form>
 </div><!--.row-->
 
-@if(!empty($treatments_plans))
+@if(!empty($treatments_plans) && $treatments_plans->count() > 0)
 <section class="card">
 <header class="card-header card-header-lg">
 Treatment Plans for current record no# {{ $record->id }}

@@ -9,7 +9,7 @@
 		<h3>New Record</h3>
 		<ol class="breadcrumb breadcrumb-simple">
 			<li><a href="#">Dashboard</a></li>
-			<li><a href="#">Record</a></li>
+			<li><a href="{{route('backend.search_pmr')}}">Records</a></li>
 			<li class="active">Add</li>
 		</ol>
 	</div>

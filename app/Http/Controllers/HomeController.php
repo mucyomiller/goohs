@@ -12,6 +12,7 @@ use App\Appointment;
 use App\Checkupfee;
 use App\Record;
 use App\TreatmentPlan;
+use App\TreatmentRecordSheet;
 use App\Employee;
 class HomeController extends Controller
 {
@@ -355,13 +356,38 @@ class HomeController extends Controller
         return view('dashboard.medical_records.add_treatment_plan')
         ->with(['record'=>$record,'treatments_plans'=>$treatements_plans]);
     }
-    public  function treatments_record_sheet(){
-
+    public  function treatments_record_sheet(Request $request){
+        if($request->isMethod('post'))
+        {
+            $this->validate($request,[
+                'procedure_code'=> 'required',
+                'tooths_no' => 'required',
+                'sextant_no' => 'required',
+                'treatment_notes' => 'required',
+                'treatments_id' => 'required'
+                ]);
+            TreatmentRecordSheet::create([
+                'record_id' => $request->input('record_id'),
+                'procedure_code' => $request->input('procedure_code'),
+                'tooths_no' => $request->input('tooths_no'),
+                'sextant_no' => $request->input('sextant_no'),
+                'treatment_notes' => $request->input('treatment_notes'),
+                'treatments_id' => $request->input('treatments_id'),
+                ]);
+            return redirect()->back();
+        }
+        $record = Record::where('id',$request->input('record'))->first();
+        $treatment_record_sheets = TreatmentRecordSheet::where('record_id',$request->input('record'))->get();
+        return view('dashboard.medical_records.treatment_record_sheet')
+        ->with(['record'=>$record,'treatment_record_sheets'=>$treatment_record_sheets]);
     }
 
     public function delete(Request $request){
         if($request->has('treatment_plan') && $request->input('treatment_plan') == true){
             TreatmentPlan::where('id',$request->input('id'))->delete();
+            return redirect()->back();
+        }else if($request->has('treatment_record_sheet') && $request->input('treatment_record_sheet') == true){
+            TreatmentRecordSheet::where('id',$request->input('id'))->delete();
             return redirect()->back();
         }
     }
