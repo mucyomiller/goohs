@@ -129,11 +129,6 @@
 <span class="lbl">View Vital Signs</span>
 </a>
 </li>
-<li>
-<a href="{{route('appointments.index')}}">
-<span class="lbl">View Appointments</span>
-</a>
-</li>
 </ul>
 </li>
 <li class="magenta opened">

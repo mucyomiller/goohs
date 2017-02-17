@@ -26,6 +26,9 @@ class Patient extends Model
     public function records(){
         return $this->hasMany('App\Record');
     }
+    public function number(){
+        return $this->hasMany('App\Numbering');
+    }
     public function allergies()
     {
         return $this->hasMany('App\Allergy');
