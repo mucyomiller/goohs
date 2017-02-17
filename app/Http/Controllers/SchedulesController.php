@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Response;
 use App\Appointment;
+use Calendar;
 
 class SchedulesController extends Controller
 {
@@ -23,7 +24,7 @@ class SchedulesController extends Controller
         $event = [];
         $appointments = Appointment::all();
         foreach($appointments as $appointment){
-         $event = \Calendar::event(
+         $event = Calendar::event(
             $appointment->patient->user->names,
             false,
             new \DateTime($appointment->date),
@@ -35,7 +36,7 @@ class SchedulesController extends Controller
         ]
             );
           //dd($event);
-             $calendar=\Calendar::addEvent($event)
+             $calendar= Calendar::addEvent($event)
                             ->setOptions([
                               'firstDay'=> 1
                             ])->setCallbacks([]);
