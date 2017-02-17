@@ -46,9 +46,11 @@ class AppointmentsController extends Controller
             'start_time'  => 'required',
             ]);
 
+        $pid=Patient::where('patientID',$request->input('patient_id'))->first();
+
         Appointment::create([
             'hospital_id' => $request->input('hospital_id'),
-            'patient_id'  => $request->input('patient_id'), 
+            'patient_id'  => $pid->id, 
             'date'        => $request->input('date'), 
             'start_time'  => $request->input('start_time'),
             ]);

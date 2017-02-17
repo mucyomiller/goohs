@@ -27,10 +27,10 @@ class SchedulesController extends Controller
             $appointment->patient->user->names,
             false,
             new \DateTime($appointment->date),
-            new \DateTime(''),
+            new \DateTime($appointment->date),
             $appointment->id,
              [
-        'url' => 'http://full-calendar.io',
+        'url' => '/index',
         //any other full-calendar supported parameters
         ]
             );
