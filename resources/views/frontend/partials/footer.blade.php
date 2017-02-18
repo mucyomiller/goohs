@@ -157,7 +157,7 @@
 <div class="bookform bookform-1" id="bookform2">
     <div class="bookform-left">
         <h2 class="section-title"><span class="bold700">TAKE  NUMBER</span></h2>
-                <form method="post" action="{{ route('appointments.store') }}">
+                <form method="post" action="{{ route('queue_no') }}">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-form-item f-doctor">

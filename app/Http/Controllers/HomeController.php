@@ -14,6 +14,8 @@ use App\Record;
 use App\TreatmentPlan;
 use App\TreatmentRecordSheet;
 use App\Employee;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 class HomeController extends Controller
 {
     /**
@@ -26,6 +28,16 @@ class HomeController extends Controller
         //$this->middleware('auth');
     }
     
+    public function sendSMS($phone_no,$message)
+    {
+    $client = new Client(); //GuzzleHttp\Client
+    $result = $client
+    ->get('https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0?username=xxx&password=xxx&message='.$message.'&msisdn='.$phone_no.'');
+}
+
+    public function test(){
+        $this->sendSMS('250782535706','test from php');
+    }
     /**
      * Show the application dashboard.
      *

@@ -16,12 +16,13 @@ Route::get('contact',['as'=>'contact','uses'=>'FrontendController@contact']);
 Route::get('services',['as'=>'services','uses'=>'FrontendController@services']);
 Route::post('subscribe',['as'=>'subscribe','uses'=>'NewsLetterController@subscribe']); 
 Route::post('contactsend',['as'=>'contactSend','uses'=>'ContactController@contactsend']);
+Route::post('queue_no',['as'=>'queue_no','uses' => 'NumberingController@getNumber']);
 Auth::routes();
 
 //backend routes
 Route::group(['prefix'=>'backend'],function(){
      Route::resource('appointments', 'AppointmentsController');
-
+     Route::get('test',['as'=>'backend.test','uses'=>'HomeController@test']);
      Route::group(['middleware' => 'auth'], function(){
 
     Route::get('delete',['as'=>'backend.delete','uses'=>'HomeController@delete']); 
