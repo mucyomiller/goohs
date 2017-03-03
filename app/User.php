@@ -45,10 +45,6 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Prescription');
     }
-
-    public function hospital(){
-        return $this->belongsTo('App\Clinic');
-    }
     public function employee(){
         return $this->hasOne('App\Employee');
     }
