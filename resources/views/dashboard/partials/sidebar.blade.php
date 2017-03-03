@@ -25,7 +25,7 @@
 </a>
 </li>
 <li>
-<a href="{{route('hospitals.index')}}">
+<a href="{{route('manager.index')}}">
 <span class="lbl">Manage Hospitals Manager</span>
 </a>
 </li>
@@ -36,82 +36,12 @@
 <li class="grey with-sub">
 <span>
 <i class="font-icon font-icon-dashboard"></i>
-<span class="lbl">Administrator</span>
+<span class="lbl">Hospital Manager</span>
 </span>
 <ul>
 <li>
 <a href="{{route('users.index')}}">
 <span class="lbl">Manage Employees</span>
-</a>
-</li>
-<li>
-<a href="{{route('appointments.index')}}">
-<span class="lbl">Manage Appointments</span>
-</a>
-</li>
-<li>
-<a href="{{route('patients.index')}}">
-<span class="lbl">Manage Patients</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.search_pmr')}}">
-<span class="lbl">Manage Medical Record</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.app_vitals')}}">
-<span class="lbl">Add Vital Signs</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.app_prescription')}}">
-<span class="lbl">Prepare Prescription</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.app_pres_print')}}">
-<span class="lbl">Print Prescription</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.app_tests')}}">
-<span class="lbl">Manage Test Reports</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.app_test_print')}}">
-<span class="lbl">Print Test Reports</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.app_check_fee')}}">
-<span class="lbl">Add Checkup Fee</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.app_checkup_fee_print')}}">
-<span class="lbl">Print Checkup Invoice</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.app_test_fee')}}">
-<span class="lbl">Add Lab Test Fee</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.app_test_fee_print')}}">
-<span class="lbl">Print Test Invoice</span>
-</a>
-</li>
-<li>
-<a href="{{route('medicines.index')}}">
-<span class="lbl">Manage Medicines</span>
-</a>
-</li>
-<li>
-<a href="{{route('backend.patients_reporting')}}">
-<span class="lbl">View Checked Patients</span>
 </a>
 </li>
 </ul>
