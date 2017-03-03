@@ -8,7 +8,9 @@ use Hash;
 use Mail;
 use URL;
 use App\Hospital;
+use App\District;
 use App\User;
+
 class HospitalsController extends Controller
 {
     /**
@@ -18,8 +20,8 @@ class HospitalsController extends Controller
      */
     public function index()
     {
-        $hospitals = Hospital::paginate(10);
-        return view('dashboard.clinics.index')->with(['clinics'=>$hospitals]);
+        $hospitals = Hospital::all();
+        return view('dashboard.hospitals.index')->with(['hospitals'=>$hospitals]);
     }
 
     /**
@@ -29,7 +31,8 @@ class HospitalsController extends Controller
      */
     public function create()
     {
-        return view('dashboard.clinics.create');
+        $districts = District::all();
+        return view('dashboard.hospitals.create')->with(['districts'=>$districts]);
     }
 
     /**
@@ -40,70 +43,25 @@ class HospitalsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $validator = Validator::make($data, 
-            [
-                'password'          => 'min:6',
-                'email'             => 'unique:Users',
-                'status'            => 'required',
-                'clinic_name'       => 'required',
-                'clinic_address'    => 'required'
-               ]);
-
-        if ($validator->fails())
+        $this->validate($request,[
+        'name'           => 'required',
+        'location'       => 'required|exists:districts,district_name',
+        'quota'          => 'required|numeric'
+        ]);
+        if($request->has('activate')){
+        $activate = 1;
+        }
+        else
         {
-            return redirect()->back()->withErrors($validator)->withInput();
+        $activate= 0;   
         }
-
-        $clinic = Hospital::create(['name' => $data['clinic_name'], 'address' => $data['clinic_address']]);
-
-        $User = new User();
-        $User->clinic_id = $clinic->id;
-        $User->name = $request->input('name');
-        $User->password = Hash::make($request->input('password'));
-        $User->email = $request->input('email');
-        $User->gender = $request->input('gender');
-        $User->age = $request->input('age');
-        $User->city = $request->input('city');
-        $User->country = $request->input('country');
-        $User->address = $request->input('address');
-
-        if($request->input('phone') == ''){
-            $User->phone = 'N/A';
-        }else {
-            $User->phone = $request->input('phone');
-        }
-
-        if($request->input('cnic') == ''){
-            $User->cnic = 'N/A';
-        }else {
-            $User->cnic = $request->input('cnic');
-        }
-
-        if($request->input('branch') == ''){
-            $User->branch = 'N/A';
-        }else {
-            $User->branch = $request->input('branch');
-        }
-
-        if($request->input('note') == ''){
-            $User->note = 'N/A';
-        }else {
-            $User->note = $request->input('note');
-        }
-
-        $User->status = $request->input('status');
-        $User->role = 'Administrator';
-        $User->save();
-
-        $data = ['link' => URL::to('login'), 'name' => $request->input('name')];
-//      Send email to User
-        Mail::queue('emails.welcome', $data, function($message)
-        {
-        $message->to($request->input('email'), $request->input('name'))->subject('Welcome to EMR!');
-        });
-
-        return redirect()->route('clinics.index');
+        Hospital::create([
+            'name'          => $request->input('name'),
+            'location'      => $request->input('location'),
+            'quota_per_day' => $request->input('quota'),
+            'is_activated'  => $activate,
+            ]);
+        return redirect()->route('hospitals.index');
     }
 
     /**
@@ -114,9 +72,8 @@ class HospitalsController extends Controller
      */
     public function show($id)
     {
-        $clinic = Hospital::find($id);
-        $admin = User::where('role', 'Administrator')->where('clinic_id', $clinic->id)->first();
-        return view('dashboard.clinics.show')->with(['clinic'=>$clinic, 'admin'=>$admin]);
+        $hospital = Hospital::find($id);
+        return view('dashboard.hospitals.show')->with(['hospital'=>$hospital]);
     }
 
     /**
@@ -127,9 +84,9 @@ class HospitalsController extends Controller
      */
     public function edit($id)
     {
-        $clinic = Hospital::find($id);
-        $admin = User::where('role', 'Administrator')->where('clinic_id', $clinic->id)->first();
-        return view('dashboard.clinics.edit')->with(['clinic'=>$clinic, 'admin'=>$admin]);
+        $hospital = Hospital::find($id);
+        $districts = District::all();
+        return view('dashboard.hospitals.edit')->with(['hospital'=>$hospital,'districts'=> $districts]);
     }
 
     /**
@@ -204,6 +161,6 @@ class HospitalsController extends Controller
     public function destroy($id)
     {
         Hospital::destroy($id);
-        return redirect()->route('dashboard.clinics.index');
+        return redirect()->route('dashboard.hospitals.index');
     }
 }
