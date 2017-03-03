@@ -13,7 +13,7 @@ class RolesTableSeeder extends Seeder
     {
         
         $superUser =new Role();  //superUser
-        $superUser->name 			='superUser'; 
+        $superUser->name 			='superuser'; 
         $superUser->display_name	='Super User';
         $superUser->description 	='High privileged User';
         $superUser->save();
