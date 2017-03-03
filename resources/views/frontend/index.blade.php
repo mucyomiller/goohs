@@ -201,7 +201,6 @@ Plaque is the primary cause of gum disease. However, other factors can contribut
 <!-- =========================
 END SERVICES
 ============================== -->
-*/
 
 <!-- =========================
 ABOUT
