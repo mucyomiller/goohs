@@ -12,7 +12,7 @@
 <span class="lbl">My Patient info</span>
 </a>
 </li>
-@role('superUser')
+@role('superuser')
 <li class="grey with-sub">
 <span>
 <i class="font-icon font-icon-dashboard"></i>
@@ -21,7 +21,12 @@
 <ul>
 <li>
 <a href="{{route('hospitals.index')}}">
-<span class="lbl">Manage Hospitals</span><span class="label label-custom label-pill label-danger">new</span>
+<span class="lbl">Manage Hospitals</span>
+</a>
+</li>
+<li>
+<a href="{{route('hospitals.index')}}">
+<span class="lbl">Manage Hospitals Manager</span>
 </a>
 </li>
 </ul>
