@@ -24,7 +24,8 @@ Route::group(['prefix'=>'backend'],function(){
      Route::resource('appointments', 'AppointmentsController');
      Route::get('test',['as'=>'backend.test','uses'=>'HomeController@test']);
      Route::group(['middleware' => 'auth'], function(){
-
+    
+    Route::resource('hospital/manager','AdminsController'); 
     Route::get('delete',['as'=>'backend.delete','uses'=>'HomeController@delete']); 
     Route::get('/',['as'=>'backend.index','uses'=>'HomeController@index']);
     Route::resource('profile','ProfileController');
