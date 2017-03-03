@@ -28,20 +28,20 @@ class RolesTableSeeder extends Seeder
 		$doctor =new Role();  //doctors users
         $doctor->name          ='doctor';
         $doctor->display_name  ='Doctor';
-        $doctor->description   ='Doctor Users';
+        $doctor->description   ='Doctor User';
         $doctor->save();
 
         
 		$nurse =new Role();  //nurse users
         $nurse->name          ='nurse';
         $nurse->display_name  ='Nurse';
-        $nurse->description   ='Nurse Users';
+        $nurse->description   ='Nurse User';
         $nurse->save();
 
         $nurse =new Role();  //labmanager users
         $nurse->name          ='labmanager';
         $nurse->display_name  ='Lab Manager';
-        $nurse->description   ='Lab Manager Users';
+        $nurse->description   ='Lab Manager User';
         $nurse->save();
 
         $accountant =new Role();  //accountant
