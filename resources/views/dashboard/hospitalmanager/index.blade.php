@@ -44,6 +44,11 @@ All Registered Hospital Managers <span class="label label-pill label-info">{{$ma
 </div>
 </section>
 @else
+<section class="card">
+<header class="card-header card-header-lg">
+<a href="{{ route('manager.create')}} " class="btn btn-rounded  btn-success-outline pull-right">Add new Manager</a>
+</header>
+</section>
 <h2>notify that there is no Manager registered yet</h2>
 @endif
 </div><!--.container-fluid-->

@@ -6,7 +6,7 @@
 <div class="tbl">
 <div class="tbl-row">
 <div class="tbl-cell">
-	<h3>{{ link_to_route('users.create', 'Register Employee', '', ['class' => 'btn_1'])}}</h3>
+	<h3>Manage Employees</h3>
 	<ol class="breadcrumb breadcrumb-simple">
 		<li><a href="#">Dashboard</a></li>
 		<li><a href="#">Employees</a></li>
@@ -16,6 +16,8 @@
 </div>
 </div>
 </header>
+<div class="box-typical box-typical-padding">
+<h3 class="m-t-lg with-border"><span class="label label-success">{{Auth::user()->employee->hospital->name}}</span> employees <a href="{{ route('users.create')}} " class="btn btn-rounded  btn-success-outline pull-right">Add new Employee</a></h3>
 <table id="table-edit" class="table table-bordered table-hover">
 <thead>
 <tr>
@@ -57,6 +59,7 @@
 @endforeach
 </tbody>
 </table>
+</div><!-- .box typical -->
 </div><!--.container-fluid-->
 </div><!--.page-content-->
 @endsection

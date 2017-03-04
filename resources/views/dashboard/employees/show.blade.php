@@ -18,26 +18,29 @@
 </header>
 <table id="table-edit" class="table  table-hover">
 <tbody>
-<tr>
-<td width="20">Employee Name:</td><td width="80">{{ $employee->user->names }}</td>
+<tr style="background-color: aqua;">
+<td width="20"><b>Employee Role(Access level):</b></td><td width="80"><b>{{ $employee->user->roles->first()->display_name }}</b></td>
 </tr>
 <tr>
-<td>Hospital Name:</td><td>{{ $employee->hospital->name }}</td>
+<td width="20"><b>Employee Name:</b></td><td width="80">{{ $employee->user->names }}</td>
 </tr>
 <tr>
-<td>Country:</td><td>{{ $employee->country }}</td>
+<td><b>Hospital Name:</b></td><td>{{ $employee->hospital->name }}</td>
 </tr>
 <tr>
-<td>Address:</td><td>{{ $employee->address }}</td>
+<td><b>Country:</b></td><td>{{ $employee->country }}</td>
 </tr>
 <tr>
-<td>Branch:</td><td>{{ $employee->branch }}</td>
+<td><b>Address:</b></td><td>{{ $employee->address }}</td>
 </tr>
 <tr>
-<td>Note:</td><td>{{ $employee->note }}</td>
+<td><b>Branch:</b></td><td>{{ $employee->branch }}</td>
 </tr>
 <tr>
-<td>Status:</td><td>{{ $employee->status == 0 ?"enabled":"disabled" }}</td>
+<td><b>Note:</b></td><td>{{ $employee->note }}</td>
+</tr>
+<tr>
+<td><b>Status:</b></td><td><b>{{ $employee->status == 0 ?"active":"disabled" }}</b></td>
 </tr>
 </tbody>
 </table>
