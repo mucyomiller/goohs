@@ -9,6 +9,9 @@ use Mail;
 use Validator;
 use App\User;
 use App\Employee;
+use App\Hospital;
+use App\Role;
+
 
 class UsersController extends Controller
 {
@@ -19,8 +22,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $employees = Employee::where('hospital_id', Auth::user()->employee->hospital_id)->paginate(10);
-
+        $employees = Employee::where('hospital_id', Auth::user()->employee->hospital_id)->get();
         return view('dashboard.employees.index')->with(['employees'=>$employees]);
     }
 
@@ -31,7 +33,10 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('dashboard.employees.create');
+        $users = User::all();
+        $roles = ['doctor','nurse','labmanager','accountant','receptionist','user'];
+        $hospital = Hospital::where('id', Auth::user()->employee->hospital_id)->first();
+        return view('dashboard.employees.create')->with(['users'=>$users,'hospital'=>$hospital,'roles'=>$roles]);
     }
 
     /**
@@ -42,66 +47,38 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $validator = Validator::make($data, 
-            [
-            'password'  => 'min:6',
-            'email'     => 'unique:employees',
-            'status'    => 'required',
-            'role'      => 'required'
+        $this->validate($request,[
+            'user'   => 'required|exists:users,id',
+            'hospital'  => 'required|exists:hospitals,id',
+            'country'   => 'required',
+            'role'      => 'required',
+            'address'   => 'required',
+            'branch'    => 'required',
+            'note'      => 'required',
             ]);
-
-        if ($validator->fails())
+        if($request->has('status'))
         {
-            return redirect()->back()->withErrors($validator)->withInput();
+            $status = 1;
         }
-
-        $employee = new User();
-        $employee->name = $request->input('name');
-        $employee->clinic_id = Auth::user()->clinic_id;
-        $employee->password = Hash::make($request->input('password'));
-        $employee->email = $request->input('email');
-        $employee->gender = $request->input('gender');
-        $employee->age = $request->input('age');
-        $employee->city = $request->input('city');
-        $employee->country = $request->input('country');
-        $employee->address = $request->input('address');
-
-        if($request->input('phone') == ''){
-            $employee->phone = 'N/A';
-        }else {
-            $employee->phone = $request->input('phone');
-        }
-
-        if($request->input('cnic') == ''){
-            $employee->cnic = 'N/A';
-        }else {
-            $employee->cnic = $request->input('cnic');
-        }
-
-        if($request->input('branch') == ''){
-            $employee->branch = 'N/A';
-        }else {
-            $employee->branch = $request->input('branch');
-        }
-
-        if($request->input('note') == ''){
-            $employee->note = 'N/A';
-        }else {
-            $employee->note = $request->input('note');
-        }
-
-        $employee->status = $request->input('status');
-        $employee->role = $request->input('role');
-        $employee->save();
-
-        $data = ['link' => URL::to('login'), 'name' => $request->input('name')];
-        // Send email to employee
-        Mail::queue('emails.welcome', $data, function($message)
+        else
         {
-            $message->to($request->input('email'), $request->input('name'))->subject('Welcome to GOOHS!');
-        });
+            $status = 0;   
+        }
 
+        //creating employee
+        $emp = Employee::create(
+            [
+                'user_id'     => $request->input('user'),
+                'hospital_id' => $request->input('hospital'),
+                'country'     => $request->input('country'),
+                'address'     => $request->input('address'),
+                'branch'      => $request->input('branch'),
+                'note'        => $request->input('note'),
+                'status'      => $status,
+            ]);
+        //getting admin role(manger of hospital)
+        $role = Role::where('name',$request->input('role'))->first();
+        $emp->user->attachRole($role);
         return redirect()->route('users.index');
     }
 
@@ -125,8 +102,10 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('dashboard.employees.edit')->with(['employee'=>$user]);
+        $users =  User::all();
+        $hospitals =  Hospital::all();
+        $employee = Employee::where('id',$id)->first();
+        return view('dashboard.employees.edit')->with(['employee'=>$employee,'users'=>$users,'hospitals'=>$hospitals]);
     }
 
     /**
@@ -138,33 +117,6 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id);
-
-        if ($request->input('email') !== $user->email) {
-            $input = array('email' => $request->input('email'));
-            $validator = Validator::make($input, array('email' => 'unique:users'));
-
-            if ($validator->fails())
-            {
-                return redirect()->back()->withErrors($validator)->withInput();
-            }
-
-        }
-
-        $data = $request->all();
-        $validator = Validator::make($data, 
-            [
-            'status' => 'required',
-             'role' => 'required'
-             ]);
-
-        if ($validator->fails())
-        {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-
-        $user->update($data);
-
         return redirect()->route('users.index');
     }
 
